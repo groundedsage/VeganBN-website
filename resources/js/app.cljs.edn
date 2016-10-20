@@ -1,0 +1,4 @@
+{:require  [vbn.app]
+ :init-fns [vbn.app/init]
+ :compiler-options {:asset-path "js/app.out"
+                    :devcards true}}
