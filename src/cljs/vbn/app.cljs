@@ -6,16 +6,45 @@
 (enable-console-print!)
 (devcards.core/start-devcard-ui!)
 
+
+(rum/defc skip-to-main []
+  [:a {:href "#main"} "Skip to main content"]
+  )
+
+(rum/defc main [content]
+  "Enters content into main container with id=\"main\" "
+  [:main#main
+   content
+   ])
+
+(rum/defc inline-link [text link]
+  [:a {:href link} text])
+
+
+
+
+
+
 (rum/defc label [text]
   [:div
    [:h1 "A label"]
-   [:p text]])
+   [:p text (inline-link text "#")]])
+
 
 
 (defcard
+  "Skip to main"
+  (skip-to-main))
+
+(defcard
   "label"
-  (label "This is the label"))
+  (label "This is the label here" "This is a link"))
+
+(defcard
+  "main-testing"
+  (main "This is some main content"))
 
 
-;(defn init []
-;  (rum/mount (label) (. js/document (getElementById "container"))))
+
+(defn init []
+  (rum/mount (label) (. js/document (getElementById "container"))))

@@ -10,7 +10,7 @@
                  [weasel                    "0.7.0"      :scope "test"]
                  [org.clojure/clojurescript "1.7.228"]
                  [rum "0.10.4"]
-                 [org.martinklepsch/boot-garden "1.2.5-3" :scope "test"]
+                 [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]])
 
 (require
@@ -22,9 +22,7 @@
 
 (deftask build []
   (comp (speak)
-        
         (cljs )
-        
         (garden :styles-var 'vbn.styles/screen
 :output-to "css/garden.css")))
 
