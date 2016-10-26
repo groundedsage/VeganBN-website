@@ -28,19 +28,30 @@
 (rum/defc navigation []
   [:nav
    [:ul
-    [:li.order-3 [:a {:href "#main"}
-                  [:svg.home {:alt "VBN Logo Home"
-                              :viewBox "0 0 158 172"
-                              }
-                [:use
-                 {:xlink-href "logo.svg#logo"}]]]]
-    [:li.order-1 [:a {:href "/about-us.html"} "About Us"]]
-    [:li.order-2 [:a {:href "/veganism.html"} "Veganism"]]
-    [:li.order-4 [:a {:href "/consulting.html"} "Consulting"]]
-    [:li.order-5 [:a {:href "/community.html"} "Community"]]
+   ; [:li.order-3 [:a {:href "#main"}
+   ;               [:svg.home {:alt "VBN Logo Home"
+   ;                           :viewBox "0 0 158 172"
+   ;                           }
+   ;             [:use
+   ;              {:xlink-href "logo.svg#logo"}]]]]
+    [:li.order-middle [:a {:href "#main"} [:span {:aria-hidden true} "Home"]
+          [:svg.home {:alt "VBN Logo Home"
+                      :viewBox "0 0 158 172"
+                      }
+           [:use
+            {:xlink-href "logo.svg#logo"}]]
+
+          ]]
+    [:li.order-front [:a {:href "/about-us.html"} [:span "About Us"]]]
+    [:li.order-front [:a {:href "/veganism.html"} [:span "Veganism"]]]
+    [:li.order-end [:a {:href "/consulting.html"} [:span "Consulting"]]]
+    [:li.order-end [:a {:href "/community.html"} [:span "Community"]]]
 
     ]])
 
+(rum/defc intro []
+  [:div.intro-text
+  [:p "intro text"]])
 
 
 
@@ -58,6 +69,7 @@
    (skip-to-main)
    (navigation)
    (hidden)
+   ;(intro)
 
    ])
 

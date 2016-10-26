@@ -17,7 +17,6 @@
                                             defclass
                                             ]]))
 
-                                        ;(defselector a )
 
 (def brand-color "#6DEF14")
 
@@ -29,22 +28,20 @@
     ;; Might remove this
     (html [:font-size "calc(1em + 1vw)"])
 
-    (body
 
+    (body
      ;; Remove this later
      {:font-family "Helvetica Neue"}
      {:margin 0}
 
-     (at-media {:min-width (px 1500)}
-     {:background 'blue})
+
 
      ;;;;;;;;;  LAYOUT DEFAULTS  ;;;;;;;;;;
-
 
      [:* {:box-sizing 'border-box}
       [:&:focus {:outline 'none}]]
 
-     ;; Normally have html and body in here also
+     ;; Normally have html and body in here also however they have been moved to the top
      [:header
       :div
       :section
@@ -86,7 +83,6 @@
                                         ;(attr= "href" "#main") - targets too many attributes
       {:position 'absolute
        :top 0
-                                        ; :right "100%"
 
        ;;My Additions
        :height (px 0)
@@ -102,6 +98,7 @@
        :transition-property 'height
        :transition-duration "0.2s"
        :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)" }
+
       [:span {:display 'none}]
 
 
@@ -113,26 +110,84 @@
 
      ;;;;;;;;;  NAVIGATION BAR  ;;;;;;;;;;
 
+
+     (at-media {:min-width (px 667) }
+               [:.intro-text {:align-items 'center
+                              :background-color 'lightgrey}])
+     ;; Seem to be unable to utilize media queries due to being a defstyle
+
      (defselector li)
+     (defselector nav)
      (defpseudoclass before)
      (defpseudoclass not)
-     (defclass home)
+     (defclass order-middle)
+
+     [:nav {:background-color "#0D8EC1"
+            }]
+
+     ;; Mobile Styles
+
+     [:nav {:padding {:top (em 1.5)
+                      :left (em 1.5)
+                      :right (em 1.5)
+                      :bottom (em 1.5)}}]
+
+     [:nav
+      [:ul {:height "100%"
+            :justify-content 'space-around
+            ;:max-width (em 75)    ;; add a media query for this
+            }]]
+
+     ["nav li:not(.order-middle)" {
+                                   :width (em 8.125)
+
+                                    
 
 
-     [:nav {:height (px 100)
-            :background-color "#0D8EC1"
-            :margin-top (em 3)}]
+
+                                   }]
+
+     [:nav
+      [:li
+       [:a {:color 'white
+            :text-decoration 'none
+            :min-height (em 3.7
+                         )
+            :display 'flex
+            :flex-direction 'column
+            :justify-content 'center}]]]
+
+     [:.home {:height (em 5)
+              :position 'absolute
+              :right 0
+              :top "8%"}]
+
+     [:nav
+      [:li
+       [:a {:will-change "font-size"
+            :transition-property 'font-size
+            :transition-duration "0.4s"
+            :transition-timing-function "ease-out"}
+        [:&:hover
+         :&:focus
+         [:span
+          {:font-size (em 1.5)}]
+ ]]]]
+
+
+     (at-media {:min-width (px 667) }
+
+               [:nav {:margin-top (em 3)
+                      :height (rem 6.25)}]
 
      [:nav
       [:ul {:flex-direction 'row
-            :justify-content 'space-around
-            :height "100%"
             :align-items 'center
             }]]
 
      [:nav
       [:ul
-       [:li ;; Need to ensure it takes focus off home link as it is an image
+       [:a ;; Need to ensure it takes focus off home link as it is an image
         [:&:hover
          :&:focus   ;; THIS STYLE ISN'T BEING PICKED UP
          [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
@@ -148,22 +203,27 @@
        [:a {:color 'white
             :text-decoration 'none
             :text-align 'center
+            :width 'auto
             :min-width (rem 8.125)
             :position 'relative
-            :will-change "font-size, opacity"
+            :will-change "font-size"
             :transition-property 'font-size
             :transition-duration "0.2s"
             :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"}
 
-        [:&:focus
-         :&:hover {:font-size (em 1.5)}]]]]
+        ]]]
 
-     [:.order-1 {:order 1}]
-     [:.order-2 {:order 2}]
-     [:.order-3 {:order 3}]
-     [:.order-4 {:order 4}]
-     [:.order-5 {:order 5}]
+     [:nav
+      [:li.order-middle
+       [:span {:display 'none}]]]
 
+     [:.home {:height 'auto
+              :position 'relative}]
+
+     [:.order-front {:order 1}]
+     [:.order-middle {:order 2}]
+     [:.order-end {:order 3}]
+)
 
 
 
