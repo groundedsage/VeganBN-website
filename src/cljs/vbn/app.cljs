@@ -4,22 +4,17 @@
   (:require-macros [devcards.core :refer [defcard]]))
 
 (enable-console-print!)
-(devcards.core/start-devcard-ui!)
 
 
 (rum/defc skip-to-main []
-  [:a {:href "#main"} "Skip to main content"]
-  )
+  [:a {:href "#main"} "Skip to main content"])
 
 (rum/defc main [content]
   "Enters content into main container with id=\"main\" "
-  [:main#main
-   content
-   ])
+  [:main#main content])
 
 (rum/defc inline-link [text link]
   [:a {:href link} text])
-
 
 
 
@@ -32,9 +27,11 @@
 
 
 
-(defcard
-  "Skip to main"
-  (skip-to-main))
+;(defcard
+;  "Skip to main"
+;  (skip-to-main))
+
+
 
 (defcard
   "label"
@@ -44,7 +41,9 @@
   "main-testing"
   (main "This is some main content"))
 
-
-
 (defn init []
-  (rum/mount (label) (. js/document (getElementById "container"))))
+  (devcards.core/start-devcard-ui!)
+  )
+
+;(defn init []
+;  (rum/mount (label) (. js/document (getElementById "container"))))

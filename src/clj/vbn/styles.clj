@@ -20,13 +20,18 @@
         body (rule :body)]
 
     ;; Might remove this
-    (html [:font-size "calc(1em + 1vw)"]
-          )
+    (html [:font-size "calc(1em + 1vw)"])
 
     ;; Body css rules - ADDED BY ME
     (body
 
-     ;;;;;;;;; INCLUSIVITY
+     ;; Remove this later
+     {:font-family "Helvetica Neue"}
+
+
+
+     ;;;;;;;;;  INCLUSIVITY  ;;;;;;;;;;
+
 
      ;; VISUALLY HIDDEN
      [:.visually-hidden {:position 'absolute
@@ -40,6 +45,30 @@
                               :top 0
                               :right "100%"}
       [:&:focus {:right 'auto}]]
+
+
+     ;;;;;;;;;  LAYOUT DEFAULTS  ;;;;;;;;;;
+
+
+     [* {:box-sizing 'border-box}]
+
+     [:html
+      :body
+      :header
+      :div
+      :section
+      :article
+      {:position 'flex
+       :flex-direction 'column
+       :align-items 'stretch
+       :flex-shrink 0
+       :border "0 solid black"
+       :margin 0
+       :padding 0
+       :max-width "100%"}
+      ]
+
+
 
 
      ;; VERTICAL RHYTHM
@@ -78,11 +107,10 @@
      ;;  ]
 
 
-     
 
 
-     ;; Remove this later
-     {:font-family "Helvetica Neue"}
+
+     ;; Paragraph styles
 
      [:p
       {:margin "1.5em 0"
@@ -104,7 +132,8 @@
                    :background-color "#cef"}]]
 
       ]
-     )))
+     )
+    ))
 
 
                                         ;(defstyles print
