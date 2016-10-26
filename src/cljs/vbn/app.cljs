@@ -5,9 +5,11 @@
 
 (enable-console-print!)
 
-
+;; Accessibility defaults
 (rum/defc skip-to-main []
-  [:a {:href "#main"} "Skip to main content"])
+  [:a.skip-to-main {:href "#main"}
+   [:span "Skip to main content"]
+   ])
 
 (rum/defc main [content]
   "Enters content into main container with id=\"main\" "
@@ -15,6 +17,31 @@
 
 (rum/defc inline-link [text link]
   [:a {:href link} text])
+
+;; Site specific
+
+
+(rum/defc hidden []
+  [:span  {:hidden true} "This is hidden text"])
+
+
+(rum/defc navigation []
+  [:nav
+   [:ul
+    [:li.order-3 [:a {:href "#main"}
+                  [:svg.home {:alt "VBN Logo Home"
+                              :viewBox "0 0 158 172"
+                              }
+                [:use
+                 {:xlink-href "logo.svg#logo"}]]]]
+    [:li.order-1 [:a {:href "/about-us.html"} "About Us"]]
+    [:li.order-2 [:a {:href "/veganism.html"} "Veganism"]]
+    [:li.order-4 [:a {:href "/consulting.html"} "Consulting"]]
+    [:li.order-5 [:a {:href "/community.html"} "Community"]]
+
+    ]])
+
+
 
 
 
@@ -26,24 +53,13 @@
    [:p text (inline-link text "#")]])
 
 
+(rum/defc page [content]
+  [:div
+   (skip-to-main)
+   (navigation)
+   (hidden)
 
-;(defcard
-;  "Skip to main"
-;  (skip-to-main))
-
-
-
-(defcard
-  "label"
-  (label "This is the label here" "This is a link"))
-
-(defcard
-  "main-testing"
-  (main "This is some main content"))
+   ])
 
 (defn init []
-  (devcards.core/start-devcard-ui!)
-  )
-
-;(defn init []
-;  (rum/mount (label) (. js/document (getElementById "container"))))
+  (rum/mount (page) (. js/document (getElementById "container"))))

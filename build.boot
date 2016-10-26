@@ -45,6 +45,13 @@
                  )
   identity)
 
+
+;; My own task
+;(deftask devcards []
+;  (task-options! cljs {:compiler-options {:devcards true}}
+;                 serve {:dir "devcards/resources"})
+
+
 (deftask dev
   "Simple alias to run application in development mode"
   []
