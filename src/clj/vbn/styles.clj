@@ -19,6 +19,7 @@
 
 
 (def brand-color "#6DEF14")
+(def brand-blue "#0d8ec1")
 
 
 (defstyles screen
@@ -36,7 +37,10 @@
 
 
 
-     ;;;;;;;;;  LAYOUT DEFAULTS  ;;;;;;;;;;
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   LAYOUT DEFAULTS   ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
      [:* {:box-sizing 'border-box}
       [:&:focus {:outline 'none}]]
@@ -64,11 +68,17 @@
        :border "0 solid black"
        :margin 0
        :padding 0
-       :max-width "100%"}
-      ]
+       :max-width "100%"}]
+
+     [:.page-padding {:margin {:left (rem 1.5)
+                               :right (rem 1.5) }}]
 
 
-     ;;;;;;;;;  INCLUSIVITY  ;;;;;;;;;;
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   INCLUSIVITY PATTERNS   ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
      ;; VISUALLY HIDDEN
@@ -108,13 +118,19 @@
        [:span {:display 'flex}]]]
 
 
-     ;;;;;;;;;  NAVIGATION BAR  ;;;;;;;;;;
+     ;; MAX WIDTH ISN'T WORKING AS EXPECTED
+
+     [:main {;:width (rem 60)
+             :max-width (rem 60)
+             :align-self 'center
+             }]
 
 
-     (at-media {:min-width (px 667) }
-               [:.intro-text {:align-items 'center
-                              :background-color 'lightgrey}])
-     ;; Seem to be unable to utilize media queries due to being a defstyle
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   NAVIGATION BAR   ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
      (defselector li)
      (defselector nav)
@@ -122,30 +138,23 @@
      (defpseudoclass not)
      (defclass order-middle)
 
-     [:nav {:background-color "#0D8EC1"
-            }]
+     [:nav {:background-color "#0D8EC1"}]
 
      ;; Mobile Styles
 
      [:nav {:padding {:top (em 1.5)
                       :left (em 1.5)
                       :right (em 1.5)
-                      :bottom (em 1.5)}}]
+                      :bottom (em 1.5)}
+            :z-index 1}]
 
      [:nav
       [:ul {:height "100%"
             :justify-content 'space-around
-            ;:max-width (em 75)    ;; add a media query for this
+                                        ;:max-width (em 75)    ;; add a media query for this
             }]]
 
-     ["nav li:not(.order-middle)" {
-                                   :width (em 8.125)
-
-                                    
-
-
-
-                                   }]
+     ["nav li:not(.order-middle)" {:width (em 8.125)}]
 
      [:nav
       [:li
@@ -171,10 +180,10 @@
         [:&:hover
          :&:focus
          [:span
-          {:font-size (em 1.5)}]
- ]]]]
+          {:font-size (em 1.5)}]]]]]
 
 
+     ;; Desktop styles
      (at-media {:min-width (px 667) }
 
                [:nav {:margin-top (em 3)
@@ -222,28 +231,129 @@
 
      [:.order-front {:order 1}]
      [:.order-middle {:order 2}]
-     [:.order-end {:order 3}]
-)
+     [:.order-end {:order 3}])
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   GLOBAL STYLES   ;;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
-     ;; VERTICAL RHYTHM
+     [:h1 :h2 :h3 :h4 :p {:margin 0
+                          :font-weight 'normal}]
 
-     ;; [:main * + * {:margin-top (rem 1.5)}]
+     [:h1 :h2 :h3 :h4 {:font-family 'bitter}]
+     [:p :span :ol {:font-family "Source Sans Pro"
+                    }]
+
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   HOME PAGE SPECIFIC   ;;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     (defclass line-under)
+
+
+     [:#banner-image {:height (em 18.75)
+                                        ;:max-height "100%"
+                      :width "100%"
+                      :background-color 'grey
+                      :background-image "url(\"resources/photos/banner-image.jpg\") "
+                      :background-size 'cover
+                      :background-repeat 'no-repeat
+                      :background-position "50% 40%"
+                      :justify-content 'center
+                      :align-items 'center
+                      :padding (rem 1.5)}]
+     [:#banner-image
+      [:span {:font-size (em 2)}]]
+
+     [:.h1-home {:font-weight 'bold}]
+
+     [:.h1-home 
+      :.h2-home {:align-self 'center
+                 :position 'relative}]
+
+     [:.home-component {:flex-direction 'row
+                        :flex-wrap 'wrap
+                        :justify-content 'center
+                        :align-items 'center}
+      [:svg {:width "25%"
+             :min-width (px 180)}]
+      ]
+
+     (at-media {:min-width (px 667) }
+               [:.home-component {:justify-content 'space-between
+                                  }])
+
+     [(line-under s/before) {:border-bottom "solid 1px rgba(51,61,71, 0.2)"
+                             :position 'absolute
+                             :top "110%"
+                             :right "10%" 
+                             :width "80%"
+                             :content " \" \" "
+                             }]
+
+     [:.at-our-core {:flex-direction 'row
+                     :flex-wrap 'wrap
+                     :align-items 'baseline
+                     :justify-content 'center
+                     }
+            [:div {:padding {:left (rem 1.5)
+                      :right (rem 1.5)}}]
+      [:svg {:width (px 125)
+              }]]
+
+     (at-media {:min-width (px 667)}
+               [:.at-our-core
+                {:width "100%"
+                 :max-width (rem 40)
+                 :justify-content 'space-between}])
+
+     [:.sign-up-box {:background-color brand-blue}]
+
+     [:.blurb-image {:width "100%"
+                     :height 'auto
+                     :margin-top (em 1.5)
+                     :background-color 'grey
+                     :border-radius "10%"}]
+
+
+
+
+     (at-media {:min-width (px 568) }
+               [:.blurb {:flex-direction 'row
+
+                                  }])
+
+
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   VERTICAL RHYTHM   ;;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+     ;; These need to be reviewed !!
+
+
+     ["main * + *" {:margin-top (rem 1.5)}]
 
      [:li :dt :dd :br :th :td {:margin 0}]
 
-     ;; [:* + h2
-     ;;  :* + h3 {:margin-top (em 1.5)}]
+      ["* + h2" "* + h3" {:margin-top (em 1.5)}]
 
-     ;; [:main * + *:not(p) {:margin-top "3rem 0}]
-     ;; [:main ":empty" {:display 'none}]
-
+      ["main * + *:not(p)" {:margin-top "3rem 0"}]
+      [":main :empty" {:display 'none}]
 
 
 
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   SHOW EXTERNAL LINK   ;;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-     ;; SHOW LINK IS EXTERNAL
 
      ;; [(attr-starts-with "http")(not (attr-matches "your domain"))::after
      ;;  :display 'inline-block
@@ -264,14 +374,35 @@
 
 
 
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   PARAGRAPH STYLES   ;;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-     ;; Paragraph styles
+      [:h1 {:font-size "2em"
+            :line-height "1.25em"}]
+      [:h2 {:font-size "1.625em"
+            :line-height "1.15284615em"}]
+      [:h3 {:font-size "1.375em"
+            :line-height "1.13636364em"}]
+      [:h4 {:font-size "1.125em"
+            :line-height "1.11111111em"}]
 
-     [:p
-      {:margin "1.5em 0"
-       :font-size (rem 1)
-       :line-height 1.5}
+                                        ;OLD STYLES
+                                        ;[:p {:font-size "1em"
+                                        ;     :line-height "1.25em"
+                                        ;     :max-width "28em"
+                                        ;     }]
+
+
+
+      ;; Paragraph styles
+
+      [:p
+       {:margin "1.5em 0"
+        :font-size (rem 1)
+        :line-height 1.5
+        :max-width (em 28)}
 
 
       ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE

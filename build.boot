@@ -23,8 +23,7 @@
 (deftask build []
   (comp (speak)
         (cljs )
-        (garden :styles-var 'vbn.styles/screen
-:output-to "css/garden.css")))
+        (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 (deftask run []
   (comp (serve)
@@ -39,7 +38,9 @@
   identity)
 
 (deftask development []
-  (task-options! cljs {:optimizations :none :source-map true
+  (task-options! cljs {:optimizations :none
+                       :source-map true
+                     ;  :compiler-options {:parallel-build true}}
                        :compiler-options {:devcards true}}
                  reload {:on-jsload 'vbn.app/init}
                  )
