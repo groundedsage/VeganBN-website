@@ -5,6 +5,19 @@
 
 (enable-console-print!)
 
+
+;; HELPER COMPONENTS
+
+
+(rum/defc svg-icon [meta]
+  (let [{:keys [alt viewbox href]} meta]
+    [:svg {:alt alt
+           :viewbox viewbox}
+     [:use {:xlink-href href}]]))
+
+
+
+
 ;; Accessibility defaults
 (rum/defc skip-to-main []
   [:a.skip-to-main {:href "#main"}
@@ -55,17 +68,18 @@
 
 (rum/defc bigger-than-business []
   [:div.home-component
-   [:svg
-    {:alt "VBN Logo Home"
-     :viewBox "0 0 255 100"}
-    [:use {:xlink-href "bigger-than-business.svg#bigger-than-business"}]]
+   (svg-icon {:alt "Bigger Than Business"
+              :viewbox "0 0 255 175"
+              :href "bigger-than-business.svg#bigger-than-business"})
    [:p "There is a monumental shift happening all over the world right now! We believe in a better world and we are here to make that happen."]])
+
+
 
 (rum/defc movement []
   [:div.home-component
-   [:svg {:alt "Movement"
-          :viewbox "0 0 238 175"}
-    [:use {:xlink-href "movement.svg#movement"}]]
+   (svg-icon {:alt "Movement"
+              :viewbox "0 0 238 175"
+              :href "movement.svg#movement"})
    [:p "The vegan movement continues to grow exponentially, however businesses still have little knowledge on how to cater to this rapdily growing industry."]])
 
 (rum/defc h2-home [text]
@@ -73,16 +87,17 @@
 
 (rum/defc community []
   [:div
-   [:svg {:alt "Community"
-          :viewbox "0 0 238 175"}
-    [:use {:xlink-href "community.svg#community"}]]
+   (svg-icon {:alt "Community"
+              :viewbox "0 0 238 175"
+              :href "community.svg#community"})
    [:p "We are about community"]])
 
 
 (rum/defc education []
   [:div
-   [:svg {:alt "Education"}
-    [:use {:xlink-href "education.svg#education"}]]
+   (svg-icon {:alt "Education"
+              :viewbox "0 0 238 175"
+              :href "education.svg#education"})
    [:span "We are about education"]])
 
 (rum/defc sign-up []
@@ -140,5 +155,40 @@
    (hidden)
    ])
 
+;(defn init [] (rum/mount (page) (. js/document (getElementById "container"))))
+
+
+;(comment
+
+(defcard
+  "Heading 1"
+  (h1-home "Heading 1 - Home Page"))
+
+(defcard
+  "Heading 2"
+  (h2-home "Heading 2 - Home Page"))
+
+(defcard
+  "Heading 3"
+  (h3 "Heading 3 - Home Page"))
+
+(defcard
+  "Bigger Than Business Symbol"
+(svg-icon {:alt "Bigger Than Business"
+           :viewbox "0 0 255 175"
+           :href "bigger-than-business.svg#bigger-than-business"}))
+
+
+(defcard
+  "Movement Symbol"
+  (svg-icon {:alt "Movement"
+             :viewbox "0 0 238 175"
+             :href "movement.svg#movement"}) )
+
+
+
+
 (defn init []
-  (rum/mount (page) (. js/document (getElementById "container"))))
+  (devcards.core/start-devcard-ui!)
+  )
+;)
