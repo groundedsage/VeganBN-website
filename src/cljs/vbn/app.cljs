@@ -94,10 +94,21 @@
 
 
 (rum/defc education []
-  [:div
+  [:div {:style {:width "100%"
+                 :max-width "250px"
+                 :align-items "center"}}
+   [:svg {:height "80%"
+          :width "80%"
+          :viewBox "0 0 123 123"
+         ; :preserveAspectRatio "xMidyMid slice"
+          }
+   [:use 
+     {:xlink-href "education.svg#education"}]]
+   (comment
    (svg-icon {:alt "Education"
               :viewbox "0 0 238 175"
               :href "education.svg#education"})
+   )
    [:span "We are about education"]])
 
 (rum/defc sign-up []
@@ -111,15 +122,34 @@
 (rum/defc h3 [text]
   [:h3 text])
 
-(rum/defc blurb []
-  [:div.blurb
-;   {:style {:background 'blue}}
-   (blurb-image)
-   [:div
-   (h3 "Meetups TWICE a month")
-   [:p "We encourage people from all walks of life to come to our meetups. If you are interested in veganism, entrepreneurship, or you are just a business owner with a little curiosity about what a vegan is then this event is the one for you"]
-   [:button "I want to know more"]]])
 
+
+(rum/defc image-title-text-cta [content]
+  (let [{:keys [image title text cta]} content]
+  [:div
+   (h3 title)
+   [:p text]
+   [:button cta]]
+  ))
+
+(rum/defc blurbs-title-second []
+  [:div
+  [:div.blurb
+   (blurb-image)
+   (image-title-text-cta {:title "Meetups TWICE a month"
+                          :text "We encourage people from all walks of life to come to our meetups. If you are interested in veganism, entrepreneurship, or you are just a business owner with a little curiosity about what a vegan is then this event is the one for you"
+                          :cta "I want to know more"})]
+  [:div.blurb
+   (blurb-image)
+   (image-title-text-cta {:title "Consulting"
+                          :text "We provide an array of services to help everyone from the budding entrepreneur to both the small and the large business owner. If you are ready to catapult to new heights we are ready to help."
+                          :cta "I'm READY!"})]
+   [:div.blurb
+    (blurb-image)
+    (image-title-text-cta {:title "More"
+                           :text "We have so many plans and exciting things we are eager to show you. If you would like to sta in the loop don't forget to sign up to our mailing list."
+                           :cta "Sign me up!"})]
+  ])
 
 
 (rum/defc intro []
@@ -144,8 +174,7 @@
     (sign-up)
 
     (h2-home "What We Do")
-    (blurb)
-
+    (blurbs-title-second)
 
 
 
@@ -155,10 +184,10 @@
    (hidden)
    ])
 
-;(defn init [] (rum/mount (page) (. js/document (getElementById "container"))))
+(defn init [] (rum/mount (page) (. js/document (getElementById "container"))))
 
 
-;(comment
+(comment
 
 (defcard
   "Heading 1"
@@ -191,4 +220,4 @@
 (defn init []
   (devcards.core/start-devcard-ui!)
   )
-;)
+)

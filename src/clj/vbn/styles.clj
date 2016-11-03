@@ -118,9 +118,8 @@
        [:span {:display 'flex}]]]
 
 
-     ;; MAX WIDTH ISN'T WORKING AS EXPECTED
 
-     [:main {;:width (rem 60)
+     [:main {:width "100%"
              :max-width (rem 60)
              :align-self 'center
              }]
@@ -160,7 +159,7 @@
       [:li
        [:a {:color 'white
             :text-decoration 'none
-            :min-height (em 3.7
+            :min-height (px 48
                          )
             :display 'flex
             :flex-direction 'column
@@ -303,8 +302,7 @@
                      }
             [:div {:padding {:left (rem 1.5)
                       :right (rem 1.5)}}]
-      [:svg {:width (px 125)
-              }]]
+      ]
 
      (at-media {:min-width (px 667)}
                [:.at-our-core
@@ -402,7 +400,7 @@
        {:margin "1.5em 0"
         :font-size (rem 1)
         :line-height 1.5
-        :max-width (em 28)}
+        :max-width (em 35)}
 
 
       ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE
