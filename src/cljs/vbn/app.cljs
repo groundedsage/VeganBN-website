@@ -59,7 +59,7 @@
 
 
 (rum/defc banner-image[]
-  [:div#banner-image
+  [:div#banner-image.full-width
    [:span "Fostering a better world through business"]])
 
 
@@ -68,28 +68,43 @@
 
 (rum/defc bigger-than-business []
   [:div.home-component
-   (svg-icon {:alt "Bigger Than Business"
-              :viewbox "0 0 255 175"
-              :href "bigger-than-business.svg#bigger-than-business"})
-   [:p "There is a monumental shift happening all over the world right now! We believe in a better world and we are here to make that happen."]])
+ [:svg {
+          :height "100%"
+          :width "100%"
+          :viewBox "0 0 230 100"}
+    [:use 
+     {:xlink-href "bigger-than-business.svg#bigger-than-business"}]]
+   
+   [:p "There is a monumental shift happening all over the world right now!" [:br.rwd-break] " We believe in a better world and we are here to make that happen."]])
 
 
 
 (rum/defc movement []
   [:div.home-component
-   (svg-icon {:alt "Movement"
-              :viewbox "0 0 238 175"
-              :href "movement.svg#movement"})
+   [:svg {
+          :height "100%"
+          :width "100%"
+          :viewBox "0 0 238 175"}
+    [:use
+     {:xlink-href "movement.svg#movement"}]]
+
+   
    [:p "The vegan movement continues to grow exponentially, however businesses still have little knowledge on how to cater to this rapdily growing industry."]])
 
 (rum/defc h2-home [text]
   [:h2.h2-home.line-under text])
 
 (rum/defc community []
-  [:div
-   (svg-icon {:alt "Community"
-              :viewbox "0 0 238 175"
-              :href "community.svg#community"})
+  [:div {:style {:width "100%"
+                 :max-width "250px"
+                 :align-items "center"}}
+   [:svg {:height "80%"
+          :width "80%"
+          :viewBox "0 0 123 123"
+                                        ; :preserveAspectRatio "xMidyMid slice"
+          }
+    [:use
+     {:xlink-href "community.svg#community"}]]
    [:p "We are about community"]])
 
 
@@ -112,8 +127,9 @@
    [:span "We are about education"]])
 
 (rum/defc sign-up []
-  [:div.sign-up-box
-   [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]])
+  [:div.sign-up-box.full-width
+   [:div
+   [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]]])
 
 (rum/defc blurb-image []
   [:img.blurb-image {:src ""

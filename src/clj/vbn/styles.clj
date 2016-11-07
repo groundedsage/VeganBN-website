@@ -122,6 +122,8 @@
      [:main {:width "100%"
              :max-width (rem 60)
              :align-self 'center
+             :padding {:left (rem 1.5)
+                       :right (rem 1.5)}
              }]
 
 
@@ -255,9 +257,18 @@
      (defclass line-under)
 
 
+     ;; Only solution available to set 100vw without being wrecked by scrollbar
+     {:overflow-x 'hidden}
+
+     [:.full-width {:max-width "100vw"
+                    :left "50%"
+                    :right "50%"
+                    :margin-left "-50vw"
+                    :margin-right "-50vw"}]
+
+
      [:#banner-image {:height (em 18.75)
                                         ;:max-height "100%"
-                      :width "100%"
                       :background-color 'grey
                       :background-image "url(\"resources/photos/banner-image.jpg\") "
                       :background-size 'cover
@@ -271,7 +282,7 @@
 
      [:.h1-home {:font-weight 'bold}]
 
-     [:.h1-home 
+     [:.h1-home
       :.h2-home {:align-self 'center
                  :position 'relative}]
 
@@ -279,13 +290,27 @@
                         :flex-wrap 'wrap
                         :justify-content 'center
                         :align-items 'center}
-      [:svg {:width "25%"
-             :min-width (px 180)}]
+      [:p {:font-size (rem 1.125)
+     ;      :padding-left (rem 1.5)
+           }]
+      [:svg {:max-width (rem 14.375)
+             :margin (rem 1.5)
+                                        ;:width "25%"
+                                        ;:min-width (px 180)
+             }
+       ]
       ]
 
-     (at-media {:min-width (px 667) }
-               [:.home-component {:justify-content 'space-between
-                                  }])
+     (at-media {:min-width (px 850)}
+               [:.home-component
+                [:p {:width "100%"
+                     :padding-left (rem 1.5)}]])
+
+
+     (at-media {:max-width (px 600) }
+               [:.rwd-break {:display 'none}]
+               )
+
 
      [(line-under s/before) {:border-bottom "solid 1px rgba(51,61,71, 0.2)"
                              :position 'absolute
