@@ -131,9 +131,9 @@
    [:div
    [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]]])
 
-(rum/defc blurb-image []
-  [:img.blurb-image {:src ""
-         :alt ""}])
+(rum/defc blurb-image [src alt-text]
+  [:img.blurb-image {:src src
+         :alt alt-text}])
 
 (rum/defc h3 [text]
   [:h3 text])
@@ -142,7 +142,7 @@
 
 (rum/defc image-title-text-cta [content]
   (let [{:keys [image title text cta]} content]
-  [:div
+  [:div.image-title-text-cta 
    (h3 title)
    [:p text]
    [:button cta]]
@@ -151,17 +151,17 @@
 (rum/defc blurbs-title-second []
   [:div
   [:div.blurb
-   (blurb-image)
+   (blurb-image "photos/meetup.jpg" "meetup")
    (image-title-text-cta {:title "Meetups TWICE a month"
                           :text "We encourage people from all walks of life to come to our meetups. If you are interested in veganism, entrepreneurship, or you are just a business owner with a little curiosity about what a vegan is then this event is the one for you"
                           :cta "I want to know more"})]
   [:div.blurb
-   (blurb-image)
+   (blurb-image "photos/consulting.jpg" "consulting")
    (image-title-text-cta {:title "Consulting"
                           :text "We provide an array of services to help everyone from the budding entrepreneur to both the small and the large business owner. If you are ready to catapult to new heights we are ready to help."
                           :cta "I'm READY!"})]
    [:div.blurb
-    (blurb-image)
+    (blurb-image "photos/road.jpg" "more")
     (image-title-text-cta {:title "More"
                            :text "We have so many plans and exciting things we are eager to show you. If you would like to sta in the loop don't forget to sign up to our mailing list."
                            :cta "Sign me up!"})]

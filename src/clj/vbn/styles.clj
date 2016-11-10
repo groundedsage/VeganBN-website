@@ -26,8 +26,8 @@
   (let [html (rule :html)
         body (rule :body)]
 
-    ;; Might remove this
-    (html [:font-size "calc(1em + 1vw)"])
+    ;; Might remove this - works but will need to consider
+   ; (html [:font-size "calc(1em + 1vw)"})
 
 
     (body
@@ -270,7 +270,7 @@
      [:#banner-image {:height (em 18.75)
                                         ;:max-height "100%"
                       :background-color 'grey
-                      :background-image "url(\"resources/photos/banner-image.jpg\") "
+                      :background-image "url(\"/css/banner-image.jpg\") "
                       :background-size 'cover
                       :background-repeat 'no-repeat
                       :background-position "50% 40%"
@@ -339,7 +339,7 @@
 
      [:.blurb-image {:width "100%"
                      :height 'auto
-                     :margin-top (em 1.5)
+                     :margin-top (rem 1.5)
                      :background-color 'grey
                      :border-radius "10%"}]
 
@@ -347,9 +347,17 @@
 
 
      (at-media {:min-width (px 568) }
-               [:.blurb {:flex-direction 'row
 
-                                  }])
+               [:.blurb {:flex-direction 'row}]
+
+               [:.blurb-image {
+                :margin-right (rem 1.5)
+                :max-width "30%"
+                :height "100%"}
+                ]
+
+               [:.image-title-text-cta {:width "calc(70% - 1.5rem)"}]
+               )
 
 
 
@@ -400,7 +408,6 @@
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   PARAGRAPH STYLES   ;;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
       [:h1 {:font-size "2em"
             :line-height "1.25em"}]
