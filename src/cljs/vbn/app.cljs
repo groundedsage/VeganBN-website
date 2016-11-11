@@ -64,14 +64,8 @@
 
 
 (rum/defc navigation  [current-route]
-  ;(let [links (update nav-links current-route "#main")]
   (let [links (assoc nav-links current-route "#main")]
   [:nav
-   (js/console.log  (str
-                     (current-route nav-links)
-                    ; (update p :age "#main")
-                     links
-                     ))
    [:ul
     [:li.order-middle [:a {:href (:index links)}
                        [:span {:aria-hidden true} "Home"]
@@ -86,10 +80,7 @@
     ]]))
 
 
-(rum/defc home-page [content]
-  [:div
-   (skip-to-main)
-   (navigation )
+(rum/defc home [content]
    [:main#main
     (i/banner-image)
     (i/h1-home "Vegan Business Network")
@@ -106,12 +97,9 @@
     (i/blurbs-title-second)
 
 
+    (hidden)
 
-    ]
-                                        ;(intro)
-
-   (hidden)
-   ])
+    ])
 
 (rum/defc veganism []
   [:div
@@ -121,14 +109,17 @@
     [:h1 "This is the veganism page"]]])
 
 
-(def pages {:index (home-page)
-            :veganism (veganism)})
+(rum/defc page [content]
+  [:div
+   (skip-to-main)
+   (navigation (get-route))
+
+   ;; add core.match here for each page
+   ])
+
 
 (defn init []
-    (rum/mount
-    ;((:handler (match-route my-routes current-route)) pages)
-(navigation (get-route))
-   (. js/document (getElementById "container"))))
+  (rum/mount (page) (. js/document (getElementById "container"))))
 
 
 (comment

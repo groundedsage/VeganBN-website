@@ -204,6 +204,7 @@
             :transition-timing-function "ease-out"}
         [:&:hover
          :&:focus
+         
          [:span
           {:font-size (em 1.5)}]]]]]
 
@@ -218,12 +219,23 @@
       [:ul {:flex-direction 'row
             :align-items 'center
             }]]
+     [:nav
+      [:ul
+       ["a[href^=\"#\"]"
+        [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
+                 :position 'absolute
+                 :content " \"\" "
+                 :z-index "5"
+                 :bottom "-40%"
+                 :width "50%"
+                 :left "25%"}]]]]
 
      [:nav
       [:ul
-       [:a ;; Need to ensure it takes focus off home link as it is an image
+       [:a
         [:&:hover
          :&:focus   ;; THIS STYLE ISN'T BEING PICKED UP
+
          [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
                   :position 'absolute
                   :content " \"\" "
@@ -231,6 +243,13 @@
                   :bottom "-40%"
                   :width "50%"
                   :left "25%"}]]]]]
+     [:nav
+      [:a
+       [
+         :&:hover
+         :&:focus
+        [:svg
+          {:transform "rotate(4deg) scale(1.2)"}]]]]
 
      [:nav
       [:li
