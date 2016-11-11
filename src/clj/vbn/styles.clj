@@ -73,6 +73,30 @@
      [:.page-padding {:margin {:left (rem 1.5)
                                :right (rem 1.5) }}]
 
+     ;; Remove default styling of button
+     [:button {:margin 0
+               :padding 0
+               :border 0
+               :background 'none
+               :font-family 'bitter
+               :font-size (em 1)
+               :cursor 'pointer}]
+
+     ;; Custom button styles
+
+     [:button {:min-height (px 48)
+               :background-color 'none   ;MAY CHANGE
+               :border "solid black 3px"
+               :border-radius (em 1)
+               }
+      [:&:hover :&:focus
+       {:background-color 'black
+        :color 'white}]]
+
+     [:.image-title-text-cta [:button {:margin-top 'auto}]]
+
+
+
 
 
 
@@ -103,7 +127,7 @@
        :justify-content 'space-around
        :align-items 'center
        :flex-direction 'row
-       :z-index 1
+       :z-index 2
        :will-change 'height
        :transition-property 'height
        :transition-duration "0.2s"
@@ -278,7 +302,8 @@
                       :align-items 'center
                       :padding (rem 1.5)}]
      [:#banner-image
-      [:span {:font-size (em 2)}]]
+      [:span {:font-size (em 2)
+              :color 'white}]]
 
      [:.h1-home {:font-weight 'bold}]
 
@@ -323,17 +348,14 @@
      [:.at-our-core {:flex-direction 'row
                      :flex-wrap 'wrap
                      :align-items 'baseline
-                     :justify-content 'center
+                     :justify-content 'space-around
+                     :align-self 'center
+                     :width "100%"
                      }
             [:div {:padding {:left (rem 1.5)
                       :right (rem 1.5)}}]
       ]
 
-     (at-media {:min-width (px 667)}
-               [:.at-our-core
-                {:width "100%"
-                 :max-width (rem 40)
-                 :justify-content 'space-between}])
 
      [:.sign-up-box {:background-color brand-blue}]
 
@@ -341,7 +363,7 @@
                      :height 'auto
                      :margin-top (rem 1.5)
                      :background-color 'grey
-                     :border-radius "10%"}]
+                     :border-radius (em 1)}]
 
 
 
@@ -351,12 +373,12 @@
                [:.blurb {:flex-direction 'row}]
 
                [:.blurb-image {
-                :margin-right (rem 1.5)
-                :max-width "30%"
+                :margin-right "5%" 
+                :max-width "35%"
                 :height "100%"}
                 ]
 
-               [:.image-title-text-cta {:width "calc(70% - 1.5rem)"}]
+               [:.image-title-text-cta {:width "60%"}]
                )
 
 

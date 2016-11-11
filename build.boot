@@ -11,14 +11,16 @@
                  [org.clojure/clojurescript "1.7.228"]
                  [rum "0.10.4"]
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
-                 [devcards "0.2.2"]])
+                 [devcards "0.2.2"]
+                 [bidi "2.0.14"]])
 
 (require
  '[adzerk.boot-cljs      :refer [cljs]]
  '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
  '[adzerk.boot-reload    :refer [reload]]
  '[pandeiro.boot-http    :refer [serve]]
- '[org.martinklepsch.boot-garden :refer [garden]])
+ '[org.martinklepsch.boot-garden :refer [garden]]
+ )
 
 (deftask build []
   (comp (speak)
