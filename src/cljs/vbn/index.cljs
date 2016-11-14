@@ -63,15 +63,15 @@
    [:svg {:height "80%"
           :width "80%"
           :viewBox "0 0 123 123"
-         ; :preserveAspectRatio "xMidyMid slice"
+                                        ; :preserveAspectRatio "xMidyMid slice"
           }
-   [:use 
+    [:use 
      {:xlink-href "education.svg#education"}]]
    (comment
-   (svg-icon {:alt "Education"
-              :viewbox "0 0 238 175"
-              :href "education.svg#education"})
-   )
+     (svg-icon {:alt "Education"
+                :viewbox "0 0 238 175"
+                :href "education.svg#education"})
+     )
    [:span "We are about education"]])
 
 (rum/defc sign-up []
