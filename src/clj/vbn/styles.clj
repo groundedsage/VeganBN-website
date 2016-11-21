@@ -26,14 +26,19 @@
   (let [html (rule :html)
         body (rule :body)]
 
-    ;; Might remove this - works but will need to consider
-   ; (html [:font-size "calc(1em + 1vw)"})
-
-
     (body
      ;; Remove this later
      {:font-family "Helvetica Neue"}
      {:margin 0}
+
+     (at-media {:min-width (px 800)}
+
+               [:#main :nav {:font-size "24px !important"}])
+
+
+     ;; STYLES DONT APPEAR TO WORK SO I AM INLINING THEM IN HTML
+  ;   [:p {:font-size "calc(1em + (1.5-1)*(100vw - 25em)/(50-25))"}]
+    ; font-size:calc(1em + (1.5 - 1) * (100vw - 25em)/(50-25))
 
 
 
@@ -179,7 +184,7 @@
                                         ;:max-width (em 75)    ;; add a media query for this
             }]]
 
-     ["nav li:not(.order-middle)" {:width (em 8.125)}]
+     ["nav li:not(.order-middle)" {:width (em 7)}]
 
      [:nav
       [:li
@@ -206,7 +211,7 @@
          :&:focus
          
          [:span
-          {:font-size (em 1.5)}]]]]]
+          {:font-size (em 1.25)}]]]]]
 
 
      ;; Desktop styles
@@ -249,7 +254,7 @@
          :&:hover
          :&:focus
         [:svg
-          {:transform "rotate(4deg) scale(1.2)"}]]]]
+          {:transform "rotate(4deg) scale(1.1)"}]]]]
 
      [:nav
       [:li
@@ -257,7 +262,7 @@
             :text-decoration 'none
             :text-align 'center
             :width 'auto
-            :min-width (rem 8.125)
+            :min-width (em 6)
             :position 'relative
             :will-change "font-size"
             :transition-property 'font-size
@@ -334,11 +339,11 @@
                         :flex-wrap 'wrap
                         :justify-content 'center
                         :align-items 'center}
-      [:p {:font-size (rem 1.125)
+      [:p {:font-size (em 1.125)
      ;      :padding-left (rem 1.5)
            }]
-      [:svg {:max-width (rem 14.375)
-             :margin (rem 1.5)
+      [:svg {:max-width (em 14.375)
+             :margin (em 1.5)
                                         ;:width "25%"
                                         ;:min-width (px 180)
              }
@@ -471,7 +476,7 @@
 
       [:p
        {:margin "1.5em 0"
-        :font-size (rem 1)
+        :font-size (em 1)
         :line-height 1.5
         :max-width (em 35)}
 

@@ -114,6 +114,7 @@
    (skip-to-main)
    (navigation (get-route))
 
+   (home)
    ;; add core.match here for each page
    ])
 
