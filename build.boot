@@ -44,7 +44,7 @@
                        :source-map true
                      ;  :compiler-options {:parallel-build true}}
                        :compiler-options {:devcards true}}
-                 reload {:on-jsload 'vbn.app/init}
+                 reload {:on-jsload 'vbn.app/init }
                  )
   identity)
 

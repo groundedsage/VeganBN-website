@@ -456,14 +456,6 @@
      ;;;;;;;;;   PARAGRAPH STYLES   ;;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-      [:h1 {:font-size "2em"
-            :line-height "1.25em"}]
-      [:h2 {:font-size "1.625em"
-            :line-height "1.15284615em"}]
-      [:h3 {:font-size "1.375em"
-            :line-height "1.13636364em"}]
-      [:h4 {:font-size "1.125em"
-            :line-height "1.11111111em"}]
 
                                         ;OLD STYLES
                                         ;[:p {:font-size "1em"
