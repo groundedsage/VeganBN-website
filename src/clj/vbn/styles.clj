@@ -31,7 +31,7 @@
      {:font-family "Helvetica Neue"}
      {:margin 0}
 
-     (at-media {:min-width (px 800)}
+     (at-media {:min-width (px 1000)}
 
                [:#main :nav {:font-size "24px !important"}])
 
@@ -92,7 +92,7 @@
      [:button {:min-height (px 48)
                :background-color 'none   ;MAY CHANGE
                :border "solid black 3px"
-               :border-radius (em 1)
+               :border-radius (px 10)
                }
       [:&:hover :&:focus
        {:background-color 'black
@@ -149,10 +149,10 @@
 
 
      [:main {:width "100%"
-             :max-width (rem 60)
+             :max-width (em 53)
              :align-self 'center
-             :padding {:left (rem 1.5)
-                       :right (rem 1.5)}
+             :padding {:left (em 1.5)
+                       :right (em 1.5)}
              }]
 
 
@@ -342,7 +342,7 @@
       [:p {:font-size (em 1.125)
      ;      :padding-left (rem 1.5)
            }]
-      [:svg {:max-width (em 14.375)
+      [:svg {:max-width (em 10)
              :margin (em 1.5)
                                         ;:width "25%"
                                         ;:min-width (px 180)
@@ -353,6 +353,7 @@
      (at-media {:min-width (px 850)}
                [:.home-component
                 [:p {:width "100%"
+                     :max-width (em 30)
                      :padding-left (rem 1.5)}]])
 
 
@@ -387,7 +388,7 @@
                      :height 'auto
                      :margin-top (rem 1.5)
                      :background-color 'grey
-                     :border-radius (em 1)}]
+                     :border-radius (px 10)}]
 
 
 
@@ -422,7 +423,7 @@
 
       ["* + h2" "* + h3" {:margin-top (em 1.5)}]
 
-      ["main * + *:not(p)" {:margin-top "3rem 0"}]
+      ["main * + *:not(p)" {:margin-top "rem 0"}]
       [":main :empty" {:display 'none}]
 
 
