@@ -12,7 +12,9 @@
                  [rum "0.10.4"]
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]
-                 [bidi "2.0.14"]])
+                 [bidi "2.0.14"]
+                 [org.clojure/core.match "0.3.0-alpha4"]
+                 ])
 
 (require
  '[adzerk.boot-cljs      :refer [cljs]]

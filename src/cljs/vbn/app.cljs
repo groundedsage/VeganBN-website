@@ -3,8 +3,13 @@
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route]]
 
+            [vbn.atoms :as atom]
             [vbn.index :as i])
-  (:require-macros [devcards.core :refer [defcard]]))
+  (:require-macros [devcards.core :refer [defcard
+                                          defcard-doc
+                                          mkdn-pprint-source]]
+                   [cljs.core.match :refer [match]]
+                   ))
 
 (enable-console-print!)
 
@@ -84,10 +89,8 @@
 (rum/defc home [content]
    [:main#main
     (i/banner-image)
-    (i/h1-home "Vegan Business Network")
     (i/bigger-than-business)
     (i/movement)
-
     (i/h2-home "At Our Core")
 [:div.at-our-core
     (i/community)
@@ -101,6 +104,8 @@
     (hidden)
 
     ])
+
+
 
 
 (rum/defc veganism []
@@ -143,54 +148,78 @@ If you are very timepoor or just looking to have some guidance. We offer consult
    ])
 
 
+
+
+(defcard
+  "#Atoms
+   Below is a list of all the atoms used throughout the website")
+
+
+
+
+(defcard Heading-1
+  (atom/h1 "Heading 1")
+  ;(i/h1-home "Heading 1 - Home Page")
+
+
+  )
+;(defcard-doc "Source" (mkdn-pprint-source i/h1-home))
+
+
+(defcard Heading-2
+  (atom/h2 "Heading 2")
+  ;(i/h2-home "Heading 2 - Home Page")
+  )
+
+(defcard Heading-3
+  (atom/h3 "Heading 3")
+  )
+
+(defcard Heading-4
+  (atom/h4 "Heading 4"))
+
+(defcard Paragraph-Text
+  (atom/p "Here is what the paragraph text looks like."))
+
+(defcard Button
+  (atom/button "This is a button"))
+
+(defcard Blurb-image
+  (atom/blurb-image "photos/meetup.jpg" "meetup"))
+
+(defcard Circle-icon-Community
+  (atom/circle-icon "community"))
+
+(defcard Circle-icon-Education
+  (atom/circle-icon "education"))
+
+
+(defcard Bigger-than-business
+  (atom/bigger-than-business))
+
+(defcard Movement
+  (atom/movement))
+
+(defcard Intro-text
+  (atom/intro [:span "This is intro text"]))
+
+
+
+
+
+
 (rum/defc page [content]
   [:div
    (skip-to-main)
    (navigation (get-route))
+   (case (get-route)
+     :index (home)
+     :veganism (veganism))
 
-   ;(home)
-   (veganism)
-   ;; add core.match here for each page
+   ;; add core.match here for each page CORE.MATCH won't work with more than 1 match option
    ])
 
 
-
-
-
-  (defcard
-  "Heading 1"
-  (i/h1-home "Heading 1 - Home Page"))
-
-(defcard
-  "Heading 2"
-  (i/h2-home "Heading 2 - Home Page")) 
-
-(defcard
-  "Heading 3"
-  (i/h3 "Heading 3 - Home Page"))
-
-
-
-(defcard
-  "Bigger than business "
-  (i/bigger-than-business) )
-
-
-(defcard
-  "Movement Symbol"
-  (i/movement) )
-
-(defcard
-  "#Community"
-  (i/community))
-
-(defcard
-  "Education"
-  (i/education))
-
-(defcard
-  "Blurbs"
-  (i/blurbs-title-second))
 
 
 (defn init [] (rum/mount
