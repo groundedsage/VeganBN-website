@@ -105,6 +105,8 @@
 
 
 
+
+
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   INCLUSIVITY PATTERNS   ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -218,7 +220,7 @@
      (at-media {:min-width (px 667) }
 
                [:nav {:margin-top (em 3)
-                      :height (rem 6.25)}]
+                      :height (em 4.5)}]
 
      [:nav
       [:ul {:flex-direction 'row
@@ -296,7 +298,26 @@
      [:p :span :ol {:font-family "Source Sans Pro"
                     }]
 
+     [:.block-grey {:color 'white
+               :background-color 'grey}]
 
+     [:.inside-block
+      {:width "100vw"
+       :max-width (em 53)
+       :align-self 'center
+       :padding {:left (em 1.5)
+                 :right (em 1.5)
+                 :top (em 1.5)
+                 :bottom (em 1.5)}
+
+       }]
+
+     [:main {:width "100%"
+             :max-width (em 53)
+             :align-self 'center
+             :padding {:left (em 1.5)
+                       :right (em 1.5)}
+             }]
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   HOME PAGE SPECIFIC   ;;;;;;;;;;;;
@@ -382,7 +403,8 @@
       ]
 
 
-     [:.sign-up-box {:background-color brand-blue}]
+     [:.sign-up-box {:color 'white
+                     :background-color brand-blue}]
 
      [:.blurb-image {:width "100%"
                      :height 'auto
@@ -416,6 +438,8 @@
 
      ;; These need to be reviewed !!
 
+     [:h1
+      {:margin-top (em 1.5)}]
 
      ["main * + *" {:margin-top (rem 1.5)}]
 
@@ -425,6 +449,8 @@
 
       ["main * + *:not(p)" {:margin-top "rem 0"}]
       [":main :empty" {:display 'none}]
+
+      ["p + p" {:margin-top 0}]
 
 
 

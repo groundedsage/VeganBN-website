@@ -4,6 +4,9 @@
             [bidi.bidi :as b :refer [match-route]]
 
             [vbn.atoms :as atom]
+            [vbn.molecules :as molecule]
+
+            [vbn.veganism :as veganism]
             [vbn.index :as i])
   (:require-macros [devcards.core :refer [defcard
                                           defcard-doc
@@ -89,6 +92,7 @@
 (rum/defc home [content]
    [:main#main
     (i/banner-image)
+    (i/h1-home "Vegan Business Network")
     (i/bigger-than-business)
     (i/movement)
     (i/h2-home "At Our Core")
@@ -108,44 +112,7 @@
 
 
 
-(rum/defc veganism []
-  [:main#main
 
-
-   [:h1 "Veganism"]
-   [:p "The world is changing rapidly. So many new things to learn with so little time. But what is Veganism? Why do the people who claim to be vegan have such a strong belief that everyone should be vegan? How do I still run my business in a way that embraces this movement without having to shut down or completely change my business? We answer all these questions right here!"]
-
-   [:h2 "Our Definition of Vegan"]
-   [:p "A vegan actively seeks to stop any exploitation and harm caused to human and non-human animals both directly and indirectly. Through pragmatic choices made daily against using, wearing or eating anything which is a product of this."]
-
-   [:h2 "The 3 Dimensions of Veganism"]
-   [:p "There is 3 key points to veganism which combine to create strong feelings within those who choose to embrace the vegan philosophy entirely. "]
-
-   [:h3 "Sustainability"]
-   (i/blurb-image "photos/nature.jpg" "Waterfall in rainforest")
-   [:p "We all know we need to do something more. Otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us. 
-If you are someone who showers less, drives as little as possible and recycles religuously. Or just someone looking to do a little more for the planet and your fellow human beings. We highly suggest watching Cowspiracy. They also have an amazing infographic on their website."]
-   [:button "Cowspiracy.org"]
-
-   [:h3 "Nutrition"]
-   (i/blurb-image "photos/watermelon.jpg" "Child eating watermelon")
-   [:p "All around the world there are many top level athletes that hold world records and many more going vegan proving that plant sources of protein are sufficient and in many cases better than the alternative animal sources.
-In addition to this there is many doctors and physicians that are treating patients with a 100% plant based diet. 
-If nutrition is a field that interests you we suggest spending some time on."]
-   [:button "Nutritionfacts.org"]
-
-   [:h3 "Ethics"]
-   (i/blurb-image "photos/ethics.jpg" "Baby cow tagged and just another number waiting to be kille dfor food ")
-   [:p "If you are someone who cringes when you see someone kick a dog, cat or any other innocent animal. Someone who hates people who kill innocent animals for fun and enjoyment or someone who dislikes other cultures eating animals which are normally treated as pets such as dogs. 
-If you still eat meat chances are you have never really thought too deeply about where that meat comes from. Which is fair enough as the thought of it makes us quickly shut out any deeper thinking to defend ourselves.
-Melanie Joy is a psychologist who explains the psychology of eating meat and treating animals as objects that we own. "]
-   [:button "Carnism.org"]
-
-   [:h3 "How does this help my business?"]
-   [:p "By doing some research on each of the 3 dimensions of veganism. You will be more capable of handling a vegan customer and adapting to current world trends. Vegans are a chatty bunch, they stand together and are very strong willed. In a world where people are more connected and brands are defined by their customers. Vegans with either burn you or praise you. We are here to make sure they praise you. It’s better for you business and it’s better for the vegans. We love it when everyone wins!
-If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]
-
-   ])
 
 
 
@@ -203,6 +170,34 @@ If you are very timepoor or just looking to have some guidance. We offer consult
 (defcard Intro-text
   (atom/intro [:span "This is intro text"]))
 
+(defcard
+  "#Molecules")
+
+
+(rum/defc blurbs-title-second [content]
+    (molecule/blurb-title-second {:image "photos/nature.jpg"
+                         :alt-text "Waterfall in rainforest"
+                         :title "Sustainability"
+                         :text "We encourage people from all walks of life to come to our meetups. If you are interested in veganism, entrepreneurship, or you are just a business owner with a little curiosity about what a vegan is then this event is the one for you"
+                         :cta "Cowspiracy.org"}))
+
+(defcard Blurb
+  (molecule/blurb-title-second {:image "photos/nature.jpg"
+                       :alt-text "Waterfall in rainforest"
+                       :title "Sustainability"
+                       :text "We encourage people from all walks of life to come to our meetups. If you are interested in veganism, entrepreneurship, or you are just a business owner with a little curiosity about what a vegan is then this event is the one for you"
+                       :cta "Cowspiracy.org"})
+  )
+
+
+(rum/defc title-top []
+  [:div
+   (atom/blurb-image "photos/nature.jpg")
+   (atom/h3 "Sustainability")
+   (atom/p "We all know we need to do something more. Otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us. If you are someone who showers less, drives as little as possible and recycles religuously. Or just someone looking to do a little more for the planet and your fellow human beings. We highly suggest watching Cowspiracy. They also have an amazing infographic on their website.")
+   (atom/button "Cowspiracy.org")])
+
+
 
 
 
@@ -214,7 +209,7 @@ If you are very timepoor or just looking to have some guidance. We offer consult
    (navigation (get-route))
    (case (get-route)
      :index (home)
-     :veganism (veganism))
+     :veganism (veganism/content))
 
    ;; add core.match here for each page CORE.MATCH won't work with more than 1 match option
    ])

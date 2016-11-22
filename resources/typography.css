@@ -22,10 +22,10 @@
     }
 }
 
-@media (min-width: 25em) and (max-width: 50em)
+@media (min-width: 25em) and (max-width: 62.5em)
 {
     html {
-        font-size: calc(1em + (1.5 - 1) * (100vw - 25em)/(62.5-25));
+        font-size: calc(1em + (1.5 - 1) * (100vw - 25em)/(62-25));
     }
 
 h1 {
@@ -51,7 +51,7 @@ h4 {
 
 }
 
-@media (min-width: 50.01em) {
+@media (min-width: 63em) {
     html {
         font-size: 1.5rem;
     }
