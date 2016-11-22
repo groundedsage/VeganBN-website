@@ -31,10 +31,6 @@
      {:font-family "Helvetica Neue"}
      {:margin 0}
 
-     (at-media {:min-width (px 1000)}
-
-               [:#main :nav {:font-size "24px !important"}])
-
 
      ;; STYLES DONT APPEAR TO WORK SO I AM INLINING THEM IN HTML
   ;   [:p {:font-size "calc(1em + (1.5-1)*(100vw - 25em)/(50-25))"}]
@@ -495,7 +491,7 @@
 
       [:p
        {:margin "1.5em 0"
-        :font-size (em 1)
+        ;:font-size (em 1)
         :line-height 1.5
         :max-width (em 35)}
 
