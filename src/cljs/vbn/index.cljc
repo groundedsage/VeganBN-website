@@ -119,6 +119,3 @@
 (rum/defc intro []
   [:div.intro-text
   [:p "intro text"]])
-
-
-

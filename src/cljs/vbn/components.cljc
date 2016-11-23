@@ -8,6 +8,3 @@
     [:svg {:alt alt
            :viewbox viewbox}
      [:use {:xlink-href href}]]))
-
-
-

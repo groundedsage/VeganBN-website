@@ -7,6 +7,8 @@
                  [pandeiro/boot-http        "0.7.2"      :scope "test"]
                  [com.cemerick/piggieback   "0.2.1"      :scope "test"]
                  [org.clojure/tools.nrepl   "0.2.12"     :scope "test"]
+                 [samestep/boot-refresh "0.1.0" :scope "test"]
+                 [com.novemberain/pantomime "2.8.0"]
                  [weasel                    "0.7.0"      :scope "test"]
                  [org.clojure/clojurescript "1.7.228"]
                  [rum "0.10.4"]
@@ -19,6 +21,7 @@
  '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
  '[adzerk.boot-reload    :refer [reload]]
  '[pandeiro.boot-http    :refer [serve]]
+ '[samestep.boot-refresh :refer [refresh]]
  '[org.martinklepsch.boot-garden :refer [garden]]
  )
 
@@ -28,7 +31,8 @@
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 (deftask run []
-  (comp (serve)
+  (comp (serve :handler 'vbn.static/handler)
+
         (watch)
         (cljs-repl)
         (reload)
@@ -58,7 +62,8 @@
 (deftask dev
   "Simple alias to run application in development mode"
   []
-  (comp (development)
-        (run)))
+  (comp
+   (development)
+   (run)))
 
 
