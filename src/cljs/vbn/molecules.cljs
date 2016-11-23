@@ -2,8 +2,6 @@
   (:require [rum.core :as rum]
             [vbn.atoms :as atom] ))
 
-(rum/defc page-intro [content]
-  [:div content])
 
 (rum/defc our-definition [content]
   [:div content])
@@ -20,5 +18,9 @@
       [:h3 title]
       text
       [:button cta]]]))
+
+(rum/defc page-intro [& content]
+  (conj [:div {:style {:align-items 'center}}]
+        content))
 
 

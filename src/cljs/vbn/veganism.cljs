@@ -6,10 +6,9 @@
 
 (rum/defc content []
   [:main#main
-   [:div {:style {:align-items "center"}}
-
-   [:h1 "Veganism"]
-   [:p "The world is changing rapidly. So many new things to learn with so little time. But what is Veganism? Why do the people who claim to be vegan have such a strong belief that everyone should be vegan? How do I still run my business in a way that embraces this movement without having to shut down or completely change my business? We answer all these questions right here!"]]
+   (molecule/page-intro
+    [:h1 "Veganism"]
+    [:p "The world is changing rapidly. So many new things to learn with so little time. But what is Veganism? Why do the people who claim to be vegan have such a strong belief that everyone should be vegan? How do I still run my business in a way that embraces this movement without having to shut down or completely change my business? We answer all these questions right here!"])
 
 
 [:div.block-grey.full-width

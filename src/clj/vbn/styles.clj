@@ -28,13 +28,9 @@
 
     (body
      ;; Remove this later
-     {:font-family "Helvetica Neue"}
-     {:margin 0}
+     {:color "#050709"}
 
 
-     ;; STYLES DONT APPEAR TO WORK SO I AM INLINING THEM IN HTML
-  ;   [:p {:font-size "calc(1em + (1.5-1)*(100vw - 25em)/(50-25))"}]
-    ; font-size:calc(1em + (1.5 - 1) * (100vw - 25em)/(50-25))
 
 
 
@@ -54,11 +50,11 @@
 
       ;; POSSIBLY REMOVE THESE AS DEFAULTS
       :a
-      :span
+     ; :span
       :main
       :nav
       :ul
-      :li
+      ;:li
       :svg
 
       {:display 'flex
@@ -71,17 +67,48 @@
        :padding 0
        :max-width "100%"}]
 
+     [:nav [:li
+      {:display 'flex
+       :position 'relative
+       :flex-direction 'column
+       :align-items 'stretch
+       :flex-shrink 0
+       :border "0 solid black"
+       :margin 0
+       :padding 0
+       :max-width "100%"}
+      ]]
+
      [:.page-padding {:margin {:left (rem 1.5)
                                :right (rem 1.5) }}]
 
+     [:li {:padding-left (rem 0.3125)}]
+
+     [:.values-section {:display 'flex
+                        :flex-direction 'row
+                        :align-items 'baseline}]
+
+
+     [:ol.values
+      [:li {:font-weight 'bold}]
+
+      ["span:first-child"{
+                          :font-size (em 1.125)
+                          :line-height (em 1.5)
+                          }]
+      [:p {:margin {:top (em 0.8)
+                    :bottom (em 2)}}]]
+
+
+
+
      ;; Remove default styling of button
-     [:button {:margin 0
-               :padding 0
-               :border 0
-               :background 'none
+     [:button {:padding 0
                :font-family 'bitter
                :font-size (em 1)
-               :cursor 'pointer}]
+               :display 'flex
+               :justify-content 'center
+               }]
 
      ;; Custom button styles
 
@@ -491,7 +518,7 @@
 
       [:p
        {:margin "1.5em 0"
-        ;:font-size (em 1)
+        :font-size (em 1)
         :line-height 1.5
         :max-width (em 35)}
 

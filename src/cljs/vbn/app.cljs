@@ -6,7 +6,11 @@
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
 
+            [vbn.about :as about]
             [vbn.veganism :as veganism]
+            [vbn.community :as community]
+            [vbn.consulting :as consulting]
+
             [vbn.index :as i])
   (:require-macros [devcards.core :refer [defcard
                                           defcard-doc
@@ -209,7 +213,10 @@
    (navigation (get-route))
    (case (get-route)
      :index (home)
-     :veganism (veganism/content))
+     :about-us (about/content)
+     :veganism (veganism/content)
+     :community (community/content)
+     :consulting (consulting/content))
 
    ;; add core.match here for each page CORE.MATCH won't work with more than 1 match option
    ])
