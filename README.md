@@ -32,7 +32,7 @@ To view current status enter this command in the root folder `boot dev`
 
 ###Future
 * **Datascript** (Client side database) - https://github.com/tonsky/datascript
-* **CLJS-CSS (CSS Modules)** - https://github.com/matthieu-beteille/cljs-css-modules
+* **CLJS-CSS** (CSS Modules) - https://github.com/matthieu-beteille/cljs-css-modules
 
 ## Services used. (Soon)
 
