@@ -16,6 +16,8 @@ I have been working on ensuring I have a good foundation to build upon. Therefor
 
 Typography has been made fluid so that the font continually changes size based on viewport width between a large range of mobile devices. The rest of the layout is relative to the font size, parent container or the viewport.
 
+I am still figuring out how to use Devcards as a way to establish a pattern library. Similar to what has been implemented at Pattern Lab http://patternlab.io/
+
 To view current status enter this command in the root folder `boot dev`
 
 ##Tools used.
