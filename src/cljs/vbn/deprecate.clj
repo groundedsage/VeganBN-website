@@ -22,7 +22,7 @@
 
 
 ;; HELPER COMPONENTS
-
+(comment
 
 (rum/defc svg-icon [meta]
   (let [{:keys [alt viewbox href]} meta]
@@ -230,3 +230,4 @@
                  (page))
                 (. js/document (getElementById "container"))))
 
+)
