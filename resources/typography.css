@@ -1,0 +1,77 @@
+@media (max-width: 25em)
+{
+    html {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.602em;
+    }
+
+    h2 {
+        font-size: 1.424em;
+    }
+
+    h3 {
+        font-size: 1.266em;
+    }
+
+    h4 {
+        font-size: 1.125em;
+
+    }
+}
+
+@media (min-width: 25em) and (max-width: 62.5em)
+{
+    html {
+        font-size: calc(1em + (1.5 - 1) * (100vw - 25em)/(62.5 - 25));
+    }
+
+h1 {
+     font-size: calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25));
+    line-height: 1.25em;
+}
+
+h2 {
+    font-size: calc(1.424em + (1.953 - 1.424) * (100vw - 25em)/(62.5 - 25));
+    line-height: 1.15284615em;
+
+}
+
+h3 {
+    font-size: calc(1.266em + (1.563 - 1.266) * (100vw - 25em)/(62.5 - 25));
+    line-height: 1.13636364em;
+}
+
+h4 {
+    font-size: calc(1.125em + (1.250 - 1.125) * (100vw - 25em)/(62.5 - 25));
+    line-height: 1.11111111em;
+}
+
+}
+
+@media (min-width: 62.5em) {
+    html {
+        font-size: 1.5em;
+    }
+    h1 {
+        font-size: 2.441em;
+    }
+    h2 {
+        font-size: 1.953em;
+    }
+    h3 {
+        font-size: 1.563em;
+    }
+    h4 {
+        font-size: 1.250em;
+    }
+}
+
+
+@media tv and (min-width: 700px) {
+    font-size: 32px;
+    NEED TO FIX THIS LATER AND ALSO ADD PRINT QUERIES
+}
+

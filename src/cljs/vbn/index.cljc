@@ -76,7 +76,7 @@
 
 (rum/defc sign-up []
   [:div.sign-up-box.full-width
-   [:div
+   [:div.inside-block
    [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]]])
 
 (rum/defc blurb-image [src alt-text]

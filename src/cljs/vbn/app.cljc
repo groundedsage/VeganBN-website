@@ -2,7 +2,17 @@
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
+
             [vbn.index :as i]
+            [vbn.veganism :as v]
+            [vbn.consulting :as ct]
+            [vbn.community :as cm]
+            [vbn.about :as a]
+
+
+
+
+
             #?(:cljs [vbn.navigation :refer [link current-token]])
             #?(:cljs [vbn.devcards :as devcards])))
 
@@ -41,6 +51,9 @@
 #?(:clj (rum/defc link [link & content]
           [:a {:href link} content]))
 
+
+;; NEED TO ASSOC "#MAIN" onto the current URL
+
 (rum/defc navigation []
   [:nav
    [:ul
@@ -77,33 +90,32 @@
 
     (link (path-for my-routes :devcards) "Dev Cards")]])
 
-(rum/defc veganism []
+(rum/defc page-wrapper [content]
   [:div
    (skip-to-main)
    (navigation)
-   [:main#main
-    [:h1 "This is the veganism page"]]])
+   content])
+
+(rum/defc veganism []
+  (page-wrapper (v/content)))
 
 (rum/defc consulting []
-  [:div
-   (skip-to-main)
-   (navigation)
-   [:main#main
-    [:h1 "This is the consulting page"]]])
+  (page-wrapper (ct/content)))
 
 (rum/defc community []
-  [:div
-   (skip-to-main)
-   (navigation)
-   [:main#main
-    [:h1 "This is the community page"]]])
+  (page-wrapper (cm/content)))
 
 (rum/defc about-us []
-  [:div
-   (skip-to-main)
-   (navigation)
-   [:main#main
-    [:h1 "This is the About Us page"]]])
+  (page-wrapper (a/content)))
+
+;;
+;;   Need to find a way to condense the page-wrapper with the page
+;;
+
+
+
+
+
 
 #?(:cljs
    (rum/defc page < rum/reactive []
@@ -114,6 +126,12 @@
          :consulting (consulting)
          :community  (community)
          :about-us   (about-us)
+
+
+         ;;
+         ;;  Devcards remains at the top of the page after visiting and returning to normal pages
+         ;;
+
          :devcards   (devcards/init)
          ;; not found, basically
          (home)))))

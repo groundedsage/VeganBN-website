@@ -26,14 +26,12 @@
   (let [html (rule :html)
         body (rule :body)]
 
-    ;; Might remove this - works but will need to consider
-   ; (html [:font-size "calc(1em + 1vw)"})
-
-
     (body
      ;; Remove this later
-     {:font-family "Helvetica Neue"}
-     {:margin 0}
+     {:color "#050709"}
+
+     [:h6 {:font-size "calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25))"}]
+
 
 
 
@@ -53,11 +51,11 @@
 
       ;; POSSIBLY REMOVE THESE AS DEFAULTS
       :a
-      :span
+     ; :span
       :main
       :nav
       :ul
-      :li
+      ;:li
       :svg
 
       {:display 'flex
@@ -70,30 +68,63 @@
        :padding 0
        :max-width "100%"}]
 
+     [:nav [:li
+      {:display 'flex
+       :position 'relative
+       :flex-direction 'column
+       :align-items 'stretch
+       :flex-shrink 0
+       :border "0 solid black"
+       :margin 0
+       :padding 0
+       :max-width "100%"}
+      ]]
+
      [:.page-padding {:margin {:left (rem 1.5)
                                :right (rem 1.5) }}]
 
+     [:li {:padding-left (rem 0.3125)}]
+
+     [:.values-section {:display 'flex
+                        :flex-direction 'row
+                        :align-items 'baseline}]
+
+
+     [:ol.values
+      [:li {:font-weight 'bold}]
+
+      ["span:first-child"{
+                          :font-size (em 1.125)
+                          :line-height (em 1.5)
+                          }]
+      [:p {:margin {:top (em 0.5)
+                    :bottom (em 2.5)}}]]
+
+
+
+
      ;; Remove default styling of button
-     [:button {:margin 0
-               :padding 0
-               :border 0
-               :background 'none
+     [:button {:padding 0
                :font-family 'bitter
                :font-size (em 1)
-               :cursor 'pointer}]
+               :display 'flex
+               :justify-content 'center
+               }]
 
      ;; Custom button styles
 
      [:button {:min-height (px 48)
                :background-color 'none   ;MAY CHANGE
                :border "solid black 3px"
-               :border-radius (em 1)
+               :border-radius (px 10)
                }
       [:&:hover :&:focus
        {:background-color 'black
         :color 'white}]]
 
      [:.image-title-text-cta [:button {:margin-top 'auto}]]
+
+
 
 
 
@@ -144,10 +175,10 @@
 
 
      [:main {:width "100%"
-             :max-width (rem 60)
+             :max-width (em 53)
              :align-self 'center
-             :padding {:left (rem 1.5)
-                       :right (rem 1.5)}
+             :padding {:left (em 1.5)
+                       :right (em 1.5)}
              }]
 
 
@@ -179,7 +210,7 @@
                                         ;:max-width (em 75)    ;; add a media query for this
             }]]
 
-     ["nav li:not(.order-middle)" {:width (em 8.125)}]
+     ["nav li:not(.order-middle)" {:width (em 7)}]
 
      [:nav
       [:li
@@ -206,14 +237,14 @@
          :&:focus
          
          [:span
-          {:font-size (em 1.5)}]]]]]
+          {:font-size (em 1.25)}]]]]]
 
 
      ;; Desktop styles
      (at-media {:min-width (px 667) }
 
                [:nav {:margin-top (em 3)
-                      :height (rem 6.25)}]
+                      :height (em 4.5)}]
 
      [:nav
       [:ul {:flex-direction 'row
@@ -249,7 +280,7 @@
          :&:hover
          :&:focus
         [:svg
-          {:transform "rotate(4deg) scale(1.2)"}]]]]
+          {:transform "rotate(4deg) scale(1.1)"}]]]]
 
      [:nav
       [:li
@@ -257,7 +288,7 @@
             :text-decoration 'none
             :text-align 'center
             :width 'auto
-            :min-width (rem 8.125)
+            :min-width (em 6)
             :position 'relative
             :will-change "font-size"
             :transition-property 'font-size
@@ -291,7 +322,26 @@
      [:p :span :ol {:font-family "Source Sans Pro"
                     }]
 
+     [:.block-grey {:color 'white
+               :background-color 'grey}]
 
+     [:.inside-block
+      {:width "100vw"
+       :max-width (em 53)
+       :align-self 'center
+       :padding {:left (em 1.5)
+                 :right (em 1.5)
+                 :top (em 1.5)
+                 :bottom (em 1.5)}
+
+       }]
+
+     [:main {:width "100%"
+             :max-width (em 53)
+             :align-self 'center
+             :padding {:left (em 1.5)
+                       :right (em 1.5)}
+             }]
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   HOME PAGE SPECIFIC   ;;;;;;;;;;;;
@@ -334,11 +384,11 @@
                         :flex-wrap 'wrap
                         :justify-content 'center
                         :align-items 'center}
-      [:p {:font-size (rem 1.125)
+      [:p {:font-size (em 1.125)
      ;      :padding-left (rem 1.5)
            }]
-      [:svg {:max-width (rem 14.375)
-             :margin (rem 1.5)
+      [:svg {:max-width (em 10)
+             :margin (em 1.5)
                                         ;:width "25%"
                                         ;:min-width (px 180)
              }
@@ -348,6 +398,7 @@
      (at-media {:min-width (px 850)}
                [:.home-component
                 [:p {:width "100%"
+                     :max-width (em 30)
                      :padding-left (rem 1.5)}]])
 
 
@@ -376,13 +427,14 @@
       ]
 
 
-     [:.sign-up-box {:background-color brand-blue}]
+     [:.sign-up-box {:color 'white
+                     :background-color brand-blue}]
 
      [:.blurb-image {:width "100%"
                      :height 'auto
                      :margin-top (rem 1.5)
                      :background-color 'grey
-                     :border-radius (em 1)}]
+                     :border-radius (px 10)}]
 
 
 
@@ -410,6 +462,8 @@
 
      ;; These need to be reviewed !!
 
+     [:h1
+      {:margin-top (em 1.5)}]
 
      ["main * + *" {:margin-top (rem 1.5)}]
 
@@ -417,8 +471,10 @@
 
       ["* + h2" "* + h3" {:margin-top (em 1.5)}]
 
-      ["main * + *:not(p)" {:margin-top "3rem 0"}]
+      ["main * + *:not(p)" {:margin-top "rem 0"}]
       [":main :empty" {:display 'none}]
+
+      ["p + p" {:margin-top 0}]
 
 
 
@@ -450,14 +506,6 @@
      ;;;;;;;;;   PARAGRAPH STYLES   ;;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-      [:h1 {:font-size "2em"
-            :line-height "1.25em"}]
-      [:h2 {:font-size "1.625em"
-            :line-height "1.15284615em"}]
-      [:h3 {:font-size "1.375em"
-            :line-height "1.13636364em"}]
-      [:h4 {:font-size "1.125em"
-            :line-height "1.11111111em"}]
 
                                         ;OLD STYLES
                                         ;[:p {:font-size "1em"
@@ -471,7 +519,7 @@
 
       [:p
        {:margin "1.5em 0"
-        :font-size (rem 1)
+        :font-size (em 1)
         :line-height 1.5
         :max-width (em 35)}
 
