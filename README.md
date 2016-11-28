@@ -4,6 +4,18 @@ This is the next iteration of the Vegan Business Network website. https://www.ve
 Developed to be hosted on Netlify using the JAM stack (Javascript, API's and Markup).
 You can learn more about the JAM stack here: https://jamstack.org/
 
+## Design goals (no order)
+* is usable and looks clean on all devices from a _watch_ to a _tv_. 
+* is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
+* is fast, meaning the site is downloaded and usable within 2 seconds never more than 3 seconds
+* is semantic for search engines and future AI assistants
+
+## Current Status
+
+I have been working on ensuring I have a good foundation to build upon. Therefore the design elements such as colours, the logo and all other visual elements which do not affect layout are incomplete.
+
+Typography has been made fluid so that the font continually changes size based on viewport width between a large range of mobile devices. The rest of the layout is relative to the font size, parent container or the viewport.
+
 ##Tools used.
 
 * **Boot + various tasks** (Build tool) - http://boot-clj.com/
@@ -20,20 +32,6 @@ You can learn more about the JAM stack here: https://jamstack.org/
 
 * **Netlify** - https://www.netlify.com/
 * **Prismic** - https://prismic.io/
-
-## Design goals (no order)
-* is usable and looks clean on all devices from a _watch_ to a _tv_. 
-* is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
-* is fast, meaning the site is downloaded and usable within 2 seconds never more than 3 seconds
-* is semantic for search engines and future AI assistants
-
-
-## Current Status
-
-I have been working on ensuring I have a good foundation to build upon. Therefore the design elements such as colours, the logo and all other visual elements which do not affect layout are incomplete.
-
-Typography has been made fluid so that the font continually changes size based on viewport width between a large range of mobile devices. The rest of the layout is relative to the font size, parent container or the viewport.
-
 
 
 
