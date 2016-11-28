@@ -16,6 +16,8 @@ I have been working on ensuring I have a good foundation to build upon. Therefor
 
 Typography has been made fluid so that the font continually changes size based on viewport width between a large range of mobile devices. The rest of the layout is relative to the font size, parent container or the viewport.
 
+To view current status enter the run `boot dev`
+
 ##Tools used.
 
 * **Boot + various tasks** (Build tool) - http://boot-clj.com/
