@@ -30,6 +30,7 @@
      ;; Remove this later
      {:color "#050709"}
 
+     [:h6 {:font-size "calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25))"}]
 
 
 
@@ -96,8 +97,8 @@
                           :font-size (em 1.125)
                           :line-height (em 1.5)
                           }]
-      [:p {:margin {:top (em 0.8)
-                    :bottom (em 2)}}]]
+      [:p {:margin {:top (em 0.5)
+                    :bottom (em 2.5)}}]]
 
 
 
