@@ -4,6 +4,8 @@ This is the next iteration of the Vegan Business Network website. https://www.ve
 Developed to be hosted on Netlify using the JAM stack (Javascript, API's and Markup).
 You can learn more about the JAM stack here: https://jamstack.org/
 
+My intention of this project is to create a foundation. Making it possible to get off the ground quickly for the most basic of websites instead of defaulting to Wordpress or similar options. That still allows incremental changes to become a single page application without sacrificing productivity or performance.
+
 ## Design goals (no order)
 * is usable and looks clean on all devices from a _watch_ to a _tv_. 
 * is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
