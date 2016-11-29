@@ -38,8 +38,8 @@ To view current status enter this command in the root folder `boot dev`
 
 ## Services used. (Soon)
 
-* **Netlify** - https://www.netlify.com/
-* **Prismic** - https://prismic.io/
+* **Netlify** (Hosting/Deployment) - https://www.netlify.com/
+* **Prismic** (CMS) - https://prismic.io/
 
 ###Other useful third party services
 
