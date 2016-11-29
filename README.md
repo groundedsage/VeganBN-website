@@ -11,6 +11,27 @@ My intention of this project is to create a foundation. Making it possible to ge
 * is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
 * is fast, meaning the site is downloaded and usable within 2 seconds never more than 3 seconds
 * is semantic for search engines and future AI assistants
+* use as much modern browser technology as possible for future proofing. To avoid negative experiences only use features with 80% browser usage or more unless it provides significant improvement. Polyfill anything that is less than 80%.
+
+## Important references
+
+HTML5 Cross Browser Polyfills - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+Font Face Observer - https://github.com/bramstein/fontfaceobserver
+Global Costs of Site - https://whatdoesmysitecost.com/
+Item Properties - http://schema.org/Product
+Structured Data Testing Tool - https://search.google.com/structured-data/testing-tool
+Contrast Sensitivity - http://irlen.com/what-is-irlen-syndrome/
+Accessible Colour Palette Generator - http://colorsafe.co/
+Accessible Colour Finding Tool - http://www.dasplankton.de/ContrastA/
+Readability (Literacy) Tool for Chrome - https://chrome.google.com/webstore/detail/tray-readability-tool/eccbjfaplogblgjpopbihpgfgmlgjamf?hl=en-GB
+Readability (Literacy) uses Node.js - https://chrome.google.com/webstore/detail/tray-readability-tool/eccbjfaplogblgjpopbihpgfgmlgjamf?hl=en-GB
+Colour Blindness Emulator (Mac) - https://itunes.apple.com/au/app/sim-daltonism/id693112260?mt=12
+Browser support for features - http://caniuse.com/
+Site speed tester - https://www.webpagetest.org/
+Site speed and responsiveness tester - https://testmysite.thinkwithgoogle.com/
+Responsive design tool - http://material.io/resizer/
+
+
 
 ## Current Status
 
