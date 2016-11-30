@@ -11,7 +11,7 @@ My intention of this project is to create a foundation. Making it possible to ge
 * is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
 * is fast, meaning the site is downloaded and usable within 2 seconds never more than 3 seconds
 * is semantic for search engines and future AI assistants
-* use as much modern browser technology as possible for future proofing. To avoid negative experiences only use features with 80% browser usage or more unless it provides significant improvement in speed, bloat reduction or aesthetic. Polyfill anything that is less than 80%.
+* use as much modern browser technology as possible for future proofing. To avoid negative experiences only use features with 80% browser usage or more unless it provides significant improvement in speed, bloat reduction, aesthetic or has an immediately obvious reason it will become an anti-pattern. Polyfill anything that is less than 80%.
 
 
 ## Current Status
@@ -45,6 +45,7 @@ To view current status enter this command in the root folder `boot dev`
 
 * **Snipcart** (ecommerce) - https://snipcart.com/
 * **AuthO** (Authentication) - https://auth0.com/
+* **Webtask** (Serverless code runner) - https://webtask.io/
 * **Discourse** (Forum) - http://www.discourse.org/
 
 
