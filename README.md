@@ -58,21 +58,26 @@ To view current status enter this command in the root folder `boot dev`
 
 ## Important references
 
-* HTML5 Cross Browser Polyfills - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
-* Font Face Observer - https://github.com/bramstein/fontfaceobserver
-* Global Costs of Site - https://whatdoesmysitecost.com/
-* Item Properties - http://schema.org/Product
-* Structured Data Testing Tool - https://search.google.com/structured-data/testing-tool
+### Design
+
 * Contrast Sensitivity - http://irlen.com/what-is-irlen-syndrome/
 * Accessible Colour Palette Generator - http://colorsafe.co/
 * Accessible Colour Finding Tool - http://www.dasplankton.de/ContrastA/
 * Readability (Literacy) Tool for Chrome - https://chrome.google.com/webstore/detail/tray-readability-tool/eccbjfaplogblgjpopbihpgfgmlgjamf?hl=en-GB
 * Readability (Literacy) uses Node.js - https://chrome.google.com/webstore/detail/tray-readability-tool/eccbjfaplogblgjpopbihpgfgmlgjamf?hl=en-GB
 * Colour Blindness Emulator (Mac) - https://itunes.apple.com/au/app/sim-daltonism/id693112260?mt=12
+* Responsive design tool - http://material.io/resizer/
+
+### Dev
+
+* HTML5 Cross Browser Polyfills - https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+* Font Face Observer - https://github.com/bramstein/fontfaceobserver
+* Global Costs of Site - https://whatdoesmysitecost.com/
+* Item Properties - http://schema.org/Product
+* Structured Data Testing Tool - https://search.google.com/structured-data/testing-tool
 * Browser support for features - http://caniuse.com/
 * Site speed tester - https://www.webpagetest.org/
 * Site speed and responsiveness tester - https://testmysite.thinkwithgoogle.com/
-* Responsive design tool - http://material.io/resizer/
 * What my browser can do - https://whatwebcando.today/
 * What goes in a head - https://github.com/joshbuchea/HEAD
 * Serverless Framework - https://serverless.com/
