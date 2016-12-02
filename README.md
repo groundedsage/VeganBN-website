@@ -74,6 +74,10 @@ To view current status enter this command in the root folder `boot dev`
 * Site speed and responsiveness tester - https://testmysite.thinkwithgoogle.com/
 * Responsive design tool - http://material.io/resizer/
 * What my browser can do - https://whatwebcando.today/
+* What goes in a head - https://github.com/joshbuchea/HEAD
+* Serverless Framework - https://serverless.com/
+* Google AI API's - https://cloud.google.com/products/machine-learning/
+
 
 
 
