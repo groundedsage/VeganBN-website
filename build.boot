@@ -15,8 +15,8 @@
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]
                  [bidi "2.0.14"]
-                 [org.clojure/core.match "0.3.0-alpha4"]
-                 ])
+                 [org.clojure/core.match "0.3.0-alpha4"]])
+
 
 (require
  '[adzerk.boot-cljs      :refer [cljs]]
@@ -25,15 +25,56 @@
  '[pandeiro.boot-http    :refer [serve]]
  '[samestep.boot-refresh :refer [refresh]]
  '[org.martinklepsch.boot-garden :refer [garden]]
- )
+
+
+ '[clojure.string :as str]
+ '[clojure.java.io :as io]
+
+ '[vbn.static :as static])
+
+
+(defn render-template
+  [in-file out-file]
+  (doto out-file
+    io/make-parents
+    (spit (str/replace (slurp in-file) "{{CONTENT}}" "Happy times!"))))
+
+
+(deftask generate-page []
+  (let [tmp (tmp-dir!)]
+    (with-pre-wrap [fileset]
+      (empty-dir! tmp)
+      (let [in-files (input-files fileset)
+            template (by-name ["template.html"] in-files)]
+        (doseq [in template]
+          (let [in-file (tmp-file in)
+                in-path (tmp-path in)
+                out-path in-path
+                out-file (io/file tmp out-path)]
+            (render-template in-file out-file)))
+        (-> fileset
+            (add-resource tmp)
+            commit!)))))
+
+
 
 (deftask build []
   (comp (speak)
-        (cljs )
+        (cljs)
+        (generate-page)
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
+
+
+
+
 (deftask run []
-  (comp (serve :handler 'vbn.static/handler)
+  (comp (serve) ;:handler 'vbn.static/handler
+
+  ;; TODO
+
+  ; Serve up static html files from the fileset
+
 
         (watch)
         (cljs-repl)
@@ -43,6 +84,9 @@
 (deftask production []
   (task-options! cljs {:optimizations :advanced}
                       garden {:pretty-print false})
+;; TODO
+; Commit the static html files from the fileset to the target folder
+
   identity)
 
 (deftask development []
@@ -50,8 +94,8 @@
                        :source-map true
                      ;  :compiler-options {:parallel-build true}}
                        :compiler-options {:devcards true}}
-                 reload {:on-jsload 'vbn.app/init }
-                 )
+                 reload {:on-jsload 'vbn.app/init})
+
   identity)
 
 
@@ -67,5 +111,3 @@
   (comp
    (development)
    (run)))
-
-
