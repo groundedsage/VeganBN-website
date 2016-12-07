@@ -119,3 +119,28 @@
 (rum/defc intro []
   [:div.intro-text
   [:p "intro text"]])
+
+
+(rum/defc content []
+  [:main#main
+   (banner-image)
+   (h1-home "Vegan Business Network")
+   (bigger-than-business)
+   (movement)
+
+   (h2-home "At Our Core")
+   [:div.at-our-core
+    (community)
+    (education)]
+   (sign-up)
+
+   (h2-home "What We Do")
+   (blurbs-title-second)
+
+
+   ;(hidden)
+
+  ; (link (path-for my-routes :devcards) "Dev Cards")
+   ]
+
+  )
