@@ -30,17 +30,42 @@
  '[clojure.string :as str]
  '[clojure.java.io :as io]
 
- '[vbn.static :as static])
+ '[vbn.static :as static]
+ '[vbn.app :as app]
+ '[bidi.bidi :refer [path-for route-seq]]
+ '[rum.core :as rum])
 
+(def next-route (path-for app/my-routes :community))
 
 (defn render-template
-  [in-file out-file]
+  [in-file out-file route]
   (doto out-file
     io/make-parents
-    (spit (str/replace (slurp in-file) "{{CONTENT}}" "Happy times!"))))
+    (spit (str/replace (slurp in-file) "{{CONTENT}}"
+                       (case route
+                         :veganism   (rum/render-static-markup (app/veganism))
+                         :consulting (rum/render-static-markup (app/consulting))
+                         :community  (rum/render-static-markup (app/community))
+                         :about-us   (rum/render-static-markup (app/about-us)))))))
 
 
-(deftask generate-page []
+(defn gather-routes
+  "Gathers all generated routes and emits the keyword of each route."
+  []
+  (->> (route-seq app/my-routes)
+       (map #(first %))
+       (map #(conj [] %))
+       (map #(into {} %))
+       (map #(:handler %))
+       (into #{})))
+
+;; Need to capture the initial fileset and map that with generate-page and sort over all routes
+
+
+
+(deftask generate-page
+  "Takes a page route as a keyword."
+  [r route VALUE kw "The route in the form of a keyword"]
   (let [tmp (tmp-dir!)]
     (with-pre-wrap [fileset]
       (empty-dir! tmp)
@@ -51,7 +76,7 @@
                 in-path (tmp-path in)
                 out-path in-path
                 out-file (io/file tmp out-path)]
-            (render-template in-file out-file)))
+            (render-template in-file out-file route)))
         (-> fileset
             (add-resource tmp)
             commit!)))))
@@ -61,7 +86,9 @@
 (deftask build []
   (comp (speak)
         (cljs)
-        (generate-page)
+        (comp
+         (generate-page :route :veganism)
+         (sift :move{#"template.html" "veganism.html"}))
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 
@@ -84,8 +111,6 @@
 (deftask production []
   (task-options! cljs {:optimizations :advanced}
                       garden {:pretty-print false})
-;; TODO
-; Commit the static html files from the fileset to the target folder
 
   identity)
 

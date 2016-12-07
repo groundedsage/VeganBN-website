@@ -36,13 +36,14 @@
 
 ;; NAVIGATION
 
-(def my-routes ["/" {"" :index
-                     "index.html" :index
-                     "veganism.html" :veganism
-                     "about-us.html" :about-us
-                     "consulting.html" :consulting
-                     "community.html" :community
-                     "devcards.html" :devcards}])
+(def my-routes ["/" [["" :index]
+                     ["index.html" :index]
+                     ["veganism.html" :veganism]
+                     ["about-us.html" :about-us]
+                     ["consulting.html" :consulting]
+                     ["community.html" :community]
+                     ["devcards.html" :devcards]
+                     [true :not-found]]])
 
 (defn get-route [url]
   (:handler (match-route my-routes url)))
