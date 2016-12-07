@@ -140,7 +140,7 @@
 (def routes #{:veganism :consulting :community :about-us})
 
 (deftask make-pages []
-  (reduce comp (map #(make-page :route %) routes)))
+  (reduce comp (map #(make-page :route %) (gather-routes))))
 
 
 (deftask build []
