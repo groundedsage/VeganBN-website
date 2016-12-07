@@ -35,19 +35,6 @@
  '[bidi.bidi :refer [path-for route-seq]]
  '[rum.core :as rum])
 
-(def next-route (path-for app/my-routes :community))
-
-(defn render-template
-  [in-file out-file route]
-  (doto out-file
-    io/make-parents
-    (spit (str/replace (slurp in-file) "{{CONTENT}}"
-                       (case route
-                         :veganism   (rum/render-static-markup (app/veganism))
-                         :consulting (rum/render-static-markup (app/consulting))
-                         :community  (rum/render-static-markup (app/community))
-                         :about-us   (rum/render-static-markup (app/about-us)))))))
-
 
 (defn gather-routes
   "Gathers all generated routes and emits the keyword of each route."
@@ -59,39 +46,6 @@
        (map #(:handler %))
        (into #{})))
 
-;; Need to capture the initial fileset and map that with generate-page and sort over all routes
-
-
-
-(deftask generate-page
-  "Takes a page route as a keyword."
-  [r route VALUE kw "The route in the form of a keyword"
-   o template VALUE code "An atom containing the original template"]
-  (let [tmp (tmp-dir!)]
-    (with-pre-wrap [fileset]
-      (empty-dir! tmp)
-      (let [in-files (input-files fileset) ;; Currently ignored
-            template (by-name ["template.html"] in-files) ;;Currently ignored
-            template-new template]
-        (doseq [in template]
-          (let [in-file (tmp-file in)
-                in-path (tmp-path in)
-                out-path in-path
-                out-file (io/file tmp out-path)]
-            (render-template in-file out-file route)))
-
-        (-> fileset
-            (add-resource tmp)
-            commit!)))))
-
-#_(deftask get-template
-  "Extracts the template.html from the fileset and places it inside an atom"
-  []
-  (with-pre-wrap [fileset]
-    (let [in-files (input-files fileset)
-          template (by-name ["template.html"] in-files)
-          original-template (atom template)]
-      original-template)))
 
 (deftask string-template
   "Does the thing"
@@ -115,29 +69,32 @@
         (throw (ex-info "No template file found" {:opts *opts*}))))))
 
 
-
-#_(deftask generate-pages []
-  (generate-page :route :community)
-  (sift :move{#"template.html" "community.html"}))
-
 (defn route-content [route]
   (case route
-    :index "hello"
+    :index      (rum/render-static-markup (app/home))
     :veganism   (rum/render-static-markup (app/veganism))
     :consulting (rum/render-static-markup (app/consulting))
     :community  (rum/render-static-markup (app/community))
-    :about-us   (rum/render-static-markup (app/about-us))))
+    :about-us   (rum/render-static-markup (app/about-us))
+    :not-found  (rum/render-static-markup (app/not-found))
+  ))
+
+
+(defn get-path [route]
+  (cond
+    (= :index route) "index.html"
+    (= :not-found route) "404.html"
+    :else (subs (path-for app/my-routes route) 1)))
 
 (deftask make-page
   [r route VAL kw "Route of page"
    t template-file NAME str "Name of the template file to use, default is template.html"]
-  (string-template :template-file (or template-file "template.html")
-                   :target-file (subs (path-for app/my-routes route) 1)
-                   :placeholder "{{CONTENT}}"
-                   :content (route-content route)))
+  (let [url (get-path route)]
+    (string-template :template-file (or template-file "template.html")
+                     :target-file url
+                     :placeholder "{{CONTENT}}"
+                     :content (route-content route))))
 
-
-(def routes #{:veganism :consulting :community :about-us})
 
 (deftask make-pages []
   (reduce comp (map #(make-page :route %) (gather-routes))))
@@ -154,13 +111,7 @@
 
 
 (deftask run []
-  (comp (serve) ;:handler 'vbn.static/handler
-
-  ;; TODO
-
-  ; Serve up static html files from the fileset
-
-
+  (comp (serve)
         (watch)
         (cljs-repl)
         (reload)

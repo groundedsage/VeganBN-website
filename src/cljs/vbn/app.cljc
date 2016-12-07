@@ -36,14 +36,12 @@
 
 ;; NAVIGATION
 
-(def my-routes ["/" [;["" :index]
-                     ;["index.html" :index]
+(def my-routes ["/" [[#{"" "index.html"} :index]
                      ["veganism.html" :veganism]
                      ["about-us.html" :about-us]
                      ["consulting.html" :consulting]
                      ["community.html" :community]
-                     ;["devcards.html" :devcards]
-                   ;  [true :not-found]
+                     [true :not-found]
                      ]])
 
 (defn get-route [url]
@@ -69,34 +67,15 @@
     [:li.order-end   (link (path-for my-routes :consulting) [:span "Consulting"])]
     [:li.order-end   (link (path-for my-routes :community) [:span "Community"])]]])
 
-(rum/defc home [content]
-  [:div
-   (navigation)
-   [:main#main
-    (i/banner-image)
-    (i/h1-home "Vegan Business Network")
-    (i/bigger-than-business)
-    (i/movement)
-
-    (i/h2-home "At Our Core")
-    [:div.at-our-core
-     (i/community)
-     (i/education)]
-    (i/sign-up)
-
-    (i/h2-home "What We Do")
-    (i/blurbs-title-second)
-
-
-    (hidden)
-
-    (link (path-for my-routes :devcards) "Dev Cards")]])
 
 (rum/defc page-wrapper [content]
   [:div
    (skip-to-main)
    (navigation)
    content])
+
+(rum/defc home []
+  (page-wrapper (i/content)))
 
 (rum/defc veganism []
   (page-wrapper (v/content)))
@@ -109,6 +88,9 @@
 
 (rum/defc about-us []
   (page-wrapper (a/content)))
+
+(rum/defc not-found []
+  [:h1 "Page Not Found"])
 
 ;;
 ;;   Need to find a way to condense the page-wrapper with the page
@@ -128,6 +110,7 @@
          :consulting (consulting)
          :community  (community)
          :about-us   (about-us)
+         :not-found  (not-found)
 
 
          ;;
