@@ -41,8 +41,9 @@
                      ["about-us.html" :about-us]
                      ["consulting.html" :consulting]
                      ["community.html" :community]
-                     [true :not-found]
-                     ]])
+                     ["devcards.html" :devcards]]])
+                     ;[true :not-found]]])
+
 
 (defn get-route [url]
   (:handler (match-route my-routes url)))
@@ -99,8 +100,6 @@
 
 
 
-
-
 #?(:cljs
    (rum/defc page < rum/reactive []
      (let [token (rum/react current-token)]
@@ -113,13 +112,9 @@
          :not-found  (not-found)
 
 
-         ;;
-         ;;  Devcards remains at the top of the page after visiting and returning to normal pages
-         ;;
-
-         :devcards   (devcards/init)
+         :devcards   (devcards/init)))))
          ;; not found, basically
-         (home)))))
+         ;(home)))))
 
 #?(:cljs
    (defn init []

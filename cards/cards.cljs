@@ -1,4 +1,4 @@
-(ns vbn.devcards
+(ns devcards.cards
   (:require [devcards.core :as dc]
             [vbn.index :as i]
             [vbn.components :as comp]

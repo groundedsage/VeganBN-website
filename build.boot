@@ -76,8 +76,8 @@
     :consulting (rum/render-static-markup (app/consulting))
     :community  (rum/render-static-markup (app/community))
     :about-us   (rum/render-static-markup (app/about-us))
-    :not-found  (rum/render-static-markup (app/not-found))
-  ))
+    :not-found  (rum/render-static-markup (app/not-found))))
+
 
 
 (defn get-path [route]
@@ -100,10 +100,19 @@
   (reduce comp (map #(make-page :route %) (gather-routes))))
 
 
+(deftask cards []
+    (set-env! :resource-paths #(conj % "cards")
+              :source-paths #(conj % "cards"))
+    identity)
+
+
+
+
 (deftask build []
   (comp (speak)
         (cljs)
-        (make-pages)
+        ;(make-pages)
+        (make-page :route :index)
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 
@@ -115,6 +124,7 @@
         (watch)
         (cljs-repl)
         (reload)
+        (cards)
         (build)))
 
 (deftask production []
@@ -128,15 +138,12 @@
                        :source-map true
                      ;  :compiler-options {:parallel-build true}}
                        :compiler-options {:devcards true}}
+
+
+
                  reload {:on-jsload 'vbn.app/init})
 
   identity)
-
-
-;; My own task
-;(deftask devcards []
-;  (task-options! cljs {:compiler-options {:devcards true}}
-;                 serve {:dir "devcards/resources"})
 
 
 (deftask dev

@@ -37,12 +37,12 @@ A big problem is nothing other than a combination of small problems"]]
       [:p "Quality is always better than quantity"]]
      [:li
       [:span "Transparency"]
-      [:p "Be open about process and clear in communitcation"]
-      ]
+      [:p "Be open about process and clear in communitcation"]]
+
      [:li
       [:span "Collaboration"]
-      [:p "Unite efforts because teh whole is always greater than the sum of it's parts."]
-      ]
+      [:p "Unite efforts because teh whole is always greater than the sum of it's parts."]]
+
      [:li
       [:span "On the shelf or off the shelf"]
       [:p "WILL BE CHANGING THIS ONE"]]
@@ -52,15 +52,4 @@ A big problem is nothing other than a combination of small problems"]]
       [:p "Always consider both the local and global impact"]]
      [:li
       [:span "Inspire"]
-      [:p "Be inspired and inspire others in evry way imaginable"]]
-
-
-
-
-
-
-
-     ]]
-
-   ])
-
+      [:p "Be inspired and inspire others in evry way imaginable"]]]]])
