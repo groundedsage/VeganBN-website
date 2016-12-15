@@ -44,7 +44,7 @@
 
 (rum/defc community []
   [:div {:style {:width "100%"
-                 :max-width "250px"
+                 :max-width "13rem"
                  :align-items "center"}}
    [:svg {:height "80%"
           :width "80%"
@@ -53,12 +53,12 @@
 
     [:use
      {:xlink-href "community.svg#community"}]]
-   [:p "We are about community"]])
+   [:span {:style {:white-space "nowrap"}} "We are about community"]])
 
 
 (rum/defc education []
   [:div {:style {:width "100%"
-                 :max-width "250px"
+                 :max-width "13rem"
                  :align-items "center"}}
    [:svg {:height "80%"
           :width "80%"
@@ -72,7 +72,7 @@
                 :viewbox "0 0 238 175"
                 :href "education.svg#education"}))
 
-   [:span "We are about education"]])
+   [:span  {:style {:white-space "nowrap"}} "We are about education"]])
 
 (rum/defc sign-up []
   [:div.sign-up-box.full-width

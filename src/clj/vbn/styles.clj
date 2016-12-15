@@ -86,8 +86,26 @@
      [:li {:padding-left (rem 0.3125)}]
 
      [:.values-section {:display 'flex
-                        :flex-direction 'row
+                        :flex-direction 'column
                         :align-items 'baseline}]
+
+     (at-media {:min-width (rem 70)}
+               [:.values-section
+                :.vision-section  {:flex-direction 'row
+                           :justify-content 'space-between
+                                   :align-items 'baseline
+                           }]
+               [:ol.values
+                :.vision {:width "80%"}]
+
+
+               )
+     [:.vision {:padding-left (rem 0.3125)}]
+
+
+     [:.vision-title {:font-weight 'bold
+                      :font-size (em 1.125)
+                      :line-height (em 1.5)}]
 
 
      [:ol.values

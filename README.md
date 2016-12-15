@@ -84,6 +84,7 @@ To view current status enter this command in the root folder `boot dev`
 * Google AI API's - https://cloud.google.com/products/machine-learning/
 * DNS Perf - http://www.dnsperf.com/
 * Facts about web users worldwide - https://www.webworldwide.io/
+* Google Web fonts helper - https://google-webfonts-helper.herokuapp.com/fonts/source-sans-pro?subsets=latin
 
 
 

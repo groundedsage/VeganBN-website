@@ -65,10 +65,11 @@
                             [:svg.home {:alt "VBN Logo Home"
                                         :viewBox "0 0 158 172"}
                              [:use {:xlink-href "logo.svg#logo"}]])]
-    [:li.order-front (link (path-for my-routes :about-us) [:span "About Us"])]
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
-    [:li.order-end   (link (path-for my-routes :consulting) [:span "Consulting"])]
-    [:li.order-end   (link (path-for my-routes :community) [:span "Community"])]]])
+    [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
+    [:li.order-end   (link (path-for my-routes :community) [:span "Community"])]
+    [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]
+    ]])
 
 
 (rum/defc page-wrapper [content]

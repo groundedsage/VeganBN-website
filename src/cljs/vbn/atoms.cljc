@@ -25,7 +25,7 @@
 
 (rum/defc circle-icon [name]
   [:div {:style {:width "100%"
-                 :max-width "250px"
+                 :max-width "14rem"
                  :align-items "center"}}
   [:svg {:height "80%"
          :width "80%"
