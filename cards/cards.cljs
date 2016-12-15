@@ -2,6 +2,7 @@
   (:require [devcards.core :as dc]
             [vbn.index :as i]
             [vbn.components :as comp]
+            [vbn.app :as app]
 
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule])
@@ -19,8 +20,14 @@
 
 
 
+(defcard Navigation)
 
-(defcard Heading-1
+(defcard Testing-this
+  "This is a test for things")
+
+
+
+(defcard H-ONE-YO
   (atom/h1 "Heading 1"))
   ;(i/h1-home "Heading 1 - Home Page")
 

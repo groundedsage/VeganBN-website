@@ -45,7 +45,7 @@
 
      ;; Normally have html and body in here also however they have been moved to the top
      [:header
-      :div
+      :div   ; This interferes with the top level of devcards navigation
       :section
       :article
 
