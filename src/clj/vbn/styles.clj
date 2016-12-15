@@ -222,11 +222,6 @@
                       :bottom (em 1.5)}
             :z-index 1}]
 
-     [:nav
-      [:ul {:height "100%"
-            :justify-content 'space-around
-                                        ;:max-width (em 75)    ;; add a media query for this
-            }]]
 
      ["nav li:not(.order-middle)" {:width (em 7)}]
 
@@ -260,6 +255,13 @@
 
      ;; Desktop styles
      (at-media {:min-width (px 667) }
+
+               [:nav
+                [:ul {:height "100%"
+                      :justify-content 'space-around
+                                        ;:max-width (em 75)    ;; add a media query for this
+                      }]]
+
 
                [:nav {:margin-top (em 3)
                       :height (em 4.5)}]
@@ -305,8 +307,6 @@
        [:a {:color 'white
             :text-decoration 'none
             :text-align 'center
-            :width 'auto
-            :min-width (em 6)
             :position 'relative
             :will-change "font-size"
             :transition-property 'font-size
@@ -323,7 +323,8 @@
               :position 'relative}]
 
      [:.order-front {:order 1}]
-     [:.order-middle {:order 2}]
+     [:.order-middle {:order 2
+                      :width (em 6)}]
      [:.order-end {:order 3}])
 
 
