@@ -22,7 +22,7 @@
 
 
 
-  (molecule/blurb-title-second {:image "photos/nature.jpg"
+  #_(molecule/blurb-title-second {:image "photos/nature.jpg"
                                    :alt-text "Waterfall in rainforest"
                                    :title "Sustainability"
                                    :text [[:p "We all know we need to do something more, otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us."]
@@ -31,7 +31,7 @@
                                           [:p "To find out more we highly suggest watching Cowspiracy. They also have an amazing infographic on their website."]]
                                    :cta "Cowspiracy.org"})
 
-   (molecule/blurb-title-second {:image "photos/watermelon.jpg"
+   #_(molecule/blurb-title-second {:image "photos/watermelon.jpg"
                                    :alt-text "Child eating watermelon"
                                    :title "Nutrition"
                                    :text [[:p "All around the world there are many top level athletes that hold world records and many more going vegan proving that plant sources of protein are sufficient and in many cases better than the alternative animal sources."]
@@ -40,7 +40,7 @@
 
                                    :cta "Nutritionfacts.org"})
 
-   (molecule/blurb-title-second {:image "photos/ethics.jpg"
+   #_(molecule/blurb-title-second {:image "photos/ethics.jpg"
                                    :alt-text  "Baby cow tagged and just another number waiting to be killed for food"
                                    :title "Ethics"
                                    :text [[:p "If you are someone who cringes when you see someone kick a dog, cat or any other innocent animal. Someone who hates people who kill innocent animals for fun and enjoyment or someone who dislikes other cultures eating animals which are normally treated as pets such as dogs."]

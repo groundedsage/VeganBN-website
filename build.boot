@@ -47,6 +47,8 @@
        (into #{})))
 
 
+
+
 (deftask string-template
   "Does the thing"
   [f template-file VALUE str "Name of the template file to use"
@@ -76,6 +78,7 @@
     :consulting (rum/render-static-markup (app/consulting))
     :community  (rum/render-static-markup (app/community))
     :about-us   (rum/render-static-markup (app/about-us))
+    :web        (rum/render-static-markup (app/home))
     :not-found  (rum/render-static-markup (app/not-found))))
 
 
@@ -111,8 +114,8 @@
 (deftask build []
   (comp (speak)
         (cljs)
-        ;(make-pages)
-        (make-page :route :index)
+        (make-pages)
+        ;(make-page :route :index)
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 
