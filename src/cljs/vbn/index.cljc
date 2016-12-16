@@ -46,7 +46,7 @@
   [:div {:style {:width "100%"
                  :max-width "13rem"
                  :align-items "center"}}
-   [:svg {:height "80%"
+   [:svg {:height "8rem"
           :width "80%"
           :viewBox "0 0 123 123"}
                                         ; :preserveAspectRatio "xMidyMid slice"
@@ -60,7 +60,7 @@
   [:div {:style {:width "100%"
                  :max-width "13rem"
                  :align-items "center"}}
-   [:svg {:height "80%"
+   [:svg {:height "8rem"
           :width "80%"
           :viewBox "0 0 123 123"}
                                         ; :preserveAspectRatio "xMidyMid slice"
