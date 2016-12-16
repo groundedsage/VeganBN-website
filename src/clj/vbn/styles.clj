@@ -84,23 +84,31 @@
                                :right (rem 1.5) }}]
 
      [:li {:padding-left (rem 0.3125)}]
+     [:ol.values {:margin-left (rem -0.3125)}]
 
      [:.values-section {:display 'flex
                         :flex-direction 'column
-                        :align-items 'baseline}]
+                        :align-items 'baseline
+                        :padding {:left (em 1.5)
+                                  :right (em 1.5)}}]
+     [:.vision-section {:padding {:left (em 1.5)
+                                  :right (em 1.5)}}]
 
-     (at-media {:min-width (rem 70)}
+
+     (at-media {:min-width (rem 80)}
                [:.values-section
                 :.vision-section  {:flex-direction 'row
-                           :justify-content 'space-between
                                    :align-items 'baseline
-                           }]
+                                   :padding {:left 0
+                                             :right 0}
+                                   }
+                [:h3 {:margin-right (em 1.5)}]]
+               
                [:ol.values
                 :.vision {:width "80%"}]
 
 
                )
-     [:.vision {:padding-left (rem 0.3125)}]
 
 
      [:.vision-title {:font-weight 'bold
@@ -122,12 +130,12 @@
 
 
      ;; Remove default styling of button
-     [:button {:padding 0
-               :font-family 'bitter
-               :font-size (em 1)
-               :display 'flex
-               :justify-content 'center
-               }]
+     [:button {:padding 0}
+      [:span {:width "100%"
+              :font-family 'bitter
+              :font-size (em 1)
+              :display 'flex
+              :justify-content 'center}]]
 
      ;; Custom button styles
 
@@ -462,11 +470,9 @@
 
                [:.blurb {:flex-direction 'row}]
 
-               [:.blurb-image {
-                :margin-right "5%" 
-                :max-width "35%"
-                :height "100%"}
-                ]
+               [:.img-container {
+                                   :margin-right "5%" 
+                                   :max-width "35%"}]
 
                [:.image-title-text-cta {:width "60%"}]
                )

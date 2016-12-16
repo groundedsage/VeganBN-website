@@ -17,7 +17,7 @@
 (rum/defc bigger-than-business []
   [:div.home-component
    [:svg {
-            :height "100%"
+            :height "4.5em"
             :width "100%"
             :viewBox "0 0 230 100"}
       [:use
@@ -30,7 +30,7 @@
 (rum/defc movement []
   [:div.home-component
    [:svg {
-          :height "100%"
+          :height "7.5em"
           :width "100%"
           :viewBox "0 0 238 175"}
     [:use
@@ -80,8 +80,9 @@
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]]])
 
 (rum/defc blurb-image [src alt-text]
-  [:img.blurb-image {:src src
-                     :alt alt-text}])
+  [:div.img-container
+   [:img.blurb-image {:src src
+                      :alt alt-text}]])
 
 (rum/defc h3 [text]
   [:h3 text])
@@ -93,7 +94,7 @@
    [:div.image-title-text-cta
     (h3 title)
     [:p text]
-    [:button cta]]))
+    [:button [:span cta]]]))
 
 
 (rum/defc blurbs-title-second []

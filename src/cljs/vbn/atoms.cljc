@@ -17,7 +17,7 @@
   [:p text])
 
 (rum/defc button [text]
-  [:button text])
+  [:button [:span text]])
 
 (rum/defc blurb-image [src alt-text]
   [:img.blurb-image {:src src
