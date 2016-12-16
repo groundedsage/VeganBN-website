@@ -1,14 +1,12 @@
-(ns vbn.devcards
+(ns vbn.library
+
   (:require [devcards.core :as dc]
             [vbn.index :as i]
             [vbn.components :as comp]
             [rum.core :as rum]
 
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]
-            [library.atoms]
-            [library.molecules]
-            [library.organisms])
+            [vbn.molecules :as molecule])
 
 
 
@@ -17,8 +15,3 @@
 
 
 
-
-
-
-(defn init []
-  (devcards.core/start-devcard-ui!))
