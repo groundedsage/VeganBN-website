@@ -8,6 +8,7 @@
             [vbn.consulting :as ct]
             [vbn.community :as cm]
             [vbn.about :as a]
+            [vbn.web :as w]
 
 
 
@@ -41,7 +42,7 @@
 (def my-routes ["/" [[#{"" "index.html"} :index]
                      ["veganism.html" :veganism]
                      ["about-us.html" :about-us]
-                     ["consulting/"  [["index.html" :consulting]
+                     ["consulting/"  [[#{"" "index.html"} :consulting]
                                       ["web.html" :web]]]
                      ["community.html" :community]
                                         ;["devcards.html" :devcards]
@@ -66,10 +67,10 @@
                             [:span {:aria-hidden true} "Home"]
                             [:svg.home {:alt "VBN Logo Home"
                                         :viewBox "0 0 158 172"}
-                             [:use {:xlink-href "logo.svg#logo"}]])]
+                             [:use {:xlink-href "/logo.svg#logo"}]])]
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
     [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
-    [:li.order-end   (link (path-for my-routes :community) [:span "Community"])]
+    [:li.order-end (link (path-for my-routes :community) [:span "Community"])]
     [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]
     ]])
 
@@ -78,7 +79,10 @@
   [:div
    (skip-to-main)
    (navigation)
-   content])
+   content
+
+   (link (path-for my-routes :web) [:h1 "WEB"])
+   ])
 
 (rum/defc home []
   (page-wrapper (i/content)))
@@ -94,6 +98,10 @@
 
 (rum/defc about-us []
   (page-wrapper (a/content)))
+
+(rum/defc web []
+  (page-wrapper (w/content)))
+
 
 (rum/defc not-found []
   [:h1 "Page Not Found"])
@@ -115,6 +123,7 @@
          :community  (community)
          :about-us   (about-us)
          :not-found  (not-found)
+         :web        (web)
 
 
          :devcards   (devcards/init)))))

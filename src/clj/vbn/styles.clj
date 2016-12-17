@@ -20,6 +20,7 @@
 
 (def brand-color "#6DEF14")
 (def brand-blue "#0d8ec1")
+(def brand-dark "#333D47")
 
 
 (defstyles screen
@@ -350,7 +351,7 @@
                     }]
 
      [:.block-grey {:color 'white
-               :background-color 'grey}]
+               :background-color brand-dark}]
 
      [:.inside-block
       {:width "100vw"

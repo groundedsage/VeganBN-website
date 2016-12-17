@@ -7,9 +7,14 @@
   [:main#main
    (molecule/page-intro
     [:h1 "About"]
-    [:p "To foster the vegan business community we host two different networking meetups every month."]
-    [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
+    [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])
 
+   [:span [:strong "At VBN we work to:"]]
+   [:p [:strong "EDUCATE"] "   the public, businesses and government on veganism."]
+   [:p [:strong "GROW"] "  vegan and vegan friendly businesses with world class services."]
+   [:p [:strong "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]
+
+   [:h2 "Vision and Values"]
    [:div.vision-section
     [:h3 "Vision"] [:.vision [:span.vision-title "A Vegan World"]
                     [:span "Pretty simple really"]]]
