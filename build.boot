@@ -8,13 +8,14 @@
                  [com.cemerick/piggieback   "0.2.1"      :scope "test"]
                  [org.clojure/tools.nrepl   "0.2.12"     :scope "test"]
                  [samestep/boot-refresh "0.1.0" :scope "test"]
-                 [com.novemberain/pantomime "2.8.0"]
+                 ;[com.novemberain/pantomime "2.8.0"]
                  [weasel                    "0.7.0"      :scope "test"]
-                 [org.clojure/clojurescript "1.7.228"]
+                 [org.clojure/clojurescript "1.9.293"]
                  [rum "0.10.4"]
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]
                  [bidi "2.0.14"]
+                 [cljs-css-modules "0.2.1"]
                  [org.clojure/core.match "0.3.0-alpha4"]])
 
 
@@ -45,7 +46,6 @@
        (map #(into {} %))
        (map #(:handler %))
        (into #{})))
-
 
 
 

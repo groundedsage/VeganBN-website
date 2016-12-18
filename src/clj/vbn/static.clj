@@ -3,7 +3,7 @@
             [vbn.app :as app]
             [clojure.string :as str]
             [clojure.java.io :as io]
-            [pantomime.mime :refer [mime-type-of]]
+            ;[pantomime.mime :refer [mime-type-of]]
 
 
             [boot.core :as c]))

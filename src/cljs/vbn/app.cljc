@@ -45,7 +45,7 @@
                      ["consulting/"  [[#{"" "index.html"} :consulting]
                                       ["web.html" :web]]]
                      ["community.html" :community]
-                                        ;["devcards.html" :devcards]
+                     ["devcards.html" :devcards]
                      ]])
                                         ;[true :not-found]]])
 

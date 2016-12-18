@@ -3,10 +3,15 @@
             [bidi.bidi :refer [path-for]]
 
             #?(:cljs [vbn.navigation :refer [link current-token]])
+            [cljs-css-modules.macro :as s]
 
 
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]))
+
+
+(s/defstyle style [".container" {:color "#333d47"
+                                 :font-size "2em"}])
 
 
 ;;;; REMOVE LATER
@@ -29,7 +34,7 @@
     [:h1 "Consulting"]
     [:p "We provide full service business consulting"])
 
-   [:span {:style {:font-size "2em"}}"What does that mean?"]
+   [:span {:class-name (:container style)} "What does that mean?"]
    [:div.block-grey.full-width
     {:style {:margin-top "-0.3em"
              :padding-top "1em"
@@ -41,25 +46,26 @@
    [:p "The vegan community is our home. Our finger is on the pulse of this beautiful community. We know what is happening. When it is happening. Why it is happening. We are also creating and driving change ourselves."]
 
    (atom/h2 "Services")
-   (atom/h3 "Strategy")
-   [:ul
-    [:li "Business Coaching"]
-    [:li "Branding"]
-    [:li "Legal"]]
+   [:div.bullet-padding
+    (atom/h3 "Strategy")
+    [:ul
+     [:li "Business Coaching"]
+     [:li "Branding"]
+     [:li "Legal"]]
 
-   (atom/h3 "Digital")
+    (atom/h3 "Digital")
 
-   [:ul
-    [:a {:href "/consulting/web.html"} [:li "Web & Apps"]]
-    [:li "Video & Animation"]
-    [:li "Social Media Marketing"]]
+    [:ul
+     [:a {:href "/consulting/web.html"} [:li "Web & Apps"]]
+     [:li "Video & Animation"]
+     [:li "Social Media Marketing"]]
 
-   (atom/h3 "Print")
+    (atom/h3 "Print")
 
-   [:ul
-    [:li "Business Cards"]
-    [:li "Flyers & Posters"]
-    [:li "Signage & Merch"]]
+    [:ul
+     [:li "Business Cards"]
+     [:li "Flyers & Posters"]
+     [:li "Signage & Merch"]]]
 
    (atom/h2 "Harmonise the services")
    [:p "One stop shops for professional business services are rare. But today communication between multiple teams is critical. Co-ordinating communication between lawyers, designers, developers and marketers is the last thing you want to be doing when starting a business. "]

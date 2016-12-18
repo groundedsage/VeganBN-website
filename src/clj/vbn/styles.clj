@@ -92,7 +92,8 @@
                         :align-items 'baseline
                         :padding {:left (em 1.5)
                                   :right (em 1.5)}}]
-     [:.vision-section {:padding {:left (em 1.5)
+     [:.vision-section
+      :.bullet-padding {:padding {:left (em 1.5)
                                   :right (em 1.5)}}]
 
 
@@ -104,7 +105,6 @@
                                              :right 0}
                                    }
                 [:h3 {:margin-right (em 1.5)}]]
-               
                [:ol.values
                 :.vision {:width "80%"}]
 
@@ -352,6 +352,11 @@
 
      [:.block-grey {:color 'white
                :background-color brand-dark}]
+
+     [:.block-blue {:color 'white
+                   :background-color brand-blue}]
+
+     [:.block-green {:background-color brand-color}]
 
      [:.inside-block
       {:width "100vw"
