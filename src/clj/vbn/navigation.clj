@@ -52,7 +52,6 @@
             :transition-timing-function "ease-out"}
         [:&:hover
          :&:focus
-         
          [:span
           {:font-size (em 1.25)}]]]]]
 

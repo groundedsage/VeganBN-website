@@ -14,13 +14,15 @@
                                             focus
                                             defselector
                                             defpseudoclass
-                                            defclass
-                                            ]]))
+                                            defclass]]))
 
 
-(def brand-color "#6DEF14")
+
+(def brand-color "#00ff7f")
 (def brand-blue "#0d8ec1")
 (def brand-dark "#333D47")
+
+;; New Green #6FDC6F
 
 
 (defstyles screen
@@ -70,19 +72,19 @@
        :max-width "100%"}]
 
      [:nav [:li
-      {:display 'flex
-       :position 'relative
-       :flex-direction 'column
-       :align-items 'stretch
-       :flex-shrink 0
-       :border "0 solid black"
-       :margin 0
-       :padding 0
-       :max-width "100%"}
-      ]]
+            {:display 'flex
+             :position 'relative
+             :flex-direction 'column
+             :align-items 'stretch
+             :flex-shrink 0
+             :border "0 solid black"
+             :margin 0
+             :padding 0
+             :max-width "100%"}]]
+
 
      [:.page-padding {:margin {:left (rem 1.5)
-                               :right (rem 1.5) }}]
+                               :right (rem 1.5)}}]
 
      [:li {:padding-left (rem 0.3125)}]
      [:ol.values {:margin-left (rem -0.3125)}]
@@ -97,19 +99,21 @@
                                   :right (em 1.5)}}]
 
 
-     (at-media {:min-width (rem 80)}
+
+
+     (at-media {:min-width (rem 30)}
                [:.values-section
                 :.vision-section  {:flex-direction 'row
                                    :align-items 'baseline
                                    :padding {:left 0
-                                             :right 0}
-                                   }
-                [:h3 {:margin-right (em 1.5)}]]
+                                             :right 0}}
+
+                [:h3 {:margin-right (em 3)}]]
                [:ol.values
-                :.vision {:width "80%"}]
+                :.vision {:width "80%"}])
 
 
-               )
+
 
 
      [:.vision-title {:font-weight 'bold
@@ -122,10 +126,12 @@
 
       ["span:first-child"{
                           :font-size (em 1.125)
-                          :line-height (em 1.5)
-                          }]
+                          :line-height (em 1.5)}]
+
       [:p {:margin {:top (em 0.5)
                     :bottom (em 2.5)}}]]
+
+
 
 
 
@@ -143,8 +149,8 @@
      [:button {:min-height (px 48)
                :background-color 'none   ;MAY CHANGE
                :border "solid black 3px"
-               :border-radius (px 10)
-               }
+               :border-radius (px 10)}
+
       [:&:hover :&:focus
        {:background-color 'black
         :color 'white}]]
@@ -189,7 +195,7 @@
        :will-change 'height
        :transition-property 'height
        :transition-duration "0.2s"
-       :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)" }
+       :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"}
 
       [:span {:display 'none}]
 
@@ -201,12 +207,12 @@
 
 
 
-     [:main {:width "100%"
+     [:main {:width "100vw"
              :max-width (em 53)
              :align-self 'center
              :padding {:left (em 1.5)
-                       :right (em 1.5)}
-             }]
+                       :right (em 1.5)}}]
+
 
 
 
@@ -238,8 +244,8 @@
       [:li
        [:a {:color 'white
             :text-decoration 'none
-            :min-height (px 48
-                         )
+            :min-height (px 48)
+
             :display 'flex
             :flex-direction 'column
             :justify-content 'center}]]]
@@ -257,84 +263,84 @@
             :transition-timing-function "ease-out"}
         [:&:hover
          :&:focus
-         
+
          [:span
           {:font-size (em 1.25)}]]]]]
 
 
      ;; Desktop styles
-     (at-media {:min-width (px 667) }
+     (at-media {:min-width (px 667)}
 
                [:nav
                 [:ul {:height "100%"
-                      :justify-content 'space-around
+                      :justify-content 'space-around}]]
                                         ;:max-width (em 75)    ;; add a media query for this
-                      }]]
+
 
 
                [:nav {:margin-top (em 3)
                       :height (em 4.5)}]
 
-     [:nav
-      [:ul {:flex-direction 'row
-            :align-items 'center
-            }]]
-     [:nav
-      [:ul
-       ["a[href^=\"#\"]"
-        [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
-                 :position 'absolute
-                 :content " \"\" "
-                 :z-index "5"
-                 :bottom "-40%"
-                 :width "50%"
-                 :left "25%"}]]]]
+      [:nav
+       [:ul {:flex-direction 'row
+             :align-items 'center}]]
 
-     [:nav
-      [:ul
-       [:a
-        [:&:hover
-         :&:focus   ;; THIS STYLE ISN'T BEING PICKED UP
-
+      [:nav
+       [:ul
+        ["a[href^=\"#\"]"
          [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
                   :position 'absolute
                   :content " \"\" "
                   :z-index "5"
                   :bottom "-40%"
                   :width "50%"
-                  :left "25%"}]]]]]
-     [:nav
-      [:a
-       [
-         :&:hover
-         :&:focus
-        [:svg
-          {:transform "rotate(4deg) scale(1.1)"}]]]]
+                  :left "25%"}]]]]
 
-     [:nav
-      [:li
-       [:a {:color 'white
-            :text-decoration 'none
-            :text-align 'center
-            :position 'relative
-            :will-change "font-size"
-            :transition-property 'font-size
-            :transition-duration "0.2s"
-            :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"}
+      [:nav
+       [:ul
+        [:a
+         [:&:hover
+          :&:focus   ;; THIS STYLE ISN'T BEING PICKED UP
 
-        ]]]
+          [before {:border-bottom "solid rgba(255,255,255,0.6) 1px"
+                   :position 'absolute
+                   :content " \"\" "
+                   :z-index "5"
+                   :bottom "-40%"
+                   :width "50%"
+                   :left "25%"}]]]]]
+      [:nav
+       [:a
+        [
+          :&:hover
+          :&:focus
+         [:svg
+           {:transform "rotate(4deg) scale(1.1)"}]]]]
 
-     [:nav
-      [:li.order-middle
-       [:span {:display 'none}]]]
+      [:nav
+       [:li
+        [:a {:color 'white
+             :text-decoration 'none
+             :text-align 'center
+             :position 'relative
+             :will-change "font-size"
+             :transition-property 'font-size
+             :transition-duration "0.2s"
+             :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"}]]]
 
-     [:.home {:height 'auto
-              :position 'relative}]
 
-     [:.order-front {:order 1}]
-     [:.order-middle {:order 2
-                      :width (em 6)}]
-     [:.order-end {:order 3}])
+
+      [:nav
+       [:li.order-middle
+        [:span {:display 'none}]]]
+
+      [:.home {:height 'auto
+               :position 'relative}]
+
+      [:.order-front {:order 1}]
+      [:.order-middle {:order 2
+                       :width (em 6)}]
+      [:.order-end {:order 3}])
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -347,14 +353,14 @@
                           :font-weight 'normal}]
 
      [:h1 :h2 :h3 :h4 {:font-family 'bitter}]
-     [:p :span :ol {:font-family "Source Sans Pro"
-                    }]
+     [:p :span :ol {:font-family "Source Sans Pro"}]
+
 
      [:.block-grey {:color 'white
-               :background-color brand-dark}]
+                    :background-color brand-dark}]
 
      [:.block-blue {:color 'white
-                   :background-color brand-blue}]
+                    :background-color brand-blue}]
 
      [:.block-green {:background-color brand-color}]
 
@@ -364,17 +370,42 @@
        :align-self 'center
        :padding {:left (em 1.5)
                  :right (em 1.5)
-                 :top (em 1.5)
-                 :bottom (em 1.5)}
+                 :top (em 3)
+                 :bottom (em 3)}}]
+     [:.extra-padding
+      {:padding-top (em 4.5)
+       :padding-bottom (em 4.5)}]
 
-       }]
 
-     [:main {:width "100%"
-             :max-width (em 53)
-             :align-self 'center
-             :padding {:left (em 1.5)
-                       :right (em 1.5)}
-             }]
+     [:.three-up-six
+      [:svg
+       {:align-self 'center}]
+      ]
+
+     [:.buffer-left {:margin-left (em 1.5)}]
+     (at-media {:max-width (em 60)}
+               [:.three-up-six
+                [:h3 {:align-self 'center}]])
+
+     (at-media {:min-width (em 60)}
+               [:.three-up {:flex-direction 'row
+                            :justify-content 'space-between}]
+               [:.three-up-six {:flex-direction 'row
+                                :flex-wrap 'wrap
+                                :justify-content 'space-around}
+                [:h3 {:font-size (em 1.4)}]]
+
+               [:.buffer-left {:margin-left 0}]
+               [:.inside-three {:padding (em 1)
+                                :margin-top 0
+                                :max-width (em 16)}])
+
+
+     [:.center {:align-self 'center}]
+     [:.center-items {:align-items 'center}]
+
+
+
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   HOME PAGE SPECIFIC   ;;;;;;;;;;;;
@@ -417,47 +448,48 @@
                         :flex-wrap 'wrap
                         :justify-content 'center
                         :align-items 'center}
-      [:p {:font-size (em 1.125)
+      [:p {:font-size (em 1.125)}]
      ;      :padding-left (rem 1.5)
-           }]
+
       [:svg {:max-width (em 10)
-             :margin (em 1.5)
+             :margin (em 1.5)}]]
                                         ;:width "25%"
                                         ;:min-width (px 180)
-             }
-       ]
-      ]
+
+
+
 
      (at-media {:min-width (px 850)}
                [:.home-component
+                [:svg {:margin-right (em 3)}]
                 [:p {:width "100%"
-                     :max-width (em 30)
-                     :padding-left (rem 1.5)}]])
+                     :max-width (em 30)}]])
 
 
-     (at-media {:max-width (px 600) }
-               [:.rwd-break {:display 'none}]
-               )
+
+     (at-media {:max-width (px 600)}
+               [:.rwd-break {:display 'none}])
+
 
 
      [(line-under s/before) {:border-bottom "solid 1px rgba(51,61,71, 0.2)"
                              :position 'absolute
                              :top "110%"
-                             :right "10%" 
+                             :right "10%"
                              :width "80%"
-                             :content " \" \" "
-                             }]
+                             :content " \" \" "}]
+
 
      [:.at-our-core {:flex-direction 'row
                      :flex-wrap 'wrap
                      :align-items 'baseline
                      :justify-content 'space-around
                      :align-self 'center
-                     :width "100%"
-                     }
+                     :width "100%"}
+
             [:div {:padding {:left (rem 1.5)
-                      :right (rem 1.5)}}]
-      ]
+                             :right (rem 1.5)}}]]
+
 
 
      [:.sign-up-box {:color 'white
@@ -472,16 +504,16 @@
 
 
 
-     (at-media {:min-width (px 568) }
+     (at-media {:min-width (px 568)}
 
                [:.blurb {:flex-direction 'row}]
 
                [:.img-container {
-                                   :margin-right "5%" 
+                                   :margin-right "5%"
                                    :max-width "35%"}]
 
-               [:.image-title-text-cta {:width "60%"}]
-               )
+               [:.image-title-text-cta {:width "60%"}])
+
 
 
 
@@ -500,12 +532,12 @@
 
      [:li :dt :dd :br :th :td {:margin 0}]
 
-      ["* + h2" "* + h3" {:margin-top (em 1.5)}]
+     ["* + h2" "* + h3" {:margin-top (em 1.5)}]
 
-      ["main * + *:not(p)" {:margin-top "rem 0"}]
-      [":main :empty" {:display 'none}]
+     ["main * + *:not(p)" {:margin-top "rem 0"}]
+     [":main :empty" {:display 'none}]
 
-      ["p + p" {:margin-top 0}]
+     ["p + p" {:margin-top 0}]
 
 
 
@@ -548,29 +580,29 @@
 
       ;; Paragraph styles
 
-      [:p
-       {:margin "1.5em 0"
-        :font-size (em 1)
-        :line-height 1.5
-        :max-width (em 35)}
+     [:p
+      {:margin "1.5em 0"
+       :font-size (em 1)
+       :line-height 1.5
+       :max-width (em 35)}
 
 
       ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE
       ;; In addition when focused the text shadow is visible when adding a background
-       [:a
-        {:text-decoration 'none
-         :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
-         :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
-         :background-repeat "repeat-x"
-         :background-position "bottom 0.05em center"
-         :background-size "100% 0.05em"
-         }
-        [:&:focus {:outline 'none
-                   :background-color "#cef"}]]
+      [:a
+       {:text-decoration 'none
+        :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
+        :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
+        :background-repeat "repeat-x"
+        :background-position "bottom 0.05em center"
+        :background-size "100% 0.05em"}
 
-      ]
-     ))
-    )
+       [:&:focus {:outline 'none
+                  :background-color "#cef"}]]])))
+
+[:.centre {:align-self 'center}]
+
+
 
 
                                         ;(defstyles print
@@ -580,7 +612,3 @@
                                         ;                    display: none;
                                         ;                    }
                                         ;}”
-
-
-
-

@@ -2,6 +2,13 @@
   (:refer-clojure :exclude [rem not])
   (:require [garden.stylesheet :refer [at-media]]))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;   THIS IS EXPERIMENTAL IS DEPENDS ON    ;;;;;;;;
+;;;;;;;;;   THE FINAL MERGE OF GARDEN 2.0 BRANCH  ;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (def headings {:h1 {:top (em 2.441) :bottom (em 1.602)}
                :h2 {:top (em 1.953) :bottom (em 1.424)}
                :h3 {:top (em 1.563) :bottom (em 1.266)}
@@ -39,9 +46,4 @@
           [:html {:font-size (calc (+ (em 1)
                                       (/ (* (text-top - 1)
                                             (100vw - (em lowest-width)))
-                                         width-range)))}]
-
-
-
-
-          )
+                                         width-range)))}])

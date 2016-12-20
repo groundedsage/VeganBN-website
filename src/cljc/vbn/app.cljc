@@ -42,10 +42,10 @@
 (def my-routes ["/" [[#{"" "index.html"} :index]
                      ["veganism.html" :veganism]
                      ["about-us.html" :about-us]
-                     ["consulting/"  [[#{"" "index.html"} :consulting]
+                     ["consulting/"  [[ "index.html" :consulting]
                                       ["web.html" :web]]]
                      ["community.html" :community]
-                     ["devcards.html" :devcards]
+                     ;["devcards.html" :devcards]
                      ]])
                                         ;[true :not-found]]])
 

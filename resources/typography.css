@@ -52,6 +52,11 @@
         font-size: 1.125em;
 
     }
+
+    .consulting-block-text
+    .consulting-top-text  {
+        font-size: 1.4em;
+    }
 }
 
 @media (min-width: 25em) and (max-width: 62.5em)
@@ -81,6 +86,28 @@ h4 {
     line-height: 1.11111111em;
 }
 
+
+
+}
+
+@media (min-width: 25em) and (max-width: 75em) {
+
+    .consulting-block-text {
+        font-size: calc(1.4em + (3 - 1.4) * (100vw - 25em)/(52 - 25))
+    }
+
+    .consulting-top-text {
+        font-size: calc(1.4em + (2 - 1.4) * (100vw - 25em)/(52 - 25))
+    }
+
+}
+@media (min-width: 75em) {
+    .consulting-block-text {
+        font-size: 3em;
+    }
+    .consulting-top-text {
+        font-size: 2em;
+    }
 }
 
 @media (min-width: 62.5em) {
@@ -99,6 +126,8 @@ h4 {
     h4 {
         font-size: 1.250em;
     }
+
+
 }
 
 /*
@@ -107,3 +136,11 @@ h4 {
     NEED TO FIX THIS LATER AND ALSO ADD PRINT QUERIES
 }
 */
+
+
+
+/* Special Styles */
+
+    .consulting-top-text {
+        color: #333d47;
+    }
