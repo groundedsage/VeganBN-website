@@ -9,15 +9,18 @@
     [:h1 "About"]
     [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])
 
-   [:span [:strong "At VBN we work to:"]]
-   [:p [:strong "EDUCATE"] "   the public, businesses and government on veganism."]
-   [:p [:strong "GROW"] "  vegan and vegan friendly businesses with world class services."]
-   [:p [:strong "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]
+   [:div.full-width.block-green
+    [:div.inside-block
+     (atom/h2-home "At VBN we work to:")
+     [:div.center
+      [:p [:strong.about-strong "GROW"] "  vegan and vegan friendly businesses with world class services."]
+      [:p [:strong.about-strong "EDUCATE"] "   the public, businesses and government on veganism."]
+      [:p [:strong.about-strong "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]]]]
 
-   [:h2 "Vision and Values"]
+   (atom/h2-home "Vision and Values")
    [:div.vision-section
     [:h3 "Vision"] [:.vision [:span.vision-title "A Vegan World"]
-                    [:span "Pretty simple really"]]]
+                    [:span.simple-vision "Pretty simple really"]]]
 
    [:div.values-section
     [:h3 "Values"]

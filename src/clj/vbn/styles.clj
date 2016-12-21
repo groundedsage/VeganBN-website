@@ -130,6 +130,8 @@
       [:p {:margin {:top (em 0.5)
                     :bottom (em 2.5)}}]]
 
+     [:.simple-vision {:margin {:top (em 0.5)
+                                :bottom (em 2.5)}}]
 
 
 
@@ -244,6 +246,8 @@
        [:a {:color 'white
             :text-decoration 'none
             :min-height (px 48)
+           ; :font-weight 'bold
+            :letter-spacing (em 0.05)
 
             :display 'flex
             :flex-direction 'column
@@ -305,7 +309,7 @@
                    :position 'absolute
                    :content " \"\" "
                    :z-index "5"
-                   :bottom "-40%"
+                   :bottom "-20%"
                    :width "50%"
                    :left "25%"}]]]]]
       [:nav
@@ -356,7 +360,8 @@
 
 
      [:.block-grey {:color 'white
-                    :background-color brand-dark}]
+                    :background-color brand-dark}
+      [:p {:letter-spacing (em 0.01)}]]
 
      [:.block-blue {:color 'white
                     :background-color brand-blue}]
@@ -592,7 +597,11 @@
 
      [:ul.service-list {:margin-left (rem -0.3125)}]
      [:ul.service-list
-      [:li {:line-height (em 1.5)}]]
+      [:a {:text-decoration 'underline}
+       [:&:hover
+        :&:focus {:font-weight 'bold}]]
+      [:li {:line-height (em 1.5)
+            :min-height (px 48)}]]
 
 
      (at-media {:max-width (em 76.85)}
@@ -650,7 +659,7 @@
       ]
 
      [:.buffer-left {:margin-left (em 1.5)}]
-     
+
      (at-media {:max-width (em 60)}
                [:.three-up-six
                 :.four-up
@@ -669,10 +678,27 @@
                                 :margin-top 0
                                 :max-width (em 16)}])
 
+     [:.drop-top-padding {:padding-top 0}]
+     [:.make-top-margin {:margin-top (rem 1.5)}]
+
 
      [:.center {:align-self 'center}]
      [:.center-items {:align-items 'center}]
 
+
+     (at-media {:min-width (em 75)}
+               [:.principles {:flex-direction 'row
+                              :justify-content 'space-between}]
+               [:.principle {:width "45%"}])
+
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   ABOUT PAGE    ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     [:.about-strong {:margin-right (em 0.2)
+                      :letter-spacing (em 0.05)}]
 
 
 

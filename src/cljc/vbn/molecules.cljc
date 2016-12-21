@@ -16,7 +16,9 @@
      [:.img-container (atom/blurb-image image alt-text)]
      [:div.image-title-text-cta
       [:h3 title]
-      text
+      (reduce conj [:section]
+              text
+              )
       [:button [:span cta]]]]))
 
 (rum/defc page-intro [& content]

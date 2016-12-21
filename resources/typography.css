@@ -97,7 +97,7 @@ h4 {
     }
 
     .consulting-top-text {
-        font-size: calc(1.4em + (2 - 1.4) * (100vw - 25em)/(52 - 25))
+        font-size: calc(1.5em + (2 - 1.5) * (100vw - 25em)/(52 - 25))
     }
 
 }

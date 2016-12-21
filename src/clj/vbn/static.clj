@@ -38,7 +38,7 @@
     :consulting (rum/render-static-markup (app/consulting))
     :community  (rum/render-static-markup (app/community))
     :about-us   (rum/render-static-markup (app/about-us))
-    :web        (rum/render-static-markup (app/home))
+    :web        (rum/render-static-markup (app/web))
     :not-found  (rum/render-static-markup (app/not-found))))
 
 (defn get-path [route]

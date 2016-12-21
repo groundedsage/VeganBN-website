@@ -98,7 +98,7 @@
   (page-wrapper (a/content)))
 
 (rum/defc web []
-  (page-wrapper (w/content)))
+  (page-wrapper (w/dummy)))
 
 
 (rum/defc not-found []
