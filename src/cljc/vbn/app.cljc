@@ -80,8 +80,6 @@
    (skip-to-main)
    (navigation)
    content
-
-   (link (path-for my-routes :web) [:h1 "WEB"])
    ])
 
 (rum/defc home []

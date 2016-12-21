@@ -137,6 +137,37 @@
    [:use {:xlink-href "/svg/happy-days.svg#happy-days"}]])
 
 
+(rum/defc safe []
+  [:svg.bump-left {:height "10em"
+                   :width "10em"
+                   :viewBox "0 0 147 96"}
+   [:use {:xlink-href "/svg/safe.svg#safe"}]])
+
+
+(rum/defc bird []
+  [:svg.bump-left {:height "10em"
+                   :width "10em"
+                   :viewBox "0 0 223 108"}
+   [:use {:xlink-href "/svg/bird.svg#bird"}]])
+
+(rum/defc evolve []
+  [:svg.bump-left {:height "10em"
+                   :width "10em"
+                   :viewBox "0 0 2539 1500"}
+   [:use {:xlink-href "/svg/evolve.svg#evolve"}]])
+
+(rum/defc rock-solid []
+  [:svg.bump-left {:height "10em"
+                   :width "10em"
+                   :viewBox "0 0 153 158"}
+   [:use {:xlink-href "/svg/rock-solid.svg#rock-solid"}]])
+
+
+
+
+
+
+
 
 
 

@@ -376,33 +376,7 @@
        :padding-bottom (em 4.5)}]
 
 
-     [:.three-up-six
-      [:svg
-       {:align-self 'center}]
-      ]
-
-     [:.buffer-left {:margin-left (em 1.5)}]
-     (at-media {:max-width (em 60)}
-               [:.three-up-six
-                [:h3 {:align-self 'center}]])
-
-     (at-media {:min-width (em 60)}
-               [:.three-up {:flex-direction 'row
-                            :justify-content 'space-between}]
-               [:.three-up-six {:flex-direction 'row
-                                :flex-wrap 'wrap
-                                :justify-content 'space-around}
-                [:h3 {:font-size (em 1.4)}]]
-
-               [:.buffer-left {:margin-left 0}]
-               [:.inside-three {:padding (em 1)
-                                :margin-top 0
-                                :max-width (em 16)}])
-
-
-     [:.center {:align-self 'center}]
-     [:.center-items {:align-items 'center}]
-
+   
 
 
 
@@ -661,13 +635,43 @@
                                :flex-wrap 'wrap
                                :justify-content 'space-around
                                :width "100%"
-                               :background 'blue}])
+                               }])
 
      (at-media {:min-width (rem 120)}
                [:.four-up {:flex-wrap 'no-wrap}]
                [:.column-four {:margin-top 0
                                :width "50%"}])
 
+     [:.four-up [:svg {:align-self 'center}]]
+
+     [:.three-up-six
+      [:svg
+       {:align-self 'center}]
+      ]
+
+     [:.buffer-left {:margin-left (em 1.5)}]
+     
+     (at-media {:max-width (em 60)}
+               [:.three-up-six
+                :.four-up
+                [:h3 {:align-self 'center}]])
+
+     (at-media {:min-width (em 60)}
+               [:.three-up {:flex-direction 'row
+                            :justify-content 'space-between}]
+               [:.three-up-six {:flex-direction 'row
+                                :flex-wrap 'wrap
+                                :justify-content 'space-around}
+                [:h3 {:font-size (em 1.4)}]]
+
+               [:.buffer-left {:margin-left 0}]
+               [:.inside-three {:padding (em 1)
+                                :margin-top 0
+                                :max-width (em 16)}])
+
+
+     [:.center {:align-self 'center}]
+     [:.center-items {:align-items 'center}]
 
 
 

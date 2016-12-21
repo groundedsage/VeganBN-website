@@ -61,6 +61,7 @@
    [:div.four-up
     [:div.column-four
      [:.inside-three
+      (atom/rock-solid)
       (icon-title-text
        [:h3 "Rock Solid Foundations"]
        [ [:p "Built on the most reliable
@@ -68,6 +69,7 @@ technology the web has to offer."]
         [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing." ]  ])]
 
      [:.inside-three
+      (atom/bird)
       (icon-title-text
        [:h3 "Speed Matters"]
        [[:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
@@ -75,6 +77,7 @@ technology the web has to offer."]
 
     [:div.column-four 
      [:.inside-three
+      (atom/safe)
       (icon-title-text
        [:h3 "Ultra Secure"]
        [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
@@ -83,6 +86,7 @@ technology the web has to offer."]
        )]
 
      [:.inside-three
+      (atom/evolve)
       (icon-title-text
        [:h3 "Designed to Evolve"]
        [[:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
@@ -95,9 +99,9 @@ technology the web has to offer."]
    [:div.block-grey.full-width
     [:div.inside-block
      [:h2 "We have two guiding principles"]
-     [:div #_{:class-name (:principles-wrap style)}
+     [:div
 
-      [:div #_{:class-name (:principles-width style)}
+      [:div
        [:h3 "Speed"]
        [:p "We emphasize speed throughout our development process and in our final product."]
        [:p "Immediate feedback on a design results in a smoother creative flow and is the difference between testing all the ideas both you and our team have or just the ones we have time for. "]
@@ -172,51 +176,57 @@ technology the web has to offer."]
 
    [:div.bullet-padding
 
-    [:span "$1500"]
-    [:span "Simple Site"]
-    [:ul
-     [:li "Without a CMS"]
-     [:li "Custom Site Design"]
-     [:li "Custom domain that you own"]
-     [:li "You own the site code"]
-     [:li "Never pay any upkeep fees"]]
+    [:div.column-four
+     [:div.inside-three
+      [:span "$1500"]
+      [:span "Simple Site"]
+      [:ul
+       [:li "Without a CMS"]
+       [:li "Custom Site Design"]
+       [:li "Custom domain that you own"]
+       [:li "You own the site code"]
+       [:li "Never pay any upkeep fees"]]]
 
-    [:span "$2300"]
-    [:span "Dynamic Site"]
-    [:ul
-     [:li "Advanced CMS"]
-     [:li "Custom Site Design"]
-     [:li "Custom domain that you own"]
-     [:li "You own the site code"]
-     [:li "Never pay any upkeep fees"]]
+     [:div.inside-three
+      [:span "$2300"]
+      [:span "Dynamic Site"]
+      [:ul
+       [:li "Advanced CMS"]
+       [:li "Custom Site Design"]
+       [:li "Custom domain that you own"]
+       [:li "You own the site code"]
+       [:li "Never pay any upkeep fees"]]]]
 
-    [:span "$2300+"]
-    [:span "Dynamic Site"]
-    [:span "+"]
-    [:span "Extras"]
-    [:ul
-     [:li "Advanced CMS"]
-     [:li "Custom Site Design"]
-     [:li "Custom domain that you own"]
-     [:li "You own the site code"]
-     [:li "Never pay any upkeep fees"]]
+    [:div.column-four
+     [:div.inside-three
+      [:span "$2300+"]
+      [:span "Dynamic Site"]
+      [:span "+"]
+      [:span "Extras"]
+      [:ul
+       [:li "Advanced CMS"]
+       [:li "Custom Site Design"]
+       [:li "Custom domain that you own"]
+       [:li "You own the site code"]
+       [:li "Never pay any upkeep fees"]]]
 
-    [:span "$3000 +"]
-    [:span "Dynamic Site"]
-    [:span "+"]
-    [:span "E-commerce"]
-    [:ul
-     [:li "Advanced CMS"]
-     [:li "Custom Site Design"]
-     [:li "Custom domain that you own"]
-     [:li "You own the site code"]
-     [:li "Upkeep starts at 2% of transactions with a minimum of $10 (excluding fees from your choice of payment gateway).
-Non-profits, schools or crowdfunding projects are exempt from the minimum $10 and the fee is reduced to 1.5%. "]]]
+     [:div.inside-three
+      [:span "$3000 +"]
+      [:span "Dynamic Site"]
+      [:span "+"]
+      [:span "E-commerce"]
+      [:ul
+       [:li "Advanced CMS"]
+       [:li "Custom Site Design"]
+       [:li "Custom domain that you own"]
+       [:li "You own the site code"]
+       [:li "Upkeep starts at 2% of transactions with a minimum of $10 (excluding fees from your choice of payment gateway).
+Non-profits, schools or crowdfunding projects are exempt from the minimum $10 and the fee is reduced to 1.5%. "]]]]
 
-   [:div.block-green.full-width
-    [:div.inside-block
-     [:h2 "What are you waiting for?"]
-     [:button "Send"]]]
+    [:div.block-green.full-width
+     [:div.inside-block
+      [:h2 "What are you waiting for?"]
+      [:button "Send"]]]]
 
 
 
