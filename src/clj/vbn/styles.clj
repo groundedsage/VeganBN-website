@@ -639,6 +639,10 @@
      (at-media {:max-width (em 60)}
                [:.center-to-60 {:align-self 'center}])
 
+     (at-media {:min-width (rem 120)}
+               [:.bump-width {:max-width (rem 110)}
+                [:.inside-three {:font-size (rem 0.8)}] ])
+
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   WEB & APP PAGE    ;;;;;;;;;;
@@ -658,6 +662,12 @@
                                :justify-content 'space-around
                                :width "100%"
                                :background 'blue}])
+
+     (at-media {:min-width (rem 120)}
+               [:.four-up {:flex-wrap 'no-wrap}]
+               [:.column-four {:margin-top 0
+                               :width "50%"}])
+
 
 
 

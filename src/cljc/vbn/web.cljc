@@ -55,8 +55,10 @@
 
    [:h2.center "4 Reasons to Choose Us"]
 
-   [:div.four-up
 
+   [:div.full-width
+    [:div.inside-block.bump-width
+   [:div.four-up
     [:div.column-four
      [:.inside-three
       (icon-title-text
@@ -85,7 +87,7 @@ technology the web has to offer."]
        [:h3 "Designed to Evolve"]
        [[:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
 "]
-        [:p "Our system allows your business to grow without any major technology changes or massive rewriteżs."]])]]]
+        [:p "Our system allows your business to grow without any major technology changes or massive rewriteżs."]])]]]]]
 
 
 
@@ -113,7 +115,7 @@ technology the web has to offer."]
 
    [:div.block-blue.full-width
     {:style {:margin-top "0"}}
-    [:div.inside-block
+    [:div.inside-block.bump-width
      [:h2.center "Our Process"]
 
      [:p.center "We focus on immediate feedback throughout our entire  process. As such it is highly iterative and interactive from the very beginning. You are completely engaged throughout the entire process. When you start with us after the initial consult we provide you with a completely interactive unfinished design prototype. From here we progressively evolve this prototype togther to produce a design that feels almost real. Knowing this is exactly what you want we begin the final stage of actually building your website or application."]
