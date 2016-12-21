@@ -5,12 +5,6 @@
             [clojure.java.io :as io]
             [boot.core :as c]
 
-            [vbn.consulting :refer [style]]
-
-
-
-
-
             [bidi.bidi :refer [path-for route-seq]]
             [boot.core :refer [deftask
                                tmp-dir!
@@ -99,7 +93,7 @@
 
 
 
-(defn add-module
+#_(defn add-module
   [in-file out-file style]
    ;(println "Testing something" (str (slurp in-file) style))
   ;(println in-file)
@@ -110,7 +104,7 @@
     ))
 
 
-(deftask add-css-modules
+#_(deftask add-css-modules
   [s style VAL str "Styles from a CSS Module"]
   (let [tmp (tmp-dir!)]
     (with-pre-wrap [fileset]

@@ -25,13 +25,8 @@
  '[samestep.boot-refresh :refer [refresh]]
  '[org.martinklepsch.boot-garden :refer [garden]]
 
-
- '[clojure.string :as str]
- '[clojure.java.io :as io]
-
  '[vbn.static :as static]
- '[vbn.app :as app]
- '[vbn.consulting :refer [style]])
+ '[vbn.app :as app])
 
 
 
@@ -40,8 +35,6 @@
     (set-env! :resource-paths #(conj % "cards")
               :source-paths #(conj % "cards"))
     identity)
-
-(println (:css style))
 
 
 
@@ -52,11 +45,9 @@
         ;(static/make-page :route :index)
 
         ;; Need to join css-modules onto the output css/garden.css
+        ;;(static/add-css-modules :style (:css style))
 
-        (static/add-css-modules :style (:css style))
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
-
-
 
 
 
@@ -68,11 +59,14 @@
         (cards)
         (build)))
 
+
+
 (deftask production []
   (task-options! cljs {:optimizations :advanced}
                       garden {:pretty-print false})
-
   identity)
+
+
 
 (deftask development []
   (task-options! cljs {:optimizations :none
@@ -81,8 +75,8 @@
                                           }}
 
                  reload {:on-jsload 'vbn.app/init})
-
   identity)
+
 
 
 (deftask dev

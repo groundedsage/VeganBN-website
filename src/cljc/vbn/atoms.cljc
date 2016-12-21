@@ -106,7 +106,7 @@
    [:use {:xlink-href "/svg/information-architecture.svg#information-architecture"}]])
 
 (rum/defc visual-language []
-  [:svg {:height "10em"
+  [:svg.bump-left {:height "10em"
          :width "10em"
          :viewBox "0 0 363 309"}
    [:use {:xlink-href "/svg/visual-language.svg#visual-language"}]])
@@ -119,19 +119,19 @@
    [:use {:xlink-href "/svg/mock-up.svg#mock-up"}]])
 
 (rum/defc micro-interactions []
-  [:svg {:height "10em"
+  [:svg.bump-left {:height "10em"
          :width "10em"
          :viewBox "0 0 247 272"}
    [:use {:xlink-href "/svg/micro-interactions.svg#micro-interactions"}]])
 
 (rum/defc develop []
-  [:svg {:height "10em"
+  [:svg.bump-left {:height "10em"
          :width "10em"
          :viewBox "0 0 361 301"}
    [:use {:xlink-href "/svg/develop.svg#develop"}]])
 
 (rum/defc happy-days []
-  [:svg {:height "10em"
+  [:svg.bump-left {:height "10em"
          :width "10em"
          :viewBox "0 0 314 272"}
    [:use {:xlink-href "/svg/happy-days.svg#happy-days"}]])

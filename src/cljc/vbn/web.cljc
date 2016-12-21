@@ -55,35 +55,37 @@
 
    [:h2.center "4 Reasons to Choose Us"]
 
-   [:div.three-up-six
+   [:div.four-up
 
-    [:.inside-three
-     (icon-title-text
-      [:h3 "Rock Solid Foundations"]
-      [ [:p "Built on the most reliable
+    [:div.column-four
+     [:.inside-three
+      (icon-title-text
+       [:h3 "Rock Solid Foundations"]
+       [ [:p "Built on the most reliable
 technology the web has to offer."]
-       [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing." ]  ])]
+        [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing." ]  ])]
 
-    [:.inside-three
-     (icon-title-text
-      [:h3 "Speed Matters"]
-      [[:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
-       [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]
+     [:.inside-three
+      (icon-title-text
+       [:h3 "Speed Matters"]
+       [[:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
+        [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
 
-    [:.inside-three
-     (icon-title-text
-      [:h3 "Ultra Secure"]
-      [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
+    [:div.column-four 
+     [:.inside-three
+      (icon-title-text
+       [:h3 "Ultra Secure"]
+       [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
 "]
-      [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]
-      )]
+       [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]
+       )]
 
-    [:.inside-three
-     (icon-title-text
-      [:h3 "Designed to Evolve"]
-      [[:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
+     [:.inside-three
+      (icon-title-text
+       [:h3 "Designed to Evolve"]
+       [[:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
 "]
-       [:p "Our system allows your business to grow without any major technology changes or massive rewriteżs."]])]]
+        [:p "Our system allows your business to grow without any major technology changes or massive rewriteżs."]])]]]
 
 
 

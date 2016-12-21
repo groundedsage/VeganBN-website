@@ -38,7 +38,6 @@
 
 
 
-
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   LAYOUT DEFAULTS   ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,7 +52,7 @@
       :article
 
       ;; POSSIBLY REMOVE THESE AS DEFAULTS
-      :a
+      ;:a
      ; :span
       :main
       :nav
@@ -353,7 +352,7 @@
                           :font-weight 'normal}]
 
      [:h1 :h2 :h3 :h4 {:font-family 'bitter}]
-     [:p :span :ol {:font-family "Source Sans Pro"}]
+     [:p :span :ol :ul {:font-family "Source Sans Pro"}]
 
 
      [:.block-grey {:color 'white
@@ -370,9 +369,9 @@
        :align-self 'center
        :padding {:left (em 1.5)
                  :right (em 1.5)
-                 :top (em 3)
-                 :bottom (em 3)}}]
-     [:.extra-padding
+                 :top (em 4.5)
+                 :bottom (em 4.5)}}]
+     #_[:.extra-padding
       {:padding-top (em 4.5)
        :padding-bottom (em 4.5)}]
 
@@ -598,9 +597,74 @@
         :background-size "100% 0.05em"}
 
        [:&:focus {:outline 'none
-                  :background-color "#cef"}]]])))
+                  :background-color "#cef"}]]]
 
-[:.centre {:align-self 'center}]
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   CONSULTING PAGE   ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     [:.buffer-top {:margin-top (em 1.5)}]
+     [:.buffer-top-large {:margin-top (em 3)}]
+
+     [:.consulting-block {:margin-top (em -0.3)}]
+
+
+     [:.green-text {:color "#6def14"
+                    :letter-spacing (em 0.01)} ]
+
+     [:.centre {:align-self 'center}]
+     [:.services-align {:margin-left (em -0.2)}]
+
+     [:ul.service-list {:margin-left (rem -0.3125)}]
+     [:ul.service-list
+      [:li {:line-height (em 1.5)}]]
+
+
+     (at-media {:max-width (em 76.85)}
+               [:.home-component
+                [:h2 {:align-self 'center
+                      :margin-left (em -1)}]]
+
+               )
+
+     (at-media {:min-width (em 80)}
+
+               [:.consult-component
+                [:svg {:margin-left 0
+                       :height (em 15)
+                       :max-width (em 13)
+                       }]])
+
+     (at-media {:max-width (em 60)}
+               [:.center-to-60 {:align-self 'center}])
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   WEB & APP PAGE    ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+     (at-media {:min-width (em 60)}
+               [:.bump-left {:margin-right (em 1.5)}]
+               [:.four-up {:flex-direction 'row
+                           :flex-wrap 'wrap
+                           :justify-content 'space-around
+                           }])
+
+     (at-media {:min-width (em 60)}
+               [:.column-four {:flex-direction 'row
+                               :flex-wrap 'wrap
+                               :justify-content 'space-around
+                               :width "100%"
+                               :background 'blue}])
+
+
+
+
+
+     )))
+
 
 
 
@@ -612,3 +676,6 @@
                                         ;                    display: none;
                                         ;                    }
                                         ;}”
+
+
+
