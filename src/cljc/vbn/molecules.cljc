@@ -16,10 +16,21 @@
      [:.img-container (atom/blurb-image image alt-text)]
      [:div.image-title-text-cta
       [:h3 title]
-      (reduce conj [:section]
-              text
-              )
+      ;(reduce conj [:section])
+      text
       [:button [:span cta]]]]))
+
+(rum/defc blurb-title-second-veganism [content]
+  (let [{:keys [image alt-text title text cta]} content
+        text (conj [:div] text)]
+    [:div.blurb
+     [:.img-container (atom/blurb-image image alt-text)]
+     [:div.image-title-text-cta
+      [:h3 title]
+      text
+      [:button [:span cta]]]]))
+
+
 
 (rum/defc page-intro [& content]
   (conj [:div {:style {:align-items 'center}}]

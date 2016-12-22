@@ -25,7 +25,7 @@
   (molecule/blurb-title-second {:image "photos/nature.jpg"
                                    :alt-text "Waterfall in rainforest"
                                    :title "Sustainability"
-                                   :text [[:p "We all know we need to do something more, otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us."]
+                                   :text [:div [:p "We all know we need to do something more, otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us."]
                                           [:p "If you are someone who showers less, drives as little as possible and recycles religuously, or just someone looking to do a little more for the planet and your fellow human beings then veganism is a way of life for you to do this."]
 
                                           [:p "To find out more we highly suggest watching Cowspiracy. They also have an amazing infographic on their website."]]
@@ -34,7 +34,7 @@
    (molecule/blurb-title-second {:image "photos/watermelon.jpg"
                                    :alt-text "Child eating watermelon"
                                    :title "Nutrition"
-                                   :text [[:p "All around the world there are many top level athletes that hold world records and many more going vegan proving that plant sources of protein are sufficient and in many cases better than the alternative animal sources."]
+                                   :text [:div [:p "All around the world there are many top level athletes that hold world records and many more going vegan proving that plant sources of protein are sufficient and in many cases better than the alternative animal sources."]
                                           [:p "In addition to this there is many doctors and physicians that are treating patients with a 100% plant based diet."]
                                           [:p "If nutrition is a field that interests you we suggest spending some time on."]]
 
@@ -43,7 +43,7 @@
    (molecule/blurb-title-second {:image "photos/ethics.jpg"
                                    :alt-text  "Baby cow tagged and just another number waiting to be killed for food"
                                    :title "Ethics"
-                                   :text [[:p "If you are someone who cringes when you see someone kick a dog, cat or any other innocent animal. Someone who hates people who kill innocent animals for fun and enjoyment or someone who dislikes other cultures eating animals which are normally treated as pets such as dogs."]
+                                   :text [:div [:p "If you are someone who cringes when you see someone kick a dog, cat or any other innocent animal. Someone who hates people who kill innocent animals for fun and enjoyment or someone who dislikes other cultures eating animals which are normally treated as pets such as dogs."]
                                           [:p "If you still eat meat chances are you have never really thought too deeply about where that meat comes from. Which is fair enough as the thought of it makes us quickly shut out any deeper thinking to defend ourselves."]
                                           [:p "Melanie Joy is a psychologist who explains the psychology of eating meat and treating animals as objects that we own."]]
                                    :cta "Carnism.org"})

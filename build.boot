@@ -31,7 +31,7 @@
 
 
 
-(deftask cards []
+#_(deftask cards []
     (set-env! :resource-paths #(conj % "cards")
               :source-paths #(conj % "cards"))
     identity)
@@ -56,7 +56,7 @@
         (watch)
         (cljs-repl)
         (reload)
-        (cards)
+        ;(cards)
         (build)))
 
 

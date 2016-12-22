@@ -19,8 +19,14 @@
 
 
 (def brand-color "#00ff7f")
-(def brand-blue "#0d8ec1")
+(def brand-blue "#0000e0")
 (def brand-dark "#333D47")
+
+;; New Blue #0000B5
+;; Other Blue #0000e0
+;; #1F3A93 Looks good
+;; #205d86 a bit lighter
+;; Another #3a539b
 
 ;; New Green #6FDC6F
 
@@ -690,6 +696,8 @@
                [:.principles {:flex-direction 'row
                               :justify-content 'space-between}]
                [:.principle {:width "45%"}])
+
+     [:.pricing-options {:height (em 3)}]
 
 
 
