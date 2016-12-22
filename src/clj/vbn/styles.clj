@@ -27,6 +27,7 @@
   "#3a539b"
     )
 (def brand-dark "#333D47")
+(def cta-colour "#E6F14A")
 
 ;; New Blue #0000B5
 ;; Other Blue #0000e0
@@ -93,6 +94,10 @@
              :padding 0
              :max-width "100%"}]]
 
+     [:nav [:ul {:max-width (em 53)
+                 :width "100%"
+                 :align-self 'center}]]
+
 
      [:.page-padding {:margin {:left (rem 1.5)
                                :right (rem 1.5)}}]
@@ -155,18 +160,21 @@
               :font-family 'bitter
               :font-size (em 1)
               :display 'flex
-              :justify-content 'center}]]
+              :justify-content 'center
+              :color cta-colour
+              :letter-spacing (em 0.01)}]]
 
      ;; Custom button styles
 
-     [:button {:min-height (px 48)
-               :background-color 'none   ;MAY CHANGE
-               :border "solid black 3px"
+     [:button {:min-height (px 60)
+               :background-color brand-dark   ;MAY CHANGE
                :border-radius (px 10)}
 
-      [:&:hover :&:focus
-       {:background-color 'black
-        :color 'white}]]
+      [:&:hover
+       :&:focus
+       {:background-color cta-colour}
+       [:span {:color brand-dark
+               :font-weight 'bold}]]]
 
      [:.image-title-text-cta [:button {:margin-top 'auto}]]
 
@@ -703,7 +711,64 @@
                               :justify-content 'space-between}]
                [:.principle {:width "45%"}])
 
-     [:.pricing-options {:height (em 3)}]
+     [:.pricing-options {
+                         :border-style 'outset
+                         :border-width (em 0.4)
+                         :border-color brand-color
+                         :border-radius (em 0.5)
+                         :align-items 'center
+                         :padding (em 1)
+                         :background brand-dark
+                         :color 'white
+                         :width (em 19)}
+      [:h3 {:margin-top 0}]
+      ]
+     [:.pricing-features [:li {:line-height (em 1.5)}]]
+
+     [:.column-four
+      [:.inside-three {:max-width (em 19)}]]
+
+     [:.row {:flex-direction 'row}]
+     [:.circle {:background brand-dark
+                :border-radius "50%"
+                :width (em 8)
+                :height (em 8)
+                :border-width (em 0.4)
+                :border-style 'outset
+                :border-color brand-color
+                :color 'white
+                :align-items 'center
+                :justify-content 'center
+                }
+      [:h3 {:margin-top 0}]]
+
+     [:.initial-consult {:margin-bottom (em 3)
+                         :font-size (em 1.5)}]
+
+     [:input
+      :textarea {:margin-top (em 0.2)
+                 :min-height (px 48)
+                 :border-radius (em 0.2)
+                 :border-style 'solid
+                 :border-color brand-dark
+                 :padding (em 0.3)
+                 :font-size (rem 1)
+                 :border-width (rem 0.05)
+                 :max-width (rem 35)
+                 :background-color "#ADFFD6"
+                 }
+      [:&:focus
+       :&:hover {:background-color 'white
+                 :border-width (em 0.1)}]]
+     [:form
+      [:p {:flex-direction 'column
+           :display 'flex
+           }]]
+
+     [:.bump-area-height {:min-height (em 6)
+                          :max-width "100%"}]
+
+
 
 
 
@@ -713,6 +778,16 @@
 
      [:.about-strong {:margin-right (em 0.2)
                       :letter-spacing (em 0.05)}]
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   COMMUNITY PAGE    ;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     [:.community-box {:padding (em 2)
+                       :border-style 'solid
+                       :border-width (em 0.2)
+                       :border-radius (em 0.5)
+                       :border-color brand-dark}]
 
 
 

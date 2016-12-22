@@ -10,7 +10,7 @@
     [:p "To foster the vegan business community we host two different networking meetups every month."]
     [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
 
-   [:div
+   [:div.center.community-box
     [:div
      [:span "99 of members"]
      [:span "0 Meetups this month"]]

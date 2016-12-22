@@ -164,9 +164,11 @@
 
 
 
-
-
-
+(rum/defc dollar []
+  [:svg {:height "1em"
+                   :width "1em"
+                   :viewBox "0 0 53 98"}
+   [:use {:xlink-href "/svg/dollar.svg#dollar"}]])
 
 
 

@@ -50,6 +50,8 @@
 
 
 
+   [:div.full-width.block-green
+    [:div.inside-block
    (atom/h3 "How does this help my business?")
    [:p "By doing some research on each of the 3 dimensions of veganism. You will be more capable of handling a vegan customer and adapting to current world trends. Vegans are a chatty bunch, they stand together and are very strong willed. In a world where people are more connected and brands are defined by their customers. Vegans with either burn you or praise you. We are here to make sure they praise you. It’s better for you business and it’s better for the vegans. We love it when everyone wins!
-If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]])
+If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]]]])

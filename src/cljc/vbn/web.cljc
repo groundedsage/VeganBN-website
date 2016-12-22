@@ -88,7 +88,7 @@ technology the web has to offer."]
        [:h3 "Designed to Evolve"]
        [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
 "]
-        [:p "Our system allows your business to grow without any major technology changes or massive rewriteżs."]])]]]]]
+        [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]])]]]]]
 
 
 
@@ -164,11 +164,16 @@ technology the web has to offer."]
    [:div.center-items
     [:h2 "What's the cost?"]
     [:p "Everyone has different needs so it will almost always end up with a custom quote. However in the interest of saving both of us time we have provided you with prices for a variety of general website combinations. These prices are based on a typical website and conditions apply with respect to upkeep fees. Prices are introductory and will change in the future."]
-    [:h3 "Initial Consult"]
+
+
     [:p "Our initial consultation covers up to two hours discussion regarding your needs and any preliminary designing. We offer so much value it is impossible for us to do this for free. We provide a detailed info sheet following the initial consult and any designs done will also be provided to you in PDF format. This means you can easily take all that value to another studio of give it to a friend doing your website."]
     [:p "If you still love us and want to continue. Rest assured that this money goes towards your final payment."]
 
+     [:div.row.circle (atom/dollar) [:h3 "250"]]
+
+    [:span.initial-consult "Initial Consult"]
     ]
+
 
 
 
@@ -176,9 +181,11 @@ technology the web has to offer."]
     [:div.column-four
      [:div.inside-three
       [:div.pricing-options
-       [:h3 "2500"]
+       [:div.row
+       (atom/dollar)
+       [:h3 "2500"]]
        [:span "Simple Site"]]
-      [:ul
+      [:ul.pricing-features
        [:li "Without a CMS"]
        [:li "Custom Site Design"]
        [:li "Custom domain that you own"]
@@ -187,9 +194,11 @@ technology the web has to offer."]
 
      [:div.inside-three
       [:div.pricing-options
-       [:h3 "3300"]
+       [:div.row
+        (atom/dollar)
+       [:h3 "3300"]]
        [:span "Dynamic Site"]]
-      [:ul
+      [:ul.pricing-features
        [:li "Advanced CMS"]
        [:li "Custom Site Design"]
        [:li "Custom domain that you own"]
@@ -199,9 +208,11 @@ technology the web has to offer."]
     [:div.column-four
      [:div.inside-three
       [:div.pricing-options
-       [:h3 "4300"]
-       [:span "Dynamic Site"]]
-      [:ul
+       [:div.row
+        (atom/dollar)
+       [:h3 "4300"]]
+       [:span "Dynamic Site +"]]
+      [:ul.pricing-features
        [:li "Advanced CMS"]
        [:li "Custom Site Design"]
        [:li "Custom domain that you own"]
@@ -209,24 +220,60 @@ technology the web has to offer."]
        [:li "Never pay any upkeep fees"]]]
 
      [:div.inside-three
-      [:div.pricing-options]
-      [:h3 "4000"]
-      [:span "Dynamic Site"]
-                                        ;[:span "+"]
-      [:span "E-commerce"]
-      [:ul
+      [:div.pricing-options
+      [:div.row
+       (atom/dollar)
+      [:h3 "4000"]]
+      [:span "Dynamic Site + E-commerce"]]
+      [:ul.pricing-features
        [:li "Advanced CMS"]
        [:li "Custom Site Design"]
        [:li "Custom domain that you own"]
        [:li "You own the site code"]
-      #_[:li "Upkeep starts at 2% of transactions with a minimum of $10 (excluding fees from your choice of payment gateway).
-Non-profits, schools or crowdfunding projects are exempt from the minimum $10 and the fee is reduced to 1.5%. "]]]]]
+       [:li "Upkeep starts at 2% of transactions with a minimum of 10 dollars (excluding fees from your choice of payment gateway).
+Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dollars and the fee is reduced to 1.5%. "]]]]]
 
 
    [:div.block-green.full-width
     [:div.inside-block
      [:h2 "What are you waiting for?"]
-     [:button "Send"]]]
+     [:div
+      {:dangerouslySetInnerHTML
+       {:__html
+        "<form name=\"contact\" netlify>
+<p>
+<label>Your Name:</label>
+<input type=\"text\" name=\"name\"
+</p>
+<p>
+<label>Your Email:</label>
+<input type=\"email\">
+</p>
+<p>
+<label>Message</label>
+<textarea class=\"bump-area-height\" name=\"message\"></textarea>
+<p>
+<button>Send</button>
+</p>
+</form>"}}]
+
+     #_[:form {:name "web"
+             "netlify" true
+             :allow-full-screen true
+             :random true}
+      [:p
+       [:label "Your Name:"]
+       [:input {:type "text"
+                :name "name"
+                :allow-full-screen true}]]
+      [:p
+       [:label "Your Email"]
+       [:input {:type "email"
+                :name "email"}]]
+      [:p
+       [:label "Message"]
+       [:textarea  {:name "message"}]]
+      [:button "Send"]]]]
 
 
 
