@@ -176,7 +176,7 @@ technology the web has to offer."]
     [:div.column-four
      [:div.inside-three
       [:div.pricing-options
-       [:h3 "$2500"]
+       [:h3 "2500"]
        [:span "Simple Site"]]
       [:ul
        [:li "Without a CMS"]

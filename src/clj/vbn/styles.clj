@@ -19,7 +19,13 @@
 
 
 (def brand-color "#00ff7f")
-(def brand-blue "#0000e0")
+(def brand-blue
+ ; "#0000e0"
+ ; "#0000B5"
+ ; "#1F3A93"
+ ; "#205d86"
+  "#3a539b"
+    )
 (def brand-dark "#333D47")
 
 ;; New Blue #0000B5
@@ -234,7 +240,7 @@
      (defpseudoclass not)
      (defclass order-middle)
 
-     [:nav {:background-color "#0D8EC1"}]
+     [:nav {:background-color brand-blue}]
 
      ;; Mobile Styles
 
