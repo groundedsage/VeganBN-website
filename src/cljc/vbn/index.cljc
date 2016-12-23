@@ -15,7 +15,7 @@
    [:span "Fostering a better world through business"]])
 
 (rum/defc sign-up []
-  [:div.sign-up-box.full-width.buffer-top-large
+  [:div#sign-up.sign-up-box.full-width.buffer-top-large
    [:div.inside-block.center-items
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]
     [:div.form-width
