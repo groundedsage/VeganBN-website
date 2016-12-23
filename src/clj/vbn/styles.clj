@@ -875,6 +875,24 @@
 
 
 
+      ;;SIGNUP FORM
+      [:#mc-embedded-subscribe {:background-color brand-color
+                                :border-radius (em 0.4)
+                                :border-width (em 0.2)
+                                :padding (em 0.8)
+                                :border-color brand-dark
+                                :color brand-dark
+                                :font-weight 'bold
+                                :margin-top (em -1)}
+       [:&:hover
+        :&:focus {:background brand-dark
+                  :border-color brand-color
+                  :color brand-color}]]
+
+      [:.sign-up-label {:color (lighten brand-blue 40)}]
+
+
+
 
      )))
 
