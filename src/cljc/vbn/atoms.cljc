@@ -85,19 +85,19 @@
 (rum/defc strategy []
   [:svg {:height "7em"
          :width "7em"
-         :viewBox "0 0 90 76"}
+         :viewBox "0 0 200 188"}
    [:use {:xlink-href "/svg/strategy.svg#strategy"}]])
 
 (rum/defc digital []
   [:svg {:height "7em"
          :width "7em"
-         :viewBox "0 0 90 76"}
+         :viewBox "0 0  136 164"}
    [:use {:xlink-href "/svg/digital.svg#digital"}]])
 
 (rum/defc physical []
   [:svg {:height "7em"
          :width "7em"
-         :viewBox "0 0 80 76"}
+         :viewBox "0 0 170 163"}
    [:use {:xlink-href "/svg/print.svg#print"}]])
 
 (rum/defc information-architecture []

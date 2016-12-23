@@ -25,17 +25,17 @@
    [:div.values-section
     [:h3 "Values"]
     [:ol.values
-     [:li [:span "Empathy"] [:p "Express empathy and kindness to all living things."]]
-     [:li [:span "Be Inclusive"] [:p "Everyone has their story, their journey, a right to be hear and a right to the truth."]]
-     [:li [:span "Positivity"] [:p "Positivity creates possibilities"]]
+     [:li [:span "Mindfulness"] [:p "Consideration of actions and the impact is has. Consideration of the journey other people are on and where they may have come from."]]
+     [:li [:span "Inclusivity"] [:p "Always include others who wish to be included and be inviting. Always collaborate when an opportunity presents itself. Unite efforts because the whole is always greater than the sum of it’s parts."]]
+     [:li [:span "Positivity"] [:p "Always strive for a more positive perspective on all situations. Positivity creates possibilities beyond our wildest imaginations. Avoid the use of negative words and phrases."]]
      [:li [:span "Kaizen"] [:p "Solve small problems and improve continuously.
 A big problem is nothing other than a combination of small problems"]]
-     [:li [:span "Quality"] [:p "Quality is always better than quantity"]]
+     [:li [:span "Now"] [:p "The best time to do anything is now. Think deeply act swiftly. Trust intuition. Draw on past experiences and be thoughtful while acting in the now. The past and failures is for learning. The future is the next now."]]
      [:li [:span "Transparency"] [:p "Be open about process and clear in communitcation"]]
 
      [:li [:span "Collaboration"] [:p "Unite efforts because teh whole is always greater than the sum of it's parts."]]
 
-     [:li [:span "On the shelf or off the shelf"] [:p "WILL BE CHANGING THIS ONE"]]
+     [:li [:span "Passion"] [:p "Be driven by a higher purpose and believe everything you do has a postivite impact on the world."]]
 
      [:li [:span "Impact"] [:p "Always consider both the local and global impact"]]
-     [:li [:span "Inspire"] [:p "Be inspired and inspire others in evry way imaginable"]]]]])
+     [:li [:span "Truth"] [:p "Be transparent and open in communication. For clarity communicate with simple words when possible and explain things as simply as possible. Always be happy to repeat what has been spoken. Be honest."]]]]])
