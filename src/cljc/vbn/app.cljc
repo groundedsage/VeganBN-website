@@ -25,7 +25,11 @@
 
 (rum/defc skip-to-main []
   [:a.skip-to-main {:href "#main"}
-   [:span "Skip to main content"]])
+   [:div 
+    [:div.skip-button
+     [:span "Skip to main content"]
+     [:span.skip-enter "Press enter to skip to main content"]]
+    [:span.skip-continue "Tab or Click anywhere to continue"]]])
 
 (rum/defc main [content]
   "Enters content into main container with id=\"main\" "
@@ -45,7 +49,7 @@
                      ["consulting/"  [[ "index.html" :consulting]
                                       ["web.html" :web]]]
                      ["community.html" :community]
-                     ;["devcards.html" :devcards]
+                                        ;["devcards.html" :devcards]
                      ]])
                                         ;[true :not-found]]])
 
@@ -66,7 +70,7 @@
     [:li.order-middle (link (path-for my-routes :index)
                             [:span {:aria-hidden true} "Home"]
                             [:svg.home {:alt "VBN Logo Home"
-                                        :viewBox "0 0 158 172"}
+                                        :viewBox "-20 0 198 212"}
                              [:use {:xlink-href "/logo.svg#logo"}]])]
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
     [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
@@ -74,12 +78,27 @@
     [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]
     ]])
 
+(rum/defc footer []
+  [:footer 
+   [:div.block-blue.full-width
+    [:div.inside-block
+
+     [:h2 "Contact Us"]
+     [:p "We have a lot of exciting plans which will be implemented in 2017. If you have any queries or would like to collaborate please send us an email"]
+     [:p "Additionally if you have any skills which fit the services listed on our "
+      (link (path-for my-routes :consulting)[:span.footer-link "consulting"]) " page and would like to join our team contact us with a cover letter, along with a resume and/or portfolio of your work"]
+     [:p  [:b "Email: "]
+      [:a {:href "mailto:wade@veganbusinessnetwork"}
+       "wade@veganbusinessnetwork.org"]]]]]
+  )
+
 
 (rum/defc page-wrapper [content]
   [:div
    (skip-to-main)
    (navigation)
    content
+   (footer)
    ])
 
 (rum/defc home []
@@ -125,8 +144,8 @@
 
 
          :devcards   (devcards/init)))))
-         ;; not found, basically
-         ;(home)))))
+;; not found, basically
+                                        ;(home)))))
 
 #?(:cljs
    (defn init []

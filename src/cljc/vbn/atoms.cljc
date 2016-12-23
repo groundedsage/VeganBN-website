@@ -5,7 +5,7 @@
   [:h1 text])
 
 (rum/defc h1-home [text]
-  [:h1.h1-home.line-under text])
+  [:h1.h1-home.line-under.buffer-top text])
 
 (rum/defc h2 [text]
   [:h2 text])
@@ -35,6 +35,7 @@
 (rum/defc blurb-image [src alt-text]
   [:img.blurb-image {:src src
                      :alt alt-text}])
+
 
 
 (rum/defc circle-icon [name]

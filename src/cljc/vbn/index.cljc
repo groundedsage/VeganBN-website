@@ -4,6 +4,7 @@
             [vbn.molecules :as molecule]
             [vbn.organisms :as organism]))
 
+
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   HOME PAGE SPECIFIC   ;;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -14,13 +15,13 @@
    [:span "Fostering a better world through business"]])
 
 (rum/defc sign-up []
-  [:div.sign-up-box.full-width
+  [:div.sign-up-box.full-width.buffer-top-large
    [:div.inside-block
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]]])
 
 
 (rum/defc content []
-  [:main#main
+  [:main#main.footer-buffer
    (banner-image)
    (atom/h1-home "Vegan Business Network")
    (organism/bigger-than-business)
@@ -28,7 +29,7 @@
    (organism/at-our-core)
    (sign-up)
    (organism/what-we-do)
-   [:a {:href "/devcards.html"} "Devcards"]
+   ;[:a {:href "/devcards.html"} "Devcards"]
    ])
 
 

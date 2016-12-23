@@ -4,7 +4,7 @@
             [vbn.molecules :as molecule]))
 
 (rum/defc content []
-  [:main#main
+  [:main#main.footer-buffer
    (molecule/page-intro
     [:h1 "About"]
     [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])

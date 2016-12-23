@@ -161,18 +161,17 @@ technology the web has to offer."]
         [:p "You can rest easy knowing you’ve made the best choice."])]]
      ]]
 
-   [:div.center-items
+   [:div.center-items.buffer-top-large
     [:h2 "What's the cost?"]
     [:p "Everyone has different needs so it will almost always end up with a custom quote. However in the interest of saving both of us time we have provided you with prices for a variety of general website combinations. These prices are based on a typical website and conditions apply with respect to upkeep fees. Prices are introductory and will change in the future."]
 
+    [:div.row.circle (atom/dollar) [:h3 "250"]]
+    [:span.initial-consult "Initial Consult"]
+
 
     [:p "Our initial consultation covers up to two hours discussion regarding your needs and any preliminary designing. We offer so much value it is impossible for us to do this for free. We provide a detailed info sheet following the initial consult and any designs done will also be provided to you in PDF format. This means you can easily take all that value to another studio of give it to a friend doing your website."]
-    [:p "If you still love us and want to continue. Rest assured that this money goes towards your final payment."]
+    [:p "If you still love us and want to continue. Rest assured that this money goes towards your final payment."]]
 
-     [:div.row.circle (atom/dollar) [:h3 "250"]]
-
-    [:span.initial-consult "Initial Consult"]
-    ]
 
 
 
@@ -235,9 +234,9 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
 
 
    [:div.block-green.full-width
-    [:div.inside-block
+    [:div.inside-block.center-items
      [:h2 "What are you waiting for?"]
-     [:div
+     [:div.form-width
       {:dangerouslySetInnerHTML
        {:__html
         "<form name=\"contact\" netlify>
@@ -250,10 +249,10 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
 <input type=\"email\">
 </p>
 <p>
-<label>Message</label>
+<label>Let us know what your dreaming up</label>
 <textarea class=\"bump-area-height\" name=\"message\"></textarea>
 <p>
-<button>Send</button>
+<button><span>Send</span></button>
 </p>
 </form>"}}]
 

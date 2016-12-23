@@ -1,6 +1,25 @@
 (ns vbn.molecules
   (:require [rum.core :as rum]
-            [vbn.atoms :as atom] ))
+            [vbn.atoms :as atom]
+
+            [bidi.bidi :as b :refer [match-route path-for]]
+            #?(:cljs [vbn.navigation :refer [link current-token]])
+            ))
+
+
+;; define clojure version of link
+#?(:clj (rum/defc link [link & content]
+          [:a {:href link} content]))
+
+(def my-routes ["/" [[#{"" "index.html"} :index]
+                     ["veganism.html" :veganism]
+                     ["about-us.html" :about-us]
+                     ["consulting/"  [[ "index.html" :consulting]
+                                      ["web.html" :web]]]
+                     ["community.html" :community]
+                                        ;["devcards.html" :devcards]
+                     ]])
+                                        ;[true :not-found]]])
 
 
 (rum/defc our-definition [content]
@@ -11,24 +30,48 @@
 
 
 (rum/defc blurb-title-second [content]
-  (let [{:keys [image alt-text title text cta]} content]
+  (let [{:keys [image alt-text title text cta cta-key]} content]
     [:div.blurb
      [:.img-container (atom/blurb-image image alt-text)]
      [:div.image-title-text-cta
       [:h3 title]
-      ;(reduce conj [:section])
+                                        ;(reduce conj [:section])
       text
-      [:button [:span cta]]]]))
+      (cond
+        (string? cta-key) [:a.button-link {:href cta-key} [:button
+                                               [:span cta]]]
+        :else (link (path-for my-routes cta-key)
+                    [:button [:span cta]]))
+
+      #_[:button [:span cta]]]]))
 
 (rum/defc blurb-title-second-veganism [content]
-  (let [{:keys [image alt-text title text cta]} content
+  (let [{:keys [image alt-text title text cta cta-key]} content
         text (conj [:div] text)]
     [:div.blurb
      [:.img-container (atom/blurb-image image alt-text)]
      [:div.image-title-text-cta
       [:h3 title]
       text
-      [:button [:span cta]]]]))
+      #_(if (= :cta-key :sign-up)
+        [:button {:href "#sign-up"}
+         [:span cta]]
+        (link (path-for my-routes cta-key)
+              [:button [:span cta]]))]]))
+
+#_(rum/defc navigation []
+  [:nav
+   [:ul
+    [:li.order-middle (link (path-for my-routes :index)
+                            [:span {:aria-hidden true} "Home"]
+                            [:svg.home {:alt "VBN Logo Home"
+                                        :viewBox "0 0 158 172"}
+                             [:use {:xlink-href "/logo.svg#logo"}]])]
+    [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
+    [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
+    [:li.order-end (link (path-for my-routes :community) [:span "Community"])]
+    [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]
+    ]])
 
 
 

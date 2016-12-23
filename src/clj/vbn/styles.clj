@@ -8,6 +8,7 @@
             [garden.units :refer [rem
                                   em
                                   px]]
+            [garden.color :refer [lighten]]
             [garden.selectors :as s :refer [attr=
                                             attr-starts-with
                                             attr-matches
@@ -27,7 +28,7 @@
   "#3a539b"
     )
 (def brand-dark "#333D47")
-(def cta-colour "#E6F14A")
+(def cta-colour  "#00FFFF")
 
 ;; New Blue #0000B5
 ;; Other Blue #0000e0
@@ -44,7 +45,8 @@
 
     (body
      ;; Remove this later
-     {:color "#050709"}
+     {:color "#050709"
+      }
 
      [:h6 {:font-size "calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25))"}]
 
@@ -155,26 +157,31 @@
 
 
      ;; Remove default styling of button
-     [:button {:padding 0}
+     [:button {:padding 0
+               :border-style 'solid
+               :border-color brand-dark
+               :border-width (em 0.2)
+
+               }
       [:span {:width "100%"
               :font-family 'bitter
               :font-size (em 1)
               :display 'flex
               :justify-content 'center
-              :color cta-colour
+              :color brand-dark
+              :font-weight 'bold
               :letter-spacing (em 0.01)}]]
 
      ;; Custom button styles
 
      [:button {:min-height (px 60)
-               :background-color brand-dark   ;MAY CHANGE
+               :background-color cta-colour   ;MAY CHANGE
                :border-radius (px 10)}
 
       [:&:hover
        :&:focus
-       {:background-color cta-colour}
-       [:span {:color brand-dark
-               :font-weight 'bold}]]]
+       {:background-color brand-dark}
+       [:span {:color cta-colour}]]]
 
      [:.image-title-text-cta [:button {:margin-top 'auto}]]
 
@@ -207,7 +214,8 @@
        :height (px 0)
        :font-size (em 2)
        :width "100%"
-       :color 'black
+       :color brand-dark
+       :font-weight 'bold
        :background-color brand-color
        :justify-content 'space-around
        :align-items 'center
@@ -216,16 +224,33 @@
        :will-change 'height
        :transition-property 'height
        :transition-duration "0.2s"
-       :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"}
+       :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+       :display 'flex
+       }
 
       [:span {:display 'none}]
+      [:.skip-enter
+       :.skip-continue {:font-weight 'normal
+                        :font-size (em 0.8)}]
 
+      [:.skip-continue {:margin-top (em 1)}]
+      [:.skip-button {:background 'white
+                      }]
 
-      [:&:focus {;:right 'auto
-                 :height (px 150)
-                 :outline 'none}
-       [:span {:display 'flex}]]]
-
+      [:&:focus {:height 'auto
+                 :outline 'none
+                 :padding (em 2)
+                 :box-shadow (str "0 0.1em 0.5em" brand-dark)
+                 }
+       [:.skip-button {:padding (em 1)
+                       :border-style 'solid
+                       :border-width (em 0.2)
+                       :border-radius (em 0.5)
+                       :border-color brand-dark
+                       }]
+       [:span {:display 'flex
+               :align-self 'center
+               :line-height (em 1.5)}]]]
 
 
      [:main {:width "100vw"
@@ -499,6 +524,8 @@
                      :background-color 'grey
                      :border-radius (px 10)}]
 
+     [:.blurb {:margin-top (rem 2)}]
+
 
 
 
@@ -587,7 +614,7 @@
 
       ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE
       ;; In addition when focused the text shadow is visible when adding a background
-      [:a
+      #_[:a
        {:text-decoration 'none
         :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
         :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
@@ -597,6 +624,7 @@
 
        [:&:focus {:outline 'none
                   :background-color "#cef"}]]]
+     [:.footer-link {:text-decoration 'underline}]
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -609,7 +637,7 @@
      [:.consulting-block {:margin-top (em -0.3)}]
 
 
-     [:.green-text {:color "#6def14"
+     [:.green-text {:color brand-color
                     :letter-spacing (em 0.01)} ]
 
      [:.centre {:align-self 'center}]
@@ -659,12 +687,11 @@
                            :justify-content 'space-around
                            }])
 
-     (at-media {:min-width (em 60)}
-               [:.column-four {:flex-direction 'row
-                               :flex-wrap 'wrap
-                               :justify-content 'space-around
-                               :width "100%"
-                               }])
+     [:.column-four {:flex-direction 'row
+                     :flex-wrap 'wrap
+                     :justify-content 'space-around
+                     :width "100%"
+                     }]
 
      (at-media {:min-width (rem 120)}
                [:.four-up {:flex-wrap 'no-wrap}]
@@ -697,6 +724,8 @@
                [:.inside-three {:padding (em 1)
                                 :margin-top 0
                                 :max-width (em 16)}])
+
+     [:.inside-three {:margin-top (rem 2)}]
 
      [:.drop-top-padding {:padding-top 0}]
      [:.make-top-margin {:margin-top (rem 1.5)}]
@@ -742,7 +771,7 @@
                 }
       [:h3 {:margin-top 0}]]
 
-     [:.initial-consult {:margin-bottom (em 3)
+     [:.initial-consult {
                          :font-size (em 1.5)}]
 
      [:input
@@ -764,9 +793,14 @@
       [:p {:flex-direction 'column
            :display 'flex
            }]]
+     [:label {:color brand-dark}]
 
      [:.bump-area-height {:min-height (em 6)
                           :max-width "100%"}]
+
+     [:.form-width {:width "100%"}]
+     (at-media {:min-width (em 60)}
+               [:.form-width {:max-width (em 35)}])
 
 
 
@@ -787,7 +821,57 @@
                        :border-style 'solid
                        :border-width (em 0.2)
                        :border-radius (em 0.5)
-                       :border-color brand-dark}]
+                       :border-color brand-dark
+                       :width "100%"
+                       :max-width (em 35)
+                       }]
+
+     [:.meetup-logo {:width (rem 5)
+                     :height (rem 5)
+                     :margin-right (rem 2)}]
+
+
+     (def meetup-red "#ED1C40")
+     [:#meetup-button {:background-color meetup-red
+                       :border-radius 0
+                       :border-width (em 0.4)
+                       :border-color 'white
+                       :padding (em 1)}
+      [:span {:color 'white
+              :font-weight 'normal}]
+
+      [:&:hover
+       :&:focus {:background 'white
+                 :border-width (em 0.4)
+                 :border-color meetup-red}
+       [:span {:color 'black}]]]
+     [:.meetup-text {:flex-direction 'row
+                     :flex-wrap 'wrap}]
+     [:#meetup-text-group {:margin-top 0
+                           :justify-content 'center
+                           :letter-spacing (em 0.02)}]
+     [:.meetup-num {:width (em 2)}]
+
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   VEGANISM PAGE    ;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     [:.dimension-buffer {:margin-top (rem 4.5)}]
+
+      [:a [:button {:width "100%"}]]
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;;;;;;;;;   FOOTER     ;;;;;;;;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+      [:.footer-buffer {:margin-bottom (em 6)}]
+
+      [:footer
+       [:b {:margin-right (em 0.5)}]
+       [:a {:text-decoration 'underline}]]
 
 
 
