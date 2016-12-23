@@ -182,7 +182,7 @@ technology the web has to offer."]
       [:div.pricing-options
        [:div.row
        (atom/dollar)
-       [:h3 "2500"]]
+       [:h3 "3000"]]
        [:span "Simple Site"]]
       [:ul.pricing-features
        [:li "Without a CMS"]
@@ -195,7 +195,7 @@ technology the web has to offer."]
       [:div.pricing-options
        [:div.row
         (atom/dollar)
-       [:h3 "3300"]]
+       [:h3 "3800"]]
        [:span "Dynamic Site"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -209,7 +209,7 @@ technology the web has to offer."]
       [:div.pricing-options
        [:div.row
         (atom/dollar)
-       [:h3 "4300"]]
+       [:h3 "4800"]]
        [:span "Dynamic Site +"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -222,7 +222,7 @@ technology the web has to offer."]
       [:div.pricing-options
       [:div.row
        (atom/dollar)
-      [:h3 "4000"]]
+      [:h3 "4500"]]
       [:span "Dynamic Site + E-commerce"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
