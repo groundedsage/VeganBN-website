@@ -25,8 +25,8 @@
  ; "#0000B5"
  ; "#1F3A93"
  ; "#205d86"
-  "#3a539b"
-    )
+  "#3a539b")
+
 (def brand-dark "#333D47")
 (def cta-colour  "#00FFFF")
 
@@ -45,8 +45,8 @@
 
     (body
      ;; Remove this later
-     {:color "#050709"
-      }
+     {:color "#050709"}
+
 
      [:h6 {:font-size "calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25))"}]
 
@@ -160,9 +160,9 @@
      [:button {:padding 0
                :border-style 'solid
                :border-color brand-dark
-               :border-width (em 0.2)
+               :border-width (em 0.2)}
 
-               }
+
       [:span {:width "100%"
               :font-family 'bitter
               :font-size (em 1)
@@ -225,8 +225,8 @@
        :transition-property 'height
        :transition-duration "0.2s"
        :transition-timing-function "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
-       :display 'flex
-       }
+       :display 'flex}
+
 
       [:span {:display 'none}]
       [:.skip-enter
@@ -234,20 +234,20 @@
                         :font-size (em 0.8)}]
 
       [:.skip-continue {:margin-top (em 1)}]
-      [:.skip-button {:background 'white
-                      }]
+      [:.skip-button {:background 'white}]
+
 
       [:&:focus {:height 'auto
                  :outline 'none
                  :padding (em 2)
-                 :box-shadow (str "0 0.1em 0.5em" brand-dark)
-                 }
+                 :box-shadow (str "0 0.1em 0.5em" brand-dark)}
+
        [:.skip-button {:padding (em 1)
                        :border-style 'solid
                        :border-width (em 0.2)
                        :border-radius (em 0.5)
-                       :border-color brand-dark
-                       }]
+                       :border-color brand-dark}]
+
        [:span {:display 'flex
                :align-self 'center
                :line-height (em 1.5)}]]]
@@ -422,11 +422,11 @@
                  :top (em 4.5)
                  :bottom (em 4.5)}}]
      #_[:.extra-padding
-      {:padding-top (em 4.5)
-       :padding-bottom (em 4.5)}]
+        {:padding-top (em 4.5)
+         :padding-bottom (em 4.5)}]
 
 
-   
+
 
 
 
@@ -615,15 +615,15 @@
       ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE
       ;; In addition when focused the text shadow is visible when adding a background
       #_[:a
-       {:text-decoration 'none
-        :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
-        :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
-        :background-repeat "repeat-x"
-        :background-position "bottom 0.05em center"
-        :background-size "100% 0.05em"}
+         {:text-decoration 'none
+          :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
+          :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
+          :background-repeat "repeat-x"
+          :background-position "bottom 0.05em center"
+          :background-size "100% 0.05em"}
 
-       [:&:focus {:outline 'none
-                  :background-color "#cef"}]]]
+         [:&:focus {:outline 'none
+                    :background-color "#cef"}]]]
      [:.footer-link {:text-decoration 'underline}]
 
 
@@ -638,7 +638,7 @@
 
 
      [:.green-text {:color brand-color
-                    :letter-spacing (em 0.01)} ]
+                    :letter-spacing (em 0.01)}]
 
      [:.centre {:align-self 'center}]
      [:.services-align {:margin-left (em -0.2)}]
@@ -655,24 +655,24 @@
      (at-media {:max-width (em 76.85)}
                [:.home-component
                 [:h2 {:align-self 'center
-                      :margin-left (em -1)}]]
+                      :margin-left (em -1)}]])
 
-               )
+
 
      (at-media {:min-width (em 80)}
 
                [:.consult-component
                 [:svg {:margin-left 0
                        :height (em 15)
-                       :max-width (em 13)
-                       }]])
+                       :max-width (em 13)}]])
+
 
      (at-media {:max-width (em 60)}
                [:.center-to-60 {:align-self 'center}])
 
      (at-media {:min-width (rem 120)}
                [:.bump-width {:max-width (rem 110)}
-                [:.inside-three {:font-size (rem 0.8)}] ])
+                [:.inside-three {:font-size (rem 0.8)}]])
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -684,14 +684,14 @@
                [:.bump-left {:margin-right (em 1.5)}]
                [:.four-up {:flex-direction 'row
                            :flex-wrap 'wrap
-                           :justify-content 'space-around
-                           }])
+                           :justify-content 'space-around}])
+
 
      [:.column-four {:flex-direction 'row
                      :flex-wrap 'wrap
                      :justify-content 'space-around
-                     :width "100%"
-                     }]
+                     :width "100%"}]
+
 
      (at-media {:min-width (rem 120)}
                [:.four-up {:flex-wrap 'no-wrap}]
@@ -702,8 +702,8 @@
 
      [:.three-up-six
       [:svg
-       {:align-self 'center}]
-      ]
+       {:align-self 'center}]]
+
 
      [:.buffer-left {:margin-left (em 1.5)}]
 
@@ -750,8 +750,8 @@
                          :background brand-dark
                          :color 'white
                          :width (em 19)}
-      [:h3 {:margin-top 0}]
-      ]
+      [:h3 {:margin-top 0}]]
+
      [:.pricing-features [:li {:line-height (em 1.5)}]]
 
      [:.column-four
@@ -767,8 +767,8 @@
                 :border-color brand-color
                 :color 'white
                 :align-items 'center
-                :justify-content 'center
-                }
+                :justify-content 'center}
+
       [:h3 {:margin-top 0}]]
 
      [:.initial-consult {
@@ -784,15 +784,15 @@
                  :font-size (rem 1)
                  :border-width (rem 0.05)
                  :max-width (rem 35)
-                 :background-color "#ADFFD6"
-                 }
+                 :background-color "#ADFFD6"}
+
       [:&:focus
        :&:hover {:background-color 'white
                  :border-width (em 0.1)}]]
      [:form
       [:p {:flex-direction 'column
-           :display 'flex
-           }]]
+           :display 'flex}]]
+
      [:label {:color brand-dark}]
 
      [:.bump-area-height {:min-height (em 6)
@@ -823,12 +823,13 @@
                        :border-radius (em 0.5)
                        :border-color brand-dark
                        :width "100%"
-                       :max-width (em 35)
-                       }]
+                       :max-width (em 35)}]
+
 
      [:.meetup-logo {:width (rem 5)
                      :height (rem 5)
-                     :margin-right (rem 2)}]
+                     :margin-right (rem 2)
+                     :margin-top (rem 1)}]
 
 
      (def meetup-red "#ED1C40")
@@ -852,6 +853,8 @@
                            :letter-spacing (em 0.02)}]
      [:.meetup-num {:width (em 2)}]
 
+     [:.wrap {:flex-wrap 'wrap}]
+
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -860,41 +863,41 @@
 
      [:.dimension-buffer {:margin-top (rem 4.5)}]
 
-      [:a [:button {:width "100%"}]]
+     [:a [:button {:width "100%"}]]
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   FOOTER     ;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-      [:.footer-buffer {:margin-bottom (em 6)}]
+     [:.footer-buffer {:margin-bottom (em 6)}]
 
-      [:footer
-       [:b {:margin-right (em 0.5)}]
-       [:a {:text-decoration 'underline}]]
+     [:footer
+      [:b {:margin-right (em 0.5)}]
+      [:a {:text-decoration 'underline}]]
 
 
 
       ;;SIGNUP FORM
-      [:#mc-embedded-subscribe {:background-color brand-color
-                                :border-radius (em 0.4)
-                                :border-width (em 0.2)
-                                :padding (em 0.8)
-                                :border-color brand-dark
-                                :color brand-dark
-                                :font-weight 'bold
-                                :margin-top (em -1)}
-       [:&:hover
-        :&:focus {:background brand-dark
-                  :border-color brand-color
-                  :color brand-color}]]
+     [:#mc-embedded-subscribe {:background-color brand-color
+                               :border-radius (em 0.4)
+                               :border-width (em 0.2)
+                               :padding (em 0.8)
+                               :border-color brand-dark
+                               :color brand-dark
+                               :font-weight 'bold
+                               :margin-top (em -1)}
+      [:&:hover
+       :&:focus {:background brand-dark
+                 :border-color brand-color
+                 :color brand-color}]]
 
-      [:.sign-up-label {:color (lighten brand-blue 40)}]
-
-
+     [:.sign-up-label {:color (lighten brand-blue 40)}])))
 
 
-     )))
+
+
+
 
 
 
@@ -907,6 +910,3 @@
                                         ;                    display: none;
                                         ;                    }
                                         ;}”
-
-
-

@@ -65,8 +65,8 @@
     [:li.order-middle (link (path-for my-routes :index)
                             [:span {:aria-hidden true} "Home"]
                             [:svg.home {:alt "VBN Logo Home"
-                                        :viewBox "0 0 158 172"}
-                             [:use {:xlink-href "/logo.svg#logo"}]])]
+                                        :viewBox "0 0 160 150"}
+                             [:use {:xlink-href "/logo.svg#logo-2"}]])]
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
     [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
     [:li.order-end (link (path-for my-routes :community) [:span "Community"])]

@@ -25,7 +25,7 @@
 
 (rum/defc skip-to-main []
   [:a.skip-to-main {:href "#main"}
-   [:div 
+   [:div
     [:div.skip-button
      [:span "Skip to main content"]
      [:span.skip-enter "Press enter to skip to main content"]]
@@ -70,7 +70,7 @@
     [:li.order-middle (link (path-for my-routes :index)
                             [:span {:aria-hidden true} "Home"]
                             [:svg.home {:alt "VBN Logo Home"
-                                        :viewBox "-20 0 198 212"}
+                                        :viewBox "0 0 160 150"}
                              [:use {:xlink-href "/logo.svg#logo"}]])]
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
     [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
@@ -79,7 +79,7 @@
     ]])
 
 (rum/defc footer []
-  [:footer 
+  [:footer
    [:div.block-blue.full-width
     [:div.inside-block
 
