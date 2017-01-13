@@ -1,9 +1,9 @@
 (ns vbn.organisms
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]
+            [vbn.molecules :as molecule]))
 
-            ))
+
 
 
 (rum/defc bigger-than-business []
@@ -45,9 +45,7 @@
 (rum/defc at-our-core []
 
   [:div.buffer-top-large
-   (atom/h2-home "At Our Core") 
+   (atom/h2-home "At Our Core")
    [:div.at-our-core
     (molecule/icon-with-text "community" "We are about community")
     (molecule/icon-with-text "education" "We are about education")]])
-
-

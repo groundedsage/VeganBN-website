@@ -1,6 +1,7 @@
 (ns vbn.static
   (:require [rum.core :as rum]
             [vbn.app :as app]
+            [vbn.components :refer [my-routes]]
             [clojure.string :as str]
             [clojure.java.io :as io]
             [boot.core :as c]
@@ -22,7 +23,7 @@
 (defn gather-routes
   "Gathers all generated routes and emits the keyword of each route."
   []
-  (->> (route-seq app/my-routes)
+  (->> (route-seq my-routes)
        (map #(first %))
        (map #(conj [] %))
        (map #(into {} %))
@@ -46,7 +47,32 @@
   (cond
     (= :index route) "index.html"
     (= :not-found route) "404.html"
-    :else (subs (path-for app/my-routes route) 1)))
+    :else (subs (path-for my-routes route) 1)))
+
+(defn remove-html [in-file out-file]
+  ;(println (str/replace (slurp in-file) #".html" "")
+    (doto out-file
+      io/make-parents
+      (spit (str/replace (slurp in-file) #".html" ""))
+      (println "This is the file!!!"(slurp out-file))))
+
+(deftask remove-html-task
+  "Removes the html from routes"
+  []
+  (let [tmp (tmp-dir!)]
+    (with-pre-wrap [fileset]
+      (empty-dir! tmp)
+      (let [in-files (input-files fileset)
+            file-with-html (by-name ["components.cljc"] in-files)]
+        (doseq [in file-with-html]
+          (let [in-file (tmp-file in)
+                in-path (tmp-path in)
+                out-path in-path
+                out-file (io/file tmp out-path)]
+            (remove-html in-file out-file)))
+        (-> fileset
+            (add-resource tmp)
+            commit!)))))
 
 
 (deftask string-template
@@ -83,43 +109,3 @@
 
 (deftask make-pages []
   (reduce comp (map #(make-page :route %) (gather-routes))))
-
-
-     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-     ;;;;;;;;;   Adding CSS MODULES TO OUTPUT    ;;;;;;;;;;;;
-     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-
-
-#_(defn add-module
-  [in-file out-file style]
-   ;(println "Testing something" (str (slurp in-file) style))
-  ;(println in-file)
-  (doto out-file
-    io/make-parents
-   ;; (spit (str/replace (slurp in-file) "{{CONTENT}}" "Happy times!"))
-    (spit (str (slurp in-file) style))
-    ))
-
-
-#_(deftask add-css-modules
-  [s style VAL str "Styles from a CSS Module"]
-  (let [tmp (tmp-dir!)]
-    (with-pre-wrap [fileset]
-      (empty-dir! tmp)
-      (let [in-files (input-files fileset)
-            stylesheet (by-name ["fix.css"] in-files)]
-        (doseq [in stylesheet]
-          (let [in-file (tmp-file in)
-                in-path (tmp-path in)
-                out-path in-path
-                out-file (io/file tmp out-path)]
-            (add-module in-file out-file style)))
-        (-> fileset
-            (add-resource tmp)
-            commit!)))))
-
-
-

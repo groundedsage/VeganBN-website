@@ -357,13 +357,7 @@
                    :bottom "-20%"
                    :width "50%"
                    :left "25%"}]]]]]
-      [:nav
-       [:a
-        [
-          :&:hover
-          :&:focus
-         [:svg
-           {:transform "rotate(4deg) scale(1.1)"}]]]]
+
 
       [:nav
        [:li
@@ -595,13 +589,6 @@
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-                                        ;OLD STYLES
-                                        ;[:p {:font-size "1em"
-                                        ;     :line-height "1.25em"
-                                        ;     :max-width "28em"
-                                        ;     }]
-
-
 
       ;; Paragraph styles
 
@@ -609,21 +596,7 @@
       {:margin "1.5em 0"
        :font-size (em 1)
        :line-height 1.5
-       :max-width (em 35)}
-
-
-      ;; NEED TO REVIEW AS IT IS ONLY VISIBLE UP CLOSE
-      ;; In addition when focused the text shadow is visible when adding a background
-      #_[:a
-         {:text-decoration 'none
-          :text-shadow "0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff"
-          :background-image "linear-gradient(to right, currentColor 0%, currentColor 100%)"
-          :background-repeat "repeat-x"
-          :background-position "bottom 0.05em center"
-          :background-size "100% 0.05em"}
-
-         [:&:focus {:outline 'none
-                    :background-color "#cef"}]]]
+       :max-width (em 35)}]
      [:.footer-link {:text-decoration 'underline}]
 
 

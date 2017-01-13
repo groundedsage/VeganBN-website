@@ -21,12 +21,12 @@
     [:div.form-width
      {:dangerouslySetInnerHTML
       {:__html
- "
+       "
 <!-- Begin MailChimp Signup Form -->
 <div id=\"mc_embed_signup\">
 <form action=\"//veganbusinessnetwork.us13.list-manage.com/subscribe/post?u=3e449a3b219823344ae7ae47a&amp;id=a3633bf54c\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate>
     <div id=\"mc_embed_signup_scroll\">
-	
+
 <div class=\"mc-field-group\">
 	<label class=\"sign-up-label\" for=\"mce-EMAIL\">Email Address </label>
 	<input type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">
@@ -44,13 +44,13 @@
 <!--End mc_embed_signup-->
 
 
-"
+"}}]]])
 
 
-       }}]
 
 
-    ]])
+
+
 
 
 (rum/defc content []
@@ -61,9 +61,9 @@
    (organism/movement)
    (organism/at-our-core)
    (sign-up)
-   (organism/what-we-do)
+   (organism/what-we-do)])
    ;[:a {:href "/devcards.html"} "Devcards"]
-   ])
+
 
 
    ;(hidden)

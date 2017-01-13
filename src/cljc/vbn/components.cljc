@@ -1,9 +1,9 @@
 (ns vbn.components
   (:require [rum.core :as rum]
             [bidi.bidi :as b :refer [match-route path-for]]
-            #?(:cljs [vbn.navigation :refer [link current-token]])
+            #?(:cljs [vbn.navigation :refer [link current-token]])))
 
-            ))
+
 
 ;; HELPER COMPONENTS
 
@@ -24,17 +24,20 @@
   [:main#main content])
 
   ;; define clojure version of link
-  #?(:clj (rum/defc link [link & content]
-            [:a {:href link} content]))
+#?(:clj (rum/defc link [link & content]
+          [:a {:href link} content]))
 
-(def my-routes ["/" [[#{"" "index.html"} :index]
-                     ["veganism.html" :veganism]
-                     ["about-us.html" :about-us]
-                     ["consulting.html" :consulting]
-                     ["community.html" :community]
-                     ["devcards.html" :devcards]]])
-                                        ;[true :not-found]]])
 
+                                      ;; NAVIGATION
+
+  (def my-routes ["/" [[#{"" "index.html"} :index]
+                       ["veganism.html" :veganism]
+                       ["about-us.html" :about-us]
+                       ["consulting/"  [[ "index.html" :consulting]
+                                        ["web.html" :web]]]
+                       ["community.html" :community]]])
+                                          ;["devcards.html" :devcards]
+            ;[true :not-found]]])
 
 (rum/defc navigation []
   [:nav

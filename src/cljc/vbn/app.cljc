@@ -10,6 +10,8 @@
             [vbn.about :as a]
             [vbn.web :as w]
 
+            [vbn.components :refer [my-routes]]
+
 
 
 
@@ -22,6 +24,7 @@
 #?(:cljs (enable-console-print!))
 
 ;; Accessibility defaults
+#?(:cljs (js/console.log "I'm trying to find something out" (path-for my-routes :veganism)))
 
 (rum/defc skip-to-main []
   [:a.skip-to-main {:href "#main"}
@@ -41,17 +44,6 @@
   [:span  {:hidden true} "This is hidden text"])
 
 
-;; NAVIGATION
-
-(def my-routes ["/" [[#{"" "index.html"} :index]
-                     ["veganism.html" :veganism]
-                     ["about-us.html" :about-us]
-                     ["consulting/"  [[ "index.html" :consulting]
-                                      ["web.html" :web]]]
-                     ["community.html" :community]
-                                        ;["devcards.html" :devcards]
-                     ]])
-                                        ;[true :not-found]]])
 
 
 (defn get-route [url]
@@ -75,8 +67,8 @@
     [:li.order-front (link (path-for my-routes :veganism) [:span "Veganism"])]
     [:li.order-front   (link (path-for my-routes :consulting) [:span "Consulting"])]
     [:li.order-end (link (path-for my-routes :community) [:span "Community"])]
-    [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]
-    ]])
+    [:li.order-end (link (path-for my-routes :about-us) [:span "About Us"])]]])
+
 
 (rum/defc footer []
   [:footer
@@ -89,8 +81,8 @@
       (link (path-for my-routes :consulting)[:span.footer-link "consulting"]) " page and would like to join our team contact us with a cover letter, along with a resume and/or portfolio of your work"]
      [:p  [:b "Email: "]
       [:a {:href "mailto:wade@veganbusinessnetwork"}
-       "wade@veganbusinessnetwork.org"]]]]]
-  )
+       "wade@veganbusinessnetwork.org"]]]]])
+
 
 
 (rum/defc page-wrapper [content]
@@ -98,8 +90,8 @@
    (skip-to-main)
    (navigation)
    content
-   (footer)
-   ])
+   (footer)])
+
 
 (rum/defc home []
   (page-wrapper (i/content)))

@@ -13,8 +13,7 @@
                  [rum "0.10.4"]
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]
-                 [bidi "2.0.14"]
-                 [cljs-css-modules "0.2.1"]])
+                 [bidi "2.0.14"]])
 
 
 (require
@@ -26,7 +25,9 @@
  '[org.martinklepsch.boot-garden :refer [garden]]
 
  '[vbn.static :as static]
- '[vbn.app :as app])
+ '[vbn.app :as app]
+ '[bidi.bidi :refer [path-for route-seq]]
+ '[vbn.components :refer [my-routes]])
 
 
 
@@ -40,6 +41,7 @@
 
 (deftask build []
   (comp (speak)
+        (static/remove-html-task)
         (cljs)
         (static/make-pages)
         ;(static/make-page :route :index)
@@ -48,7 +50,6 @@
         ;;(static/add-css-modules :style (:css style))
 
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
-
 
 
 (deftask run []
@@ -71,8 +72,8 @@
 (deftask development []
   (task-options! cljs {:optimizations :none
                        :source-map true
-                       :compiler-options {:devcards true
-                                          }}
+                       :compiler-options {:devcards true}}
+
 
                  reload {:on-jsload 'vbn.app/init})
   identity)

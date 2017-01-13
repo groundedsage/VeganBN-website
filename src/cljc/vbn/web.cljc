@@ -1,48 +1,11 @@
 (ns vbn.web
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]
+            [vbn.molecules :as molecule]))
 
-            [cljs-css-modules.macro :as s]
-            )
-  )
-
-#_(s/defstyle style
-  (at-media {:min-width "40em"}
-
-            [".four-col" {:max-width "14em"
-                          ;; This is because of globally applied margins
-                          :margin-top 0
-                          }])
-  [".wrap" {:flex-direction 'row
-            :flex-wrap 'wrap
-            :justify-content 'space-between}]
-
-  (at-media {:min-width "70em"}
-            [".wrap-again" {:flex-direction 'row
-                            :flex-wrap 'wrap
-                            :justify-content 'space-between}]
-            [".four-col" {:max-width "12em"}]
-
-            )
-
-
-  [".container" {:color 'yellow}]
-  [".icon-placeholder" {:height "10em"
-                        :width "10em"
-                        :background-color 'black}]
-  (at-media {:min-width "70em"} 
-            [".principles-width" {:max-width "24em"}]
-            [".principles-wrap" {:flex-direction 'row
-                                 :flex-wrap 'wrap
-                                 :justify-content 'space-between}])
-  )
 
 (rum/defc icon-title-text [title text]
-  [:div title text]
-   )
-
-
+  [:div title text])
 
 (rum/defc content []
   [:main#main
@@ -63,32 +26,32 @@
          [:h3 "Rock Solid Foundations"]
          [:div [:p "Built on the most reliable
 technology the web has to offer."]
-          [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing." ]  ])]
+          [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing."]])]
 
        [:.inside-three
         (atom/bird)
         (icon-title-text
          [:h3 "Speed Matters"]
          [:div [:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
-        [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
+          [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
 
-    [:div.column-four 
-     [:.inside-three
-      (atom/safe)
-      (icon-title-text
-       [:h3 "Ultra Secure"]
-       [:div [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
+      [:div.column-four
+       [:.inside-three
+        (atom/safe)
+        (icon-title-text
+         [:h3 "Ultra Secure"]
+         [:div [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
 "]
-        [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]]
-       )]
+          [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]])]
 
-     [:.inside-three
-      (atom/evolve)
-      (icon-title-text
-       [:h3 "Designed to Evolve"]
-       [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
+
+       [:.inside-three
+        (atom/evolve)
+        (icon-title-text
+         [:h3 "Designed to Evolve"]
+         [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
 "]
-        [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]])]]]]]
+          [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]])]]]]]
 
 
 
@@ -158,8 +121,8 @@ technology the web has to offer."]
        (atom/happy-days)
        (icon-title-text
         [:h3 "Happy Days"]
-        [:p "You can rest easy knowing you’ve made the best choice."])]]
-     ]]
+        [:p "You can rest easy knowing you’ve made the best choice."])]]]]
+
 
    [:div.center-items.buffer-top-large
     [:h2 "What's the cost?"]
@@ -181,8 +144,8 @@ technology the web has to offer."]
      [:div.inside-three
       [:div.pricing-options
        [:div.row
-       (atom/dollar)
-       [:h3 "3000"]]
+        (atom/dollar)
+        [:h3 "3000"]]
        [:span "Simple Site"]]
       [:ul.pricing-features
        [:li "Without a CMS"]
@@ -195,7 +158,7 @@ technology the web has to offer."]
       [:div.pricing-options
        [:div.row
         (atom/dollar)
-       [:h3 "3800"]]
+        [:h3 "3800"]]
        [:span "Dynamic Site"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -209,7 +172,7 @@ technology the web has to offer."]
       [:div.pricing-options
        [:div.row
         (atom/dollar)
-       [:h3 "4800"]]
+        [:h3 "4800"]]
        [:span "Dynamic Site +"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -220,10 +183,10 @@ technology the web has to offer."]
 
      [:div.inside-three
       [:div.pricing-options
-      [:div.row
-       (atom/dollar)
-      [:h3 "4500"]]
-      [:span "Dynamic Site + E-commerce"]]
+       [:div.row
+        (atom/dollar)
+        [:h3 "4500"]]
+       [:span "Dynamic Site + E-commerce"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
        [:li "Custom Site Design"]
@@ -237,44 +200,22 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
     [:div.inside-block.center-items
      [:h2 "What are you waiting for?"]
      [:div.form-width
-      {:dangerouslySetInnerHTML
-       {:__html
-        "<form name=\"contact\" netlify>
-<p>
-<label>Your Name:</label>
-<input type=\"text\" name=\"name\"
-</p>
-<p>
-<label>Your Email:</label>
-<input type=\"email\">
-</p>
-<p>
-<label>Let us know what your dreaming up</label>
-<textarea class=\"bump-area-height\" name=\"message\"></textarea>
-<p>
-<button><span>Send</span></button>
-</p>
-</form>"}}]
+      [:form {:name "contact"
+              "netlify" true}
+       [:p
+        [:label "Your Name:"]
+        [:input {:type "text"
+                 :name "name"}]]
+       [:p
+        [:label "Your Email:"]
+        [:input {:type "email"}]]
 
-     #_[:form {:name "web"
-             "netlify" true
-             :allow-full-screen true
-             :random true}
-      [:p
-       [:label "Your Name:"]
-       [:input {:type "text"
-                :name "name"
-                :allow-full-screen true}]]
-      [:p
-       [:label "Your Email"]
-       [:input {:type "email"
-                :name "email"}]]
-      [:p
-       [:label "Message"]
-       [:textarea  {:name "message"}]]
-      [:button "Send"]]]]
+       [:p
+        [:label "Let us know what your dreaming up"]
+        [:textarea.bump-area-height {:name "message"}]]
 
+       [:p
+        [:button [:span "Send"]]]
+       ]]
 
-
-
-   ])
+     ]]])

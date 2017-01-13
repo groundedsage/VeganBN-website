@@ -3,6 +3,7 @@
             [bidi.bidi :refer [path-for]]
 
             #?(:cljs [vbn.navigation :refer [link current-token]])
+            [vbn.components :refer [my-routes]]
 
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]))
@@ -10,24 +11,6 @@
 ;; define clojure version of link
 #?(:clj (rum/defc link [link & content]
           [:a {:href link} content]))
-
-
-
-
-
-
-;;;; REMOVE LATER
-
-
-(def my-routes ["/" [[#{"" "index.html"} :index]
-                     ["veganism.html" :veganism]
-                     ["about-us.html" :about-us]
-                     ["consulting/"  [["index.html" :consulting]
-                                      ["web.html" :web]]]
-                     ["community.html" :community]
-                                        ;["devcards.html" :devcards]
-                     ]])
-                                        ;[true :not-found]]])
 
 
 
@@ -108,71 +91,4 @@
       [:div
        (atom/h2 "How we do it")
        [:p "We do everything with our in house team or through tight partnerships. If what you need goes outside of our in house offerings. We have a strong network of talented individuals and organisations we can call upon. "]
-       [:p "We can tell you who is vegan and those that can get the job done. We also provide a service of verification and can review your list of candidates to ensure they are capable of doing the work required to suit your needs. This allows us to cater to the most advanced needs, the budget restricted or any location challenges."]]]]]
-
-   ])
-
-
-
-
-
-
-
-
-
-;; NEED TO ASSOC STYLES IN A REDUCE THEN PLACE INSIDE AN ATOM????
-
-#_(comment
-
-  #?(:clj
-     (s/defstyle new
-       [".new" {:color "yellow"}]))
-
-
-  (println "\n" "*** Printing from style ***")
-  (clojure.pprint/pprint style)
-
-  (println "\n" "*** Printing from new ***")
-  (clojure.pprint/pprint new)
-
-  (defn merged-styles [old new]
-    (println "\n"  "***This is the old css with new*** \n" (:css old) "\n" "\n"(:css new)))
-  #_(reduce #(conj (:css %1) (:css %2))
-            old
-            new)
-  (merged-styles style new)
-
-  (def p {:name "James" :age 26})
-
-  (println (assoc p :name "happy"))
-
-  (defn merge-styles [old new]
-    (assoc old :css (str (:css old) "\n" "\n" (:css new))))
-  (merge-styles style new)
-
-
-
-  ;; CLOSEST SOLUTION BELOW
-
-  ;;#?[cljs-css-modules.macro :as s]
-  #_(s/defstyle style
-      [".container" {:color "#333d47"}]
-      [".green-text" {:color "#6def14"}])
-
-  #_(def class-names (atom #?(:clj (:green-text (:map style)))
-                           #?(:cljs (:class-name (:green-text style))) ))
-
-
-
-  ;;{:class @class-names}
-  ;;Appears to be an issue when conditionally adding classname to element
-  ;; #?(:clj {:class (:green-text (:map style))})
-  ;; #?(:cljs {:class-name (:green-text style)})
-
-
-
-
-
-
-  (println style))
-
+       [:p "We can tell you who is vegan and those that can get the job done. We also provide a service of verification and can review your list of candidates to ensure they are capable of doing the work required to suit your needs. This allows us to cater to the most advanced needs, the budget restricted or any location challenges."]]]]]])

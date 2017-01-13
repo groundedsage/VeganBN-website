@@ -23,15 +23,15 @@
 
 
 
-  (molecule/blurb-title-second {:image "photos/nature.jpg"
-                                   :alt-text "Waterfall in rainforest"
-                                   :title "Sustainability"
-                                   :text [:div [:p "We all know we need to do something more, otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us."]
-                                          [:p "If you are someone who showers less, drives as little as possible and recycles religuously, or just someone looking to do a little more for the planet and your fellow human beings then veganism is a way of life for you to do this."]
+   (molecule/blurb-title-second {:image "photos/nature.jpg"
+                                    :alt-text "Waterfall in rainforest"
+                                    :title "Sustainability"
+                                    :text [:div [:p "We all know we need to do something more, otherwise each successive generation is going to have less animal diversity, plant diversity, resources and beauty in the world to enjoy. If current trends continue we could wipe out ourselves taking a large chunk of the planet with us."]
+                                           [:p "If you are someone who showers less, drives as little as possible and recycles religuously, or just someone looking to do a little more for the planet and your fellow human beings then veganism is a way of life for you to do this."]
 
-                                          [:p "To find out more we highly suggest watching Cowspiracy. They also have an amazing infographic on their website."]]
-                                :cta "Cowspiracy.com"
-                                :cta-key "http://www.cowspiracy.com/"})
+                                           [:p "To find out more we highly suggest watching Cowspiracy. They also have an amazing infographic on their website."]]
+                                 :cta "Cowspiracy.com"
+                                 :cta-key "http://www.cowspiracy.com/"})
 
    (molecule/blurb-title-second {:image "photos/watermelon.jpg"
                                    :alt-text "Child eating watermelon"
@@ -56,6 +56,6 @@
 
    [:div.full-width.block-green.buffer-top-large
     [:div.inside-block
-   (atom/h2 "How does this help my business?")
-   [:p "By doing some research on each of the 3 dimensions of veganism. You will be more capable of handling a vegan customer and adapting to current world trends. Vegans are a chatty bunch, they stand together and are very strong willed. In a world where people are more connected and brands are defined by their customers. Vegans with either burn you or praise you. We are here to make sure they praise you. It’s better for you business and it’s better for the vegans. We love it when everyone wins!"]
-[:p"If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]]]])
+     (atom/h2 "How does this help my business?")
+     [:p "By doing some research on each of the 3 dimensions of veganism. You will be more capable of handling a vegan customer and adapting to current world trends. Vegans are a chatty bunch, they stand together and are very strong willed. In a world where people are more connected and brands are defined by their customers. Vegans with either burn you or praise you. We are here to make sure they praise you. It’s better for you business and it’s better for the vegans. We love it when everyone wins!"]
+     [:p"If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]]]])
