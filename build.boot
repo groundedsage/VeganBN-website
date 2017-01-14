@@ -45,10 +45,6 @@
         (cljs)
         (static/make-pages)
         ;(static/make-page :route :index)
-
-        ;; Need to join css-modules onto the output css/garden.css
-        ;;(static/add-css-modules :style (:css style))
-
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 
@@ -73,8 +69,6 @@
   (task-options! cljs {:optimizations :none
                        :source-map true
                        :compiler-options {:devcards true}}
-
-
                  reload {:on-jsload 'vbn.app/init})
   identity)
 

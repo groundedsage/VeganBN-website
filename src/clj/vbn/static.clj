@@ -50,11 +50,10 @@
     :else (subs (path-for my-routes route) 1)))
 
 (defn remove-html [in-file out-file]
-  ;(println (str/replace (slurp in-file) #".html" "")
     (doto out-file
       io/make-parents
-      (spit (str/replace (slurp in-file) #".html" ""))
-      (println "This is the file!!!"(slurp out-file))))
+      (spit (str/replace (slurp in-file) #".html" ""))))
+
 
 (deftask remove-html-task
   "Removes the html from routes"

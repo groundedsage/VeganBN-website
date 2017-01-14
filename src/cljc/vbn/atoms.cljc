@@ -1,5 +1,5 @@
 (ns vbn.atoms
-  (:require [rum.core :as rum] ))
+  (:require [rum.core :as rum]))
 
 (rum/defc h1 [text]
   [:h1 text])
@@ -102,39 +102,39 @@
 
 (rum/defc information-architecture []
   [:svg.buffer-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 363 309"}
+                     :width "10em"
+                     :viewBox "0 0 363 309"}
    [:use {:xlink-href "/svg/information-architecture.svg#information-architecture"}]])
 
 (rum/defc visual-language []
   [:svg.bump-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 363 309"}
+                   :width "10em"
+                   :viewBox "0 0 363 309"}
    [:use {:xlink-href "/svg/visual-language.svg#visual-language"}]])
 
 
 (rum/defc mock-up []
   [:svg.buffer-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 255 309"}
+                     :width "10em"
+                     :viewBox "0 0 255 309"}
    [:use {:xlink-href "/svg/mock-up.svg#mock-up"}]])
 
 (rum/defc micro-interactions []
   [:svg.bump-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 247 272"}
+                   :width "10em"
+                   :viewBox "0 0 247 272"}
    [:use {:xlink-href "/svg/micro-interactions.svg#micro-interactions"}]])
 
 (rum/defc develop []
   [:svg.bump-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 361 301"}
+                   :width "10em"
+                   :viewBox "0 0 361 301"}
    [:use {:xlink-href "/svg/develop.svg#develop"}]])
 
 (rum/defc happy-days []
   [:svg.bump-left {:height "10em"
-         :width "10em"
-         :viewBox "0 0 314 272"}
+                   :width "10em"
+                   :viewBox "0 0 314 272"}
    [:use {:xlink-href "/svg/happy-days.svg#happy-days"}]])
 
 
@@ -170,10 +170,3 @@
                    :width "1em"
                    :viewBox "0 0 53 98"}
    [:use {:xlink-href "/svg/dollar.svg#dollar"}]])
-
-
-
-
-
-
-

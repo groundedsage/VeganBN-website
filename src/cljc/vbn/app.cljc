@@ -12,10 +12,6 @@
 
             [vbn.components :refer [my-routes]]
 
-
-
-
-
             #?(:cljs [vbn.navigation :refer [link current-token]])
             #?(:cljs [vbn.devcards :as devcards])))
 
@@ -24,7 +20,6 @@
 #?(:cljs (enable-console-print!))
 
 ;; Accessibility defaults
-#?(:cljs (js/console.log "I'm trying to find something out" (path-for my-routes :veganism)))
 
 (rum/defc skip-to-main []
   [:a.skip-to-main {:href "#main"}
