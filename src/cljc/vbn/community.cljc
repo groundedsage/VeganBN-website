@@ -2,17 +2,17 @@
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
-
-            #?(:clj [vbn.styler :as styler])))
-
+            [garden.core :refer [css]]))
 
 
-(println [:div "Hello world"])
+
 
 (rum/defc content []
   [:main#main.footer-buffer
    (molecule/page-intro
-    [:h1 "Community"]
+    [:h1
+     {:class [(css {:border 0})]}
+     "Community"]
     [:p "To foster the vegan business community we host two different networking meetups every month."]
     [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
 

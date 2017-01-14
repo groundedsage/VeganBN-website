@@ -11,7 +11,7 @@
 
    [:div.full-width.block-green
     [:div.inside-block
-     (atom/h2-home "At VBN we work to:")
+     (atom/h2-home "At VeganBN we work to:")
      [:div.center
       [:p [:strong.about-strong "GROW"] "  vegan and vegan friendly businesses with world class services."]
       [:p [:strong.about-strong "EDUCATE"] "   the public, businesses and government on veganism."]

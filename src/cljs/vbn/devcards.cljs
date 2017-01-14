@@ -14,7 +14,7 @@
 
 
 
-  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source   ]]
+  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source]]
                    #_[cljs-css-modules.macro :refer [defstyle]]))
 
 

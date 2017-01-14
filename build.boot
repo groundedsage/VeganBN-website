@@ -13,7 +13,9 @@
                  [rum "0.10.4"]
                  [org.martinklepsch/boot-garden "1.3.2-0" :scope "test"]
                  [devcards "0.2.2"]
-                 [bidi "2.0.14"]])
+                 [bidi "2.0.14"]
+                 [garden "1.3.2"]])
+
 
 
 (require
@@ -30,7 +32,7 @@
  '[vbn.components :refer [my-routes]])
 
 
-
+;(goog.style/installStyles (styler/get-css-str true))
 
 #_(deftask cards []
     (set-env! :resource-paths #(conj % "cards")
@@ -42,9 +44,11 @@
 (deftask build []
   (comp (speak)
         (static/remove-html-task)
+        ;; Do atomic styles here
         (cljs)
         (static/make-pages)
-        ;(static/make-page :route :index)
+        ;; Remove commenting to test a single static rendered page
+        ;;(static/make-page :route :index)
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
 
 

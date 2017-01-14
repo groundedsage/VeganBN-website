@@ -1,3 +1,18 @@
 (require '[vbn.styler :as styler])
 (require 'vbn.styler :as styler)
 exit
+(comp (str) "hello")
+(doc comp)
+exit
+(start-repl)
+(+ 1 1)
+(require '[garden.core :refer [css])
+(require '[garden.core :refer [css]])
+(css {:color 'blue})
+(css [:div { :color 'blue}])
+(css {:border 0})
+(str "This is it" 
+@styler/global-css-atom)
+(str "This is it" )
+exity
+exit

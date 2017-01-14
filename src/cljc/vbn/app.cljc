@@ -1,4 +1,5 @@
 (ns vbn.app
+;  #?(:cljs (:require-macros  [vbn.styler :as styler]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -12,12 +13,33 @@
 
             [vbn.components :refer [my-routes]]
 
+            #?(:cljs [goog.style])
+            [garden.core :as garden :refer [css]]
+
+
+
             #?(:cljs [vbn.navigation :refer [link current-token]])
             #?(:cljs [vbn.devcards :as devcards])))
 
 
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; API OUTPUT:
+;#?(:cljs (goog.style/installStyles (styler/get-css-str true)))
+
+
+
+#?(:cljs (println (css [:div {:background 'blue}])))
+
+
+
 #?(:cljs (enable-console-print!))
+
+
+
+
 
 ;; Accessibility defaults
 
@@ -133,6 +155,11 @@
          :devcards   (devcards/init)))))
 ;; not found, basically
                                         ;(home)))))
+
+
+
+
+;#?(:cljs (goog.style/installStyles (get-css-str true)))
 
 #?(:cljs
    (defn init []

@@ -160,26 +160,26 @@
 
 ;; Optimization: Merge the smae media queries:
 ;; Not the prettiest, but it works:
-(defn- merge-media-queries
-  "Merges the media queries since this isn't done by garden."
-  [x]
-  (let [{::keys [other] :as grouped}
-        (group-by
-         (fn [[k class]]
-           (if (instance? MediaQuery k)
-             (:query k)
-             ::other))
-         x)]
-    (reduce-kv
-     (fn [m q queries]
-       (assoc m
-              (MediaQuery. q (mapv
-                              (fn [[query class]]
-                                (to-garden (:child query) class))
-                              queries))
-              nil))
-     (into {} other)
-     (dissoc grouped ::other))))
+#_(defn- merge-media-queries
+    "Merges the media queries since this isn't done by garden."
+    [x]
+    (let [{::keys [other] :as grouped}
+          (group-by
+           (fn [[k class]]
+             (if (instance? MediaQuery k)
+               (:query k)
+               ::other))
+           x)]
+      (reduce-kv
+       (fn [m q queries]
+         (assoc m
+                (MediaQuery. q (mapv
+                                (fn [[query class]]
+                                  (to-garden (:child query) class))
+                                queries))
+                nil))
+       (into {} other)
+       (dissoc grouped ::other))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API INPUT:
@@ -243,7 +243,7 @@
               (mapv
                (fn [[k css-class]]
                  (to-garden k css-class))
-               (merge-media-queries @global-css-styles))))
+               #_(merge-media-queries @global-css-styles))))
 
 (defn- get-css-str-fn
   [prefix? cmd]

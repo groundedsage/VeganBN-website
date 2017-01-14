@@ -15,8 +15,12 @@
                                             focus
                                             defselector
                                             defpseudoclass
-                                            defclass]]))
+                                            defclass]]
+            [vbn.styler :as styler]))
 
+(println "Hello world from Styles" [:div {:class [(styler/css {:border 0
+                                                                :color 'blue :margin "10px"})]}])
+(println "This is the global styles atom" @styler/global-css-styles)
 
 
 (def brand-color "#00ff7f")
