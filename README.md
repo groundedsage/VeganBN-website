@@ -6,15 +6,15 @@ You can learn more about the JAM stack here: https://jamstack.org/
 
 My intention of this project is to create a foundation. Making it possible to get off the ground quickly for the most basic of websites instead of defaulting to Wordpress or similar options. That still allows incremental changes to become a single page application without sacrificing productivity or performance.
 
-##Rationale 
+##Rationale
 
-The browser today is powerful enough to perform 90% of the tasks we use our devices for. Progressive Web Apps (PWA) provide a future where distribution of digital products/services can be achieved with a single codebase and without serious fragmentation of technologies we experience today https://medium.com/dev-channel/why-progressive-web-apps-vs-native-is-the-wrong-question-to-ask-fb8555addcbb#.u024lehn0. The significant performance improvements are only set to get better with Web Assembly (WASM) as well https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6#.hloyw1tv4. Even without WASM the performance of JavaScript is improving faster than we realise https://www.youtube.com/watch?v=LopU-kMpe8I. 
+The browser today is powerful enough to perform 90% of the tasks we use our devices for. Progressive Web Apps (PWA) provide a future where distribution of digital products/services can be achieved with a single codebase and without serious fragmentation of technologies we experience today https://medium.com/dev-channel/why-progressive-web-apps-vs-native-is-the-wrong-question-to-ask-fb8555addcbb#.u024lehn0. The significant performance improvements are only set to get better with Web Assembly (WASM) as well https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6#.hloyw1tv4. Even without WASM the performance of JavaScript is improving faster than we realise https://www.youtube.com/watch?v=LopU-kMpe8I.
 
 The JAM stack throws out the old model of progressive enhancement where the server handles requests from users without JavaScript. This old model produces a lot of overhead for very small edge cases. For circumstances where it is absolutely necessary it is possible to utilize 'Functions as a Service' (FaaS) such as Webtask.io or AWS Lambda for small tasks, otherwise it is also possible to create your own API. By adopting the JAM stack we can drastically reduce the amount of moving parts, complications and costs inherint in the current Status Quo of web development and deployment.
 
 
 ## Design goals (no order)
-* is usable and looks clean on all devices from a _watch_ to a _tv_. 
+* is usable and looks clean on all devices from a _watch_ to a _tv_.
 * is accessible & usable in a delightful way by the blind, colour blind, contrast sensitive, people with poor literacy skills and poor motor skills
 * is fast, meaning the site is downloaded and usable within 2 seconds never more than 3 seconds
 * is semantic for search engines and future AI assistants
@@ -90,9 +90,8 @@ To view current status enter this command in the root folder `boot dev`
 
 
 
+## Gratitude Journal
 
-
-
-
-
-
+Andre R. - Helping me for a very long time to use his Macro to create atomic styles.
+Alinpert - Helping me for a very long time to render the html pages through Boot filesets.
+All creators and contributors of libraries I have used and learnt from.

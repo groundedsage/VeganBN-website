@@ -1,5 +1,5 @@
 (ns vbn.app
-;  #?(:cljs (:require-macros  [vbn.styler :as styler]))
+  #?(:cljs (:require-macros  [vbn.styler :as styler]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -27,7 +27,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API OUTPUT:
-;#?(:cljs (goog.style/installStyles (styler/get-css-str true)))
+#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
 
 
 

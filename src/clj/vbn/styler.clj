@@ -59,9 +59,9 @@
   npm install --global postcss-cli autoprefixer
   "
   (:require
-   [clojure.string :as str]
-   [garden.core :as garden]
-   [garden.stylesheet :as style]))
+    [clojure.string :as str]
+    [garden.core :as garden]
+    [garden.stylesheet :as style]))
 
 (def ^:private auto-prefixer-cmd ["postcss" "-u" "autoprefixer"])
 
@@ -149,41 +149,40 @@
   [constructor styles]
   (str/join " "
             (reduce-kv
-             (fn [xs prop v]
-               (conj xs
-                     (let [style {prop v}
-                           k (constructor style)]
-                       (or (get @global-css-styles k)
-                           (add-css-prop k)))))
-             []
-             styles)))
+              (fn [xs prop v]
+                (conj xs
+                      (let [style {prop v}
+                            k (constructor style)]
+                        (or (get @global-css-styles k)
+                            (add-css-prop k)))))
+              []
+              styles)))
 
 ;; Optimization: Merge the smae media queries:
 ;; Not the prettiest, but it works:
-#_(defn- merge-media-queries
-    "Merges the media queries since this isn't done by garden."
-    [x]
-    (let [{::keys [other] :as grouped}
-          (group-by
-           (fn [[k class]]
-             (if (instance? MediaQuery k)
-               (:query k)
-               ::other))
-           x)]
-      (reduce-kv
-       (fn [m q queries]
-         (assoc m
-                (MediaQuery. q (mapv
-                                (fn [[query class]]
-                                  (to-garden (:child query) class))
-                                queries))
-                nil))
-       (into {} other)
-       (dissoc grouped ::other))))
+(defn- merge-media-queries
+  "Merges the media queries since this isn't done by garden."
+  [x]
+  (let [{:keys [::other] :as grouped}
+        (group-by
+          (fn [[k class]]
+            (if (instance? MediaQuery k)
+              (:query k)
+              ::other))
+          x)]
+    (reduce-kv
+      (fn [m q queries]
+        (assoc m
+          (MediaQuery. q (mapv
+                           (fn [[query class]]
+                             (to-garden (:child query) class))
+                           queries))
+          nil))
+      (into {} other)
+      (dissoc grouped ::other))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API INPUT:
-(+ 10 5)
 (defmacro css
   "Returns a string of (multiple) casses (space separated) for the given styles
    The styles MUST be constants (this is a macro!):
@@ -215,15 +214,15 @@
         max! #(-> {(keyword (str "max-" (name w-or-h))) (str % "px")})]
     (->> (partition 3 2 (concat [nil] xs [nil]))
          (mapv
-          (fn [[from styles to]]
-            (classnames-for-styles
-             #(MediaQuery.
-               (cond
-                 (and from to) (merge (min+ from) (max! to))
-                 from (min+ from)
-                 to (max! to))
-               %)
-             styles)))
+           (fn [[from styles to]]
+             (classnames-for-styles
+               #(MediaQuery.
+                  (cond
+                    (and from to) (merge (min+ from) (max! to))
+                    from (min+ from)
+                    to (max! to))
+                  %)
+               styles)))
          (str/join " "))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -241,9 +240,9 @@
   []
   (garden/css {:pretty-print? false}
               (mapv
-               (fn [[k css-class]]
-                 (to-garden k css-class))
-               #_(merge-media-queries @global-css-styles))))
+                (fn [[k css-class]]
+                  (to-garden k css-class))
+                (merge-media-queries @global-css-styles))))
 
 (defn- get-css-str-fn
   [prefix? cmd]
