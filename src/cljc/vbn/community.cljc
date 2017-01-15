@@ -1,8 +1,9 @@
 (ns vbn.community
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
-            [garden.core :refer [css]]))
+            #?(:clj [vbn.styler :refer [css at-media]])))
 
 
 
@@ -11,18 +12,28 @@
   [:main#main.footer-buffer
    (molecule/page-intro
     [:h1
-     {:class [(css {:border 0})]}
      "Community"]
     [:p "To foster the vegan business community we host two different networking meetups every month."]
     [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
 
-   [:div.center.community-box
+   ;; Should try out putting the css in a let binding or a def for reusability
+   [:div {:class [(css {:align-self "center"
+                        :width "100%"
+                        :max-width "35em"
+                        :border-style "solid"
+                        :border-width "0.2em"
+                        :padding "2em"
+                        ;Need to replace black with brand-dark
+                        :border-color "black"
+                        :border-radius "0.5em"})]}
+
+    ;.center.community-box
     [:div.row.wrap
      [:img.meetup-logo {:src "photos/meetup-logo.png"
                         :alt-text "Meetup Logo"}]
 
      [:div#meetup-text-group {:style {:padding "1em"}}
-      [:div.meetup-text [:.meetup-num "103"] "Members"]
+      [:div.meetup-text [:div {:class [(css {:width "2em"})]} "103"] "Members"]
       [:div.meetup-text [:.meetup-num "2"] "Meetups this month"]]]
     [:button#meetup-button.buffer-top-large [:span "Join our Meetup group"]]]])
 
