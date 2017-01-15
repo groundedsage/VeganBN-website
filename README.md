@@ -92,6 +92,7 @@ To view current status enter this command in the root folder `boot dev`
 
 ## Gratitude Journal
 
-Andre R. - Helping me for a very long time to use his Macro to create atomic styles.
-Alinpert - Helping me for a very long time to render the html pages through Boot filesets.
-All creators and contributors of libraries I have used and learnt from.
+* **Andre R**. - Helping me for a very long time to use his Macro to create atomic styles.
+* **Alan Dipert** - Helping me for a very long time to render the html pages through Boot filesets.
+* **Eric Normand** - My clojure mentor. Helping me get things kicked off.
+* All creators and contributors of libraries I have used and learnt from.
