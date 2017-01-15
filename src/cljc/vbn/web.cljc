@@ -215,7 +215,4 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
         [:textarea.bump-area-height {:name "message"}]]
 
        [:p
-        [:button [:span "Send"]]]
-       ]]
-
-     ]]])
+        [:button [:span "Send"]]]]]]]])

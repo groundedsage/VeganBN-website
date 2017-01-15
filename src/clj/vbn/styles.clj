@@ -18,9 +18,6 @@
                                             defclass]]
             [vbn.styler :as styler]))
 
-(println "Hello world from Styles" [:div {:class [(styler/css {:border 0
-                                                                :color 'blue :margin "10px"})]}])
-(println "This is the global styles atom" @styler/global-css-styles)
 
 
 (def brand-color "#00ff7f")
@@ -105,17 +102,19 @@
                  :align-self 'center}]]
 
 
-     [:.page-padding {:margin {:left (rem 1.5)
-                               :right (rem 1.5)}}]
+
 
      [:li {:padding-left (rem 0.3125)}]
      [:ol.values {:margin-left (rem -0.3125)}]
 
-     [:.values-section {:display 'flex
-                        :flex-direction 'column
-                        :align-items 'baseline
-                        :padding {:left (em 1.5)
-                                  :right (em 1.5)}}]
+     [:ol.values
+      [:li {:font-weight 'bold}]]
+
+     [:.values-section {}];:display 'flex
+                        ;:flex-direction 'column
+                        ;:align-items 'baseline
+                        ;:padding {:left (em 1.5)
+                        ;          :right (em 1.5)}]
      [:.vision-section
       :.bullet-padding {:padding {:left (em 1.5)
                                   :right (em 1.5)}}]
@@ -124,7 +123,7 @@
 
 
      (at-media {:min-width (rem 30)}
-               [:.values-section
+               [;:.values-section
                 :.vision-section  {:flex-direction 'row
                                    :align-items 'baseline
                                    :padding {:left 0
@@ -140,11 +139,10 @@
 
      [:.vision-title {:font-weight 'bold
                       :font-size (em 1.125)
-                      :line-height (em 1.5)}]
+                      :line-height (em 1.5)}
 
 
-     [:ol.values
-      [:li {:font-weight 'bold}]
+
 
       ["span:first-child"{
                           :font-size (em 1.125)

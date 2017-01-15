@@ -1,7 +1,10 @@
 (ns vbn.about
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]))
+            [vbn.molecules :as molecule]
+
+            #?(:clj [vbn.styler :refer [css at-media]])))
 
 (rum/defc content []
   [:main#main.footer-buffer
@@ -22,8 +25,18 @@
     [:h3 "Vision"] [:.vision [:span.vision-title "A Vegan World"]
                     [:span.simple-vision "Pretty simple really"]]]
 
-   [:div.values-section
-    [:h3 "Values"]
+   [:div
+    {:class [(css {:display "flex"
+                   :flex-direction "column"
+                   :align-items "baseline"
+                   :padding-left "1.5em"
+                   :padding-right "1.5em"})
+             (at-media {:min-width "30rem"} {:flex-direction "row"
+                                             :padding-left 0
+                                             :padding-right 0})]}
+    [:h3
+      {:class [(css {:margin-right "3em"})]} 
+      "Values"]
     [:ol.values
      [:li [:span "Mindfulness"] [:p "Consideration of actions and the impact is has. Consideration of the journey other people are on and where they may have come from."]]
      [:li [:span "Inclusivity"] [:p "Always include others who wish to be included and be inviting. Always collaborate when an opportunity presents itself. Unite efforts because the whole is always greater than the sum of it’s parts."]]

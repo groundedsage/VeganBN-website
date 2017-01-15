@@ -1,5 +1,5 @@
 (ns vbn.app
-  #?(:cljs (:require-macros  [vbn.styler :as styler]))
+  #?(:cljs (:require-macros  [vbn.styler :refer [css] :as styler]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -13,33 +13,12 @@
 
             [vbn.components :refer [my-routes]]
 
-            #?(:clj [vbn.styler :as styler])
-            #?(:cljs [goog.style])
-            [garden.core :as garden :refer [css]]
+            #?(:clj [vbn.styler :refer [css] :as styler])
 
 
 
             #?(:cljs [vbn.navigation :refer [link current-token]])
             #?(:cljs [vbn.devcards :as devcards])))
-
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; API OUTPUT:
-
-
-
-
-#?(:cljs (println (css [:div {:background 'blue}])))
-
-
-
-#?(:cljs (enable-console-print!))
-
-
-
 
 
 ;; Accessibility defaults
@@ -106,7 +85,7 @@
 (rum/defc page-wrapper [content]
   [:div ;#?(:cljs {:class [(styler/css {:background "blue"})]})
    ;#?(:clj {:class [(clj-styler/css {:background "blue"})]})
-   {:class [(styler/css {:background "black"})]}
+   ;{:class [(css {:background "black"})]}
    (skip-to-main)
    (navigation)
    content
@@ -161,10 +140,6 @@
 
 
 
-
-#?(:cljs (enable-console-print!))
-#?(:cljs (println "Hello there browser here is my stuff" (styler/get-css-str false)))
-#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
 
 #?(:cljs
    (defn init []
