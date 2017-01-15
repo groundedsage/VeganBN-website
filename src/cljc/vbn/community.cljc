@@ -6,7 +6,9 @@
             #?(:clj [vbn.styler :refer [css at-media]])))
 
 
-
+#_(def meetup-num [(css {:width "2em"})])
+#_(def meetup-text [(css {:flex-direction "row"
+                          :flex-wrap "wrap"})])
 
 (rum/defc content []
   [:main#main.footer-buffer
@@ -17,24 +19,25 @@
     [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
 
    ;; Should try out putting the css in a let binding or a def for reusability
-   [:div {:class [(css {:align-self "center"
-                        :width "100%"
-                        :max-width "35em"
-                        :border-style "solid"
-                        :border-width "0.2em"
-                        :padding "2em"
-                        ;Need to replace black with brand-dark
-                        :border-color "black"
-                        :border-radius "0.5em"})]}
-
-    ;.center.community-box
-    [:div.row.wrap
+   [:div #_{:class [(css {:align-self "center"
+                          :width "100%"
+                          :max-width "35em"
+                          :border-style "solid"
+                          :border-width "0.2em"
+                          :padding "2em"
+                          ;Need to replace black with brand-dark
+                          :border-color "black"
+                          :border-radius "0.5em"})]}
+    [:div #_{:class [(css {:flex-direction "row"
+                           :flex-wrap "wrap"})]}
      [:img.meetup-logo {:src "photos/meetup-logo.png"
                         :alt-text "Meetup Logo"}]
 
      [:div#meetup-text-group {:style {:padding "1em"}}
-      [:div.meetup-text [:div {:class [(css {:width "2em"})]} "103"] "Members"]
-      [:div.meetup-text [:.meetup-num "2"] "Meetups this month"]]]
+      [:div #_{:class meetup-text}
+       [:div #_{:class meetup-num} "103"] "Members"]
+      [:div #_{:class meetup-text}
+       [:div #_{:class meetup-num} "2"] "Meetups this month"]]]
     [:button#meetup-button.buffer-top-large [:span "Join our Meetup group"]]]])
 
    ;; API FOR MEMBERS

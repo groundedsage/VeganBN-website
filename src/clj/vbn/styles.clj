@@ -821,12 +821,12 @@
                  :border-width (em 0.4)
                  :border-color meetup-red}
        [:span {:color 'black}]]]
-     [:.meetup-text {:flex-direction 'row
-                     :flex-wrap 'wrap}]
+     ;[:.meetup-text {:flex-direction 'row
+    ;               :flex-wrap 'wrap}]]]
      [:#meetup-text-group {:margin-top 0
                            :justify-content 'center
                            :letter-spacing (em 0.02)}]
-     [:.meetup-num {:width (em 2)}]
+
 
      [:.wrap {:flex-wrap 'wrap}]
 
