@@ -13,6 +13,7 @@
 
             [vbn.components :refer [my-routes]]
 
+            #?(:clj [vbn.styler :as styler])
             #?(:cljs [goog.style])
             [garden.core :as garden :refer [css]]
 
@@ -27,7 +28,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; API OUTPUT:
-#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
+
 
 
 
@@ -103,7 +104,9 @@
 
 
 (rum/defc page-wrapper [content]
-  [:div
+  [:div ;#?(:cljs {:class [(styler/css {:background "blue"})]})
+   ;#?(:clj {:class [(clj-styler/css {:background "blue"})]})
+   {:class [(styler/css {:background "black"})]}
    (skip-to-main)
    (navigation)
    content
@@ -159,7 +162,9 @@
 
 
 
-;#?(:cljs (goog.style/installStyles (get-css-str true)))
+#?(:cljs (enable-console-print!))
+#?(:cljs (println "Hello there browser here is my stuff" (styler/get-css-str false)))
+#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
 
 #?(:cljs
    (defn init []

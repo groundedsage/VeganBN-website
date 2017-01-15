@@ -1,12 +1,11 @@
 (ns vbn.navigation
   (:require
    [goog.events])
-   ;[goog.style])
   (:import
    [goog.history Html5History EventType]
    [goog History]))
 ;;
-;(goog.style/installStyles (styler/get-css-str true))
+
 
 
 ;; Replace this method:

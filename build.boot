@@ -39,17 +39,21 @@
               :source-paths #(conj % "cards"))
     identity)
 
-
+(deftask add-css-path []
+    (set-env! :resource-paths #(conj % "target/css")
+              :source-paths #(conj % "target/css"))
+    identity)
 
 (deftask build []
   (comp (speak)
         (static/remove-html-task)
-        ;; Do atomic styles here
         (cljs)
+        ;;;;;;
+        ;; Alternate comment below to toggle between Single Page Application and full site.
         (static/make-pages)
-        ;; Remove commenting to test a single static rendered page
         ;;(static/make-page :route :index)
-        (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
+        (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")
+        (static/add-atomic-styles)))
 
 
 (deftask run []
