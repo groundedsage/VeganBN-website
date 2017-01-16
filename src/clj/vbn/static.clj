@@ -6,6 +6,7 @@
             [clojure.java.io :as io]
             [boot.core :as c]
             [vbn.styler :as styler]
+            [vbn.mediafixer :refer [get-atomic-css]]
 
             [bidi.bidi :refer [path-for route-seq]]
             [boot.core :refer [deftask
@@ -83,9 +84,16 @@
 
 
 (defn make-atomic-styles [in-file out-file]
+  ;(println  "\n\n*** THIS IS THE IN FILE ***" (slurp in-file)
       (doto out-file
           io/make-parents
-          (spit (str (slurp in-file) " " (styler/get-css-str false)))))
+          (spit
+           (str (slurp in-file)
+                " "
+                ;(styler/get-css-str false)
+                (get-atomic-css (styler/get-css-str false)))))
+  (println "\n\n*** THIS IS THE OUT FILE ***" (slurp out-file)))
+
 
 
 

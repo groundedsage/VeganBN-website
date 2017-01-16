@@ -46,7 +46,7 @@
 
 (deftask build []
   (comp (speak)
-        (static/remove-html-task)
+        ;(static/remove-html-task)
         (cljs)
         ;;;;;;
         ;; Alternate comment below to toggle between Single Page Application and full site.
