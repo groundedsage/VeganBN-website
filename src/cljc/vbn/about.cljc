@@ -4,7 +4,7 @@
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
 
-            #?(:clj [vbn.styler :refer [css at-media]])))
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 (rum/defc content []
   [:main#main.footer-buffer
@@ -35,7 +35,7 @@
                                              :padding-left 0
                                              :padding-right 0})]}
     [:h3
-      {:class [(css {:margin-right "3em"})]} 
+      {:class [(css {:margin-right "3em"})]}
       "Values"]
     [:ol.values
      [:li [:span "Mindfulness"] [:p "Consideration of actions and the impact is has. Consideration of the journey other people are on and where they may have come from."]]
@@ -52,3 +52,5 @@ A big problem is nothing other than a combination of small problems"]]
 
      [:li [:span "Impact"] [:p "Always consider both the local and global impact"]]
      [:li [:span "Truth"] [:p "Be transparent and open in communication. For clarity communicate with simple words when possible and explain things as simply as possible. Always be happy to repeat what has been spoken. Be honest."]]]]])
+
+;#?(:clj (println "This is how it looks inside about.clj "(get-css-str false)))

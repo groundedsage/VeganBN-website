@@ -3,12 +3,12 @@
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
-            #?(:clj [vbn.styler :refer [css at-media]])))
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
-#_(def meetup-num [(css {:width "2em"})])
-#_(def meetup-text [(css {:flex-direction "row"
-                          :flex-wrap "wrap"})])
+;(def meetup-num [(css {:width "2em"})])
+;(def meetup-text [(css {:flex-direction "row"
+;                          :flex-wrap "wrap"])))
 
 (rum/defc content []
   [:main#main.footer-buffer
@@ -45,3 +45,4 @@
    ;; API FOR EVENTS
    ;; https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=VeganBN&only=time&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming&sig_id=23539071&sig=4befcc42261f8a53f40516ab2c65b367c8150699
    ;; CLJ TIME - (c/from-long  (:time  <naam variable))
+;#?(:clj (println "This is how it looks inside community.clj "(get-css-str false)))
