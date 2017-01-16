@@ -6,9 +6,9 @@
             #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
-;(def meetup-num [(css {:width "2em"})])
-;(def meetup-text [(css {:flex-direction "row"
-;                          :flex-wrap "wrap"])))
+(def meetup-num [(css {:width "2em"})])
+(def meetup-text [(css {:flex-direction "row"
+                          :flex-wrap "wrap"})])
 
 (rum/defc content []
   [:main#main.footer-buffer
@@ -34,10 +34,10 @@
                         :alt-text "Meetup Logo"}]
 
      [:div#meetup-text-group {:style {:padding "1em"}}
-      [:div #_{:class meetup-text}
-       [:div #_{:class meetup-num} "103"] "Members"]
-      [:div #_{:class meetup-text}
-       [:div #_{:class meetup-num} "2"] "Meetups this month"]]]
+      [:div {:class meetup-text}
+       [:div {:class meetup-num} "103"] "Members"]
+      [:div {:class meetup-text}
+       [:div {:class meetup-num} "2"] "Meetups this month"]]]
     [:button#meetup-button.buffer-top-large [:span "Join our Meetup group"]]]])
 
    ;; API FOR MEMBERS
