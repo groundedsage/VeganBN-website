@@ -1,10 +1,11 @@
 (ns vbn.molecules
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.components :refer [my-routes]]
 
             [bidi.bidi :as b :refer [match-route path-for]]
-
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])
             #?(:cljs [vbn.navigation :refer [link current-token]])))
 
 
@@ -25,9 +26,15 @@
 
 (rum/defc blurb-title-second [content]
   (let [{:keys [image alt-text title text cta cta-key]} content]
-    [:div.blurb
-     [:.img-container (atom/blurb-image image alt-text)]
-     [:div.image-title-text-cta
+    [:div
+      {:class [(css {::margin-top "2rem"})
+               (at-media {:min-width "35rem"} {:flex-direction "row"})]}
+     [:div
+      {:class [(at-media {:min-width "35rem"} {:margin-right "5%"
+                                               :max-width "35%"})]}
+      (atom/blurb-image image alt-text)]
+     [:div
+       {:class [(at-media {:min-width "35rem"} {:width "60%"})]}
       [:h3 title]
                                         ;(reduce conj [:section])
       text
@@ -42,16 +49,22 @@
 (rum/defc blurb-title-second-veganism [content]
   (let [{:keys [image alt-text title text cta cta-key]} content
         text (conj [:div] text)]
-    [:div.blurb
-     [:.img-container (atom/blurb-image image alt-text)]
-     [:div.image-title-text-cta
+    [:div]
+    {:class [(css {::margin-top "2rem"})
+             (at-media {:min-width "35rem"} {:flex-direction "row"})]
+     [:div
+       {:class [(at-media {:min-width "35rem"} {:margin-right "5%"
+                                                :max-width "35%"})]}
+      (atom/blurb-image image alt-text)]
+     [:div
+      {:class [(at-media {:min-width "35rem"} {:width "60%"})]}
       [:h3 title]
       text
       #_(if (= :cta-key :sign-up)
          [:button {:href "#sign-up"}
           [:span cta]]
          (link (path-for my-routes cta-key)
-               [:button [:span cta]]))]]))
+               [:button [:span cta]]))]}))
 
 #_(rum/defc navigation []
    [:nav
@@ -70,15 +83,24 @@
 
 
 (rum/defc page-intro [& content]
-  (conj [:div {:style {:align-items 'center}}]
+  (conj [:div
+         {:class [(css {:align-items "center"})]}]
+    ;{:style {:align-items 'center}
         content))
 
 (rum/defc icon-with-text [icon-name text]
-  [:div {:style {:width "100%"
-                 :max-width "13em"
-                 :align-items "center"}}
+  [:div
+   {:class [(css {:width "100%"
+                  :max-width "13em"
+                  :align-items "center"})]}
+  ;{:style {:width "100%"
+  ;               :max-width "13em"
+  ;               :align-items "center"
    (atom/circle-icon icon-name)
-   [:span {:style {:white-space "nowrap"}} text]])
+   [:span
+    {:class [(css {:white-space "nowrap"})]}
+    ;{:style {:white-space "nowrap"}}
+    text]])
 
 (rum/defc bigger-than-business [text]
   [:div.home-component

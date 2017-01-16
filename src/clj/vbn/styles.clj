@@ -457,9 +457,9 @@
       [:span {:font-size (em 2)
               :color 'white}]]
 
-     [:.h1-home {:font-weight 'bold}]
+     ;[:.h1-home {:font-weight 'bold}]
 
-     [:.h1-home
+     [;:.h1-home
       :.h2-home {:align-self 'center
                  :position 'relative}]
 
@@ -520,14 +520,14 @@
                      :background-color 'grey
                      :border-radius (px 10)}]
 
-     [:.blurb {:margin-top (rem 2)}]
+    ; [:.blurb {:margin-top (rem 2)}]
 
 
 
 
      (at-media {:min-width (px 568)}
 
-               [:.blurb {:flex-direction 'row}]
+               ;[:.blurb {:flex-direction 'row}]
 
                [:.img-container {
                                    :margin-right "5%"
@@ -821,12 +821,12 @@
                  :border-width (em 0.4)
                  :border-color meetup-red}
        [:span {:color 'black}]]]
-     ;[:.meetup-text {:flex-direction 'row
-    ;               :flex-wrap 'wrap}]]]
+     [:.meetup-text {:flex-direction 'row
+                     :flex-wrap 'wrap}]
      [:#meetup-text-group {:margin-top 0
                            :justify-content 'center
                            :letter-spacing (em 0.02)}]
-
+     [:.meetup-num {:width (em 2)}]
 
      [:.wrap {:flex-wrap 'wrap}]
 

@@ -1,11 +1,34 @@
 (ns vbn.atoms
-  (:require [rum.core :as rum]))
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
+  (:require [rum.core :as rum]
+    #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 (rum/defc h1 [text]
   [:h1 text])
 
+(def line-under {:border-bottom "solid 1px rgba(51,61,71, 0.2)"
+                 :position "absolute"
+                 :top "110%"
+                 :right "10%"
+                 :width "80%"
+                 :content " \" \" "})
+
 (rum/defc h1-home [text]
-  [:h1.h1-home.line-under.buffer-top text])
+  [:h1
+    {:class [(css {:font-weight "bold"
+                   :align-self "center"
+                   :position "relative"
+                   ;;[REMOVE LATER]
+                   :margin-top "1.5em"})]}
+                   ;;Should be able to make below into symbol
+;              :before {:border-bottom "solid 1px rgba(51,61,71, 0.2)"
+;                               :position "absolute"
+;                               :top "110%"
+;                               :right "10%"
+;                               :width "80%"
+;                               :content " \" \" "})]}
+  ;.h1-home.line-under.buffer-top
+   text])
 
 (rum/defc h2 [text]
   [:h2 text])

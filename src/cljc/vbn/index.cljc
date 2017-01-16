@@ -56,7 +56,6 @@
 (rum/defc content []
   [:main#main.footer-buffer
    (banner-image)
-   [:h1.random-test "Testifdsf"]
    (atom/h1-home "Vegan Business Network")
    (organism/bigger-than-business)
    (organism/movement)

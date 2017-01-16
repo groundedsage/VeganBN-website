@@ -19,17 +19,17 @@
     [:p "One is purely social and the other boasts guest speakers or a discussion forum regarding pertinent topics for the vegan/vegan friendly business owner."])
 
    ;; Should try out putting the css in a let binding or a def for reusability
-   [:div #_{:class [(css {:align-self "center"
-                          :width "100%"
-                          :max-width "35em"
-                          :border-style "solid"
-                          :border-width "0.2em"
-                          :padding "2em"
+   [:div {:class [(css {:align-self "center"
+                        :width "100%"
+                        :max-width "35em"
+                        :border-style "solid"
+                        :border-width "0.2em"
+                        :padding "2em"
                           ;Need to replace black with brand-dark
-                          :border-color "black"
-                          :border-radius "0.5em"})]}
-    [:div #_{:class [(css {:flex-direction "row"
-                           :flex-wrap "wrap"})]}
+                        :border-color "black"
+                        :border-radius "0.5em"})]}
+    [:div {:class [(css {:flex-direction "row"
+                         :flex-wrap "wrap"})]}
      [:img.meetup-logo {:src "photos/meetup-logo.png"
                         :alt-text "Meetup Logo"}]
 
