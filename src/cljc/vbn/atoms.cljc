@@ -34,7 +34,10 @@
   [:h2 text])
 
 (rum/defc h2-home [text]
-  [:h2.h2-home.line-under text])
+  [:h2 {:class [(css {:align-self "center"
+                      :position "relative"})]}
+   ;.h2-home.line-under
+   text])
 
 (rum/defc h3 [text]
   [:h3 text])

@@ -134,19 +134,19 @@
 
 
 
-     [;:.vision-title {:font-weight 'bold}
+     ;[:.vision-title {:font-weight 'bold}
       ;                :font-size (em 1.125)
       ;                :line-height (em 1.5)
 
 
 
 
-      ["span:first-child"{
-                          :font-size (em 1.125)
-                          :line-height (em 1.5)}]
+      ;["span:first-child"{
+      ;                    :font-size (em 1.125)
+      ;                    :line-height (em 1.5)}]
 
-      [:p {:margin {:top (em 0.5)
-                    :bottom (em 2.5)}}]]
+      ;[:p {:margin {:top (em 0.5)
+      ;              :bottom (em 2.5)])
 
      ;[:.simple-vision {:margin {:top (em 0.5)
     ;                          :bottom (em 2.5))}}]]
@@ -182,7 +182,7 @@
        {:background-color brand-dark}
        [:span {:color cta-colour}]]]
 
-     [:.image-title-text-cta [:button {:margin-top 'auto}]]
+     ;[:.image-title-text-cta [:button {:margin-top 'auto}]]
 
 
 
@@ -456,9 +456,9 @@
 
      ;[:.h1-home {:font-weight 'bold}]
 
-     [;:.h1-home
-      :.h2-home {:align-self 'center
-                 :position 'relative}]
+     [];:.h1-home
+    ;  :.h2-home {:align-self 'center
+    ;             :position 'relative]
 
      [:.home-component {:flex-direction 'row
                         :flex-wrap 'wrap
@@ -528,9 +528,9 @@
 
                [:.img-container {
                                    :margin-right "5%"
-                                   :max-width "35%"}]
+                                   :max-width "35%"}])
 
-               [:.image-title-text-cta {:width "60%"}])
+               ;[:.image-title-text-cta {:width "60%"}])
 
 
 

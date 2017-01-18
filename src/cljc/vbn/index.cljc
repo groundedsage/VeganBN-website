@@ -16,39 +16,44 @@
   [:div#banner-image.full-width
    [:span "Fostering a better world through business"]])
 
+(rum/defc mail-chimp-form []
+  [:div#mc_embed_signup
+   [:form#mc-embedded-subscribe-form
+    {:action "//veganbusinessnetwork.us13.list-manage.com/subscribe/post?u=3e449a3b219823344ae7ae47a&amp;id=a3633bf54c"
+     :method "post"
+     :name "mc-embedded-subscribe-form"
+     :target "_blank"
+     "novalidate" true}
+    [:div#mc_embed_signup_scroll
+     [:div.mc-field-group
+      [:label.sign-up-label {:for "mce-EMAIL"} "Email Address"]
+      [:input#mce-EMAIL.required.email {:type "email"}]]
+
+     [:div#mce-responses.clear
+      [:div#mce-error-response.response {:style {:display "none"}}]
+      [:div#mce-success-response.response {:style {:display "none"}}]]
+     [:div {:style {:position "absolute"
+                    :left "-5000px"
+                    :aria-hidden true}}
+      [:input {:type "text"
+               :name "b_3e449a3b219823344ae7ae47a_a3633bf54c"
+               :tabindex "-1"
+               "value" true}]]
+     [:div.clear
+      [:input#mc-embedded-subscribe.button {:type "submit"
+                                            :value "Subscribe"
+                                            :name "subscribe"}]]]]])
+
+
 (rum/defc sign-up []
   [:div#sign-up.sign-up-box.full-width.buffer-top-large
    [:div.inside-block.center-items
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]
     [:div {:class [(css {:width "100%"})
                    (at-media {:min-width "60rem"} {:max-width "35em"})]}
-
-     {:dangerouslySetInnerHTML
-      {:__html
-       "
-<!-- Begin MailChimp Signup Form -->
-<div id=\"mc_embed_signup\">
-<form action=\"//veganbusinessnetwork.us13.list-manage.com/subscribe/post?u=3e449a3b219823344ae7ae47a&amp;id=a3633bf54c\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate>
-    <div id=\"mc_embed_signup_scroll\">
-
-<div class=\"mc-field-group\">
-	<label class=\"sign-up-label\" for=\"mce-EMAIL\">Email Address </label>
-	<input type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\">
-</div>
-	<div id=\"mce-responses\" class=\"clear\">
-		<div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div>
-		<div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style=\"position: absolute; left: -5000px;\" aria-hidden=\"true\"><input type=\"text\" name=\"b_3e449a3b219823344ae7ae47a_a3633bf54c\" tabindex=\"-1\" value=\"\"></div>
-    <div class=\"clear\"><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>
-    </div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
+     (mail-chimp-form)]]])
 
 
-"}}]]])
 
 
 
