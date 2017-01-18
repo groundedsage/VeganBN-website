@@ -92,10 +92,10 @@
   [:div
    {:class [(css {:width "100%"
                   :max-width "13em"
-                  :align-items "center"})]}
-  ;{:style {:width "100%"
-  ;               :max-width "13em"
-  ;               :align-items "center"
+                  :align-items "center"
+                  :padding-left "1.5rem"
+                  :padding-right "1.5rem"})]}
+
    (atom/circle-icon icon-name)
    [:span
     {:class [(css {:white-space "nowrap"})]}

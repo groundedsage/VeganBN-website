@@ -1,8 +1,10 @@
 (ns vbn.veganism
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
-            [devcards.core :as dc]))
+            [devcards.core :as dc]
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 (rum/defc content []
   [:main#main
@@ -18,6 +20,10 @@
       [:p "A vegan actively seeks to stop any exploitation and harm caused to human and non-human animals both directly and indirectly. Through pragmatic choices made daily against using, wearing or eating anything which is a product of this."]]]
 
    [:div.center-items.dimension-buffer
+    ;{:class [(css {:margin-top "4.5rem"
+    ;               :align-items "center"
+    ;               :background "red"
+
     (atom/h2-home "The 3 Dimensions of Veganism")
     [:p "There is 3 key points to veganism which combine to create strong feelings within those who choose to embrace the vegan philosophy entirely. "]]
 

@@ -20,6 +20,7 @@
 
 
 
+
 (def brand-color "#00ff7f")
 (def brand-blue
  ; "#0000e0"
@@ -48,11 +49,7 @@
      ;; Remove this later
      {:color "#050709"}
 
-
      [:h6 {:font-size "calc(1.602em + (2.441 - 1.602) * (100vw - 25em)/(62.5 - 25))"}]
-
-
-
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   LAYOUT DEFAULTS   ;;;;;;;;;;
@@ -110,12 +107,12 @@
      [:ol.values
       [:li {:font-weight 'bold}]]
 
-     [:.values-section {}];:display 'flex
+     [];];:.values-section {}]:display 'flex
                         ;:flex-direction 'column
                         ;:align-items 'baseline
                         ;:padding {:left (em 1.5)
                         ;          :right (em 1.5)}]
-     [:.vision-section
+     [;:.vision-section
       :.bullet-padding {:padding {:left (em 1.5)
                                   :right (em 1.5)}}]
 
@@ -123,13 +120,13 @@
 
 
      (at-media {:min-width (rem 30)}
-               [;:.values-section
-                :.vision-section  {:flex-direction 'row
-                                   :align-items 'baseline
-                                   :padding {:left 0
-                                             :right 0}}
+               [];:.values-section
+                ;:.vision-section  {:flex-direction 'row
+                ;                   :align-items 'baseline
+                ;                   :padding {:left 0
+                ;                             :right 0}
 
-                [:h3 {:margin-right (em 3)}]]
+                ;[:h3 {:margin-right (em 3)}]]
                [:ol.values
                 :.vision {:width "80%"}])
 
@@ -137,9 +134,9 @@
 
 
 
-     [:.vision-title {:font-weight 'bold
-                      :font-size (em 1.125)
-                      :line-height (em 1.5)}
+     [;:.vision-title {:font-weight 'bold}
+      ;                :font-size (em 1.125)
+      ;                :line-height (em 1.5)
 
 
 
@@ -151,8 +148,8 @@
       [:p {:margin {:top (em 0.5)
                     :bottom (em 2.5)}}]]
 
-     [:.simple-vision {:margin {:top (em 0.5)
-                                :bottom (em 2.5)}}]
+     ;[:.simple-vision {:margin {:top (em 0.5)
+    ;                          :bottom (em 2.5))}}]]
 
 
 
@@ -499,15 +496,15 @@
                              :content " \" \" "}]
 
 
-     [:.at-our-core {:flex-direction 'row
-                     :flex-wrap 'wrap
-                     :align-items 'baseline
-                     :justify-content 'space-around
-                     :align-self 'center
-                     :width "100%"}
-
-            [:div {:padding {:left (rem 1.5)
-                             :right (rem 1.5)}}]]
+     ;[:.at-our-core {:flex-direction 'row
+    ;                 :flex-wrap 'wrap
+  ;                   :align-items 'baseline
+;                     :justify-content 'space-around
+;                     :align-self 'center
+;                     :width "100%"
+;
+;            [:div {:padding {:left (rem 1.5)
+  ;                           :right (rem 1.5)}]
 
 
 
@@ -646,8 +643,8 @@
                [:.center-to-60 {:align-self 'center}])
 
      (at-media {:min-width (rem 120)}
-               [:.bump-width {:max-width (rem 110)}
-                [:.inside-three {:font-size (rem 0.8)}]])
+               [:.bump-width {:max-width (rem 110)}])
+              ;  [:.inside-three {:font-size (rem 0.8)}]])
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -662,10 +659,10 @@
                            :justify-content 'space-around}])
 
 
-     [:.column-four {:flex-direction 'row
-                     :flex-wrap 'wrap
-                     :justify-content 'space-around
-                     :width "100%"}]
+    ; [:.column-four {:flex-direction 'row
+    ;                 :flex-wrap 'wrap
+    ;                 :justify-content 'space-around
+    ;                 :width "100%"])
 
 
      (at-media {:min-width (rem 120)}
@@ -695,12 +692,12 @@
                                 :justify-content 'space-around}
                 [:h3 {:font-size (em 1.4)}]]
 
-               [:.buffer-left {:margin-left 0}]
-               [:.inside-three {:padding (em 1)
-                                :margin-top 0
-                                :max-width (em 16)}])
+               [:.buffer-left {:margin-left 0}])
+              ; [:.inside-three {:padding (em 1)
+              ;                  :margin-top 0
+              ;                  :max-width (em 16)}])
 
-     [:.inside-three {:margin-top (rem 2)}]
+     ;[:.inside-three {:margin-top (rem 2)}]
 
      [:.drop-top-padding {:padding-top 0}]
      [:.make-top-margin {:margin-top (rem 1.5)}]
@@ -715,39 +712,39 @@
                               :justify-content 'space-between}]
                [:.principle {:width "45%"}])
 
-     [:.pricing-options {
-                         :border-style 'outset
-                         :border-width (em 0.4)
-                         :border-color brand-color
-                         :border-radius (em 0.5)
-                         :align-items 'center
-                         :padding (em 1)
-                         :background brand-dark
-                         :color 'white
-                         :width (em 19)}
-      [:h3 {:margin-top 0}]]
+;     [:.pricing-options {
+;                         :border-style 'outset
+;                         :border-width (em 0.4)
+;                         :border-color brand-color
+;                         :border-radius (em 0.5)
+;                         :align-items 'center
+;                         :padding (em 1)
+;                         :background brand-dark
+;                         :color 'white
+;                         :width (em 19)])
+    ;  [:h3 {:margin-top 0}]]
 
      [:.pricing-features [:li {:line-height (em 1.5)}]]
 
-     [:.column-four
-      [:.inside-three {:max-width (em 19)}]]
+     ;[:.column-four
+      ;[:.inside-three {:max-width (em 19)}]]
 
-     [:.row {:flex-direction 'row}]
-     [:.circle {:background brand-dark
-                :border-radius "50%"
-                :width (em 8)
-                :height (em 8)
-                :border-width (em 0.4)
-                :border-style 'outset
-                :border-color brand-color
-                :color 'white
-                :align-items 'center
-                :justify-content 'center}
+     ;[:.row {:flex-direction 'row}]
+    ; [:.circle {:background brand-dark
+    ;            :border-radius "50%"
+    ;            :width (em 8)
+    ;            :height (em 8)
+    ;            :border-width (em 0.4)
+    ;            :border-style 'outset
+    ;            :border-color brand-color
+    ;            :color 'white
+    ;            :align-items 'center
+    ;            :justify-content 'center]
 
-      [:h3 {:margin-top 0}]]
+    ;  [:h3 {:margin-top 0}]]
 
-     [:.initial-consult {
-                         :font-size (em 1.5)}]
+     ;[:.initial-consult {
+    ;                     :font-size (em 1.5)}]]
 
      [:input
       :textarea {:margin-top (em 0.2)
@@ -770,12 +767,12 @@
 
      [:label {:color brand-dark}]
 
-     [:.bump-area-height {:min-height (em 6)
-                          :max-width "100%"}]
+     ;[:.bump-area-height {:min-height (em 6)
+    ;                      :max-width "100%"}
 
-     [:.form-width {:width "100%"}]
-     (at-media {:min-width (em 60)}
-               [:.form-width {:max-width (em 35)}])
+    ; [:.form-width {:width "100%"}]
+    ; (at-media {:min-width (em 60)}
+    ;           [:.form-width {:max-width (em 35)}]]
 
 
 
@@ -785,26 +782,26 @@
      ;;;;;;;;;   ABOUT PAGE    ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-     [:.about-strong {:margin-right (em 0.2)
-                      :letter-spacing (em 0.05)}]
+     ;[:.about-strong {:margin-right (em 0.2)
+    ;                  :letter-spacing (em 0.05)}]
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   COMMUNITY PAGE    ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-     [:.community-box {:padding (em 2)
-                       :border-style 'solid
-                       :border-width (em 0.2)
-                       :border-radius (em 0.5)
-                       :border-color brand-dark
-                       :width "100%"
-                       :max-width (em 35)}]
+    ; [:.community-box {:padding (em 2)
+    ;                   :border-style 'solid
+    ;                   :border-width (em 0.2)
+    ;                   :border-radius (em 0.5)
+    ;                   :border-color brand-dark
+    ;                   :width "100%"
+    ;                   :max-width (em 35)}]
 
 
-     [:.meetup-logo {:width (rem 5)
-                     :height (rem 5)
-                     :margin-right (rem 2)
-                     :margin-top (rem 1)}]
+     ;[:.meetup-logo {:width (rem 5)
+      ;               :height (rem 5)
+      ;               :margin-right (rem 2)
+      ;               :margin-top (rem 1)]
 
 
      (def meetup-red "#ED1C40")
@@ -821,14 +818,16 @@
                  :border-width (em 0.4)
                  :border-color meetup-red}
        [:span {:color 'black}]]]
-     [:.meetup-text {:flex-direction 'row
-                     :flex-wrap 'wrap}]
+
+     ;[:.meetup-text {:flex-direction 'row
+      ;               :flex-wrap 'wrap}]]]
+
      [:#meetup-text-group {:margin-top 0
                            :justify-content 'center
                            :letter-spacing (em 0.02)}]
-     [:.meetup-num {:width (em 2)}]
+     ;[:.meetup-num {:width (em 2)}]
 
-     [:.wrap {:flex-wrap 'wrap}]
+     ;[:.wrap {:flex-wrap 'wrap}]
 
 
 

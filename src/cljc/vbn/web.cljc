@@ -1,7 +1,45 @@
 (ns vbn.web
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]))
+            [vbn.molecules :as molecule]
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
+
+(def pricing-options [(css  {:border-style "outset"
+                             :border-width "0.4em"
+                             ;; FIXBELOW - make brand-color
+                             :border-color "green"
+                             :border-radius "0.5em"
+                             :align-items "center"
+                             :padding "1em"
+                             ;; FIXBELOW - make brand-dark
+                             :background "black"
+                             :color "white"
+                             :width "19em"})])
+
+(def inside-three [(css {:margin-top "2rem"})
+                   (at-media {:min-width "60rem"} {:margin-top 0
+                                                   :padding "1em"
+                                                   :max-width "16em"})
+                   (at-media {:min-width "120rem"} {:font-size "0.8rem"})])
+
+
+(def inside-three-four [(css {:margin-top "2rem"})
+                        (at-media {:min-width "60rem"} {:margin-top 0
+                                                        :padding "1em"
+                                                        :max-width "19em"})
+                        (at-media {:min-width "120rem"} {:font-size "0.8rem"})])
+
+(def column-four [(css {:flex-direction "row"
+                        :flex-wrap "wrap"
+                        :justify-content "space-around"
+                        :width "100%"})
+                  (at-media {:min-width "120rem"} {:margin-top 0
+                                                   :width "50%"})])
+
+
+
+
 
 
 (rum/defc icon-title-text [title text]
@@ -19,8 +57,8 @@
     [:div.inside-block.bump-width
      (atom/h2-home "4 Reasons to Choose Us")
      [:div.four-up
-      [:div.column-four
-       [:.inside-three
+      [:div {:class column-four}
+       [:div {:class inside-three-four}
         (atom/rock-solid)
         (icon-title-text
          [:h3 "Rock Solid Foundations"]
@@ -28,15 +66,15 @@
 technology the web has to offer."]
           [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing."]])]
 
-       [:.inside-three
+       [:div {:class inside-three-four}
         (atom/bird)
         (icon-title-text
          [:h3 "Speed Matters"]
          [:div [:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
           [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
 
-      [:div.column-four
-       [:.inside-three
+      [:div {:class column-four}
+       [:div {:class inside-three-four}
         (atom/safe)
         (icon-title-text
          [:h3 "Ultra Secure"]
@@ -45,7 +83,7 @@ technology the web has to offer."]
           [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]])]
 
 
-       [:.inside-three
+       [:div {:class inside-three-four}
         (atom/evolve)
         (icon-title-text
          [:h3 "Designed to Evolve"]
@@ -85,39 +123,39 @@ technology the web has to offer."]
      [:p.center "We focus on immediate feedback throughout our entire  process. As such it is highly iterative and interactive from the very beginning. You are completely engaged throughout the entire process. When you start with us after the initial consult we provide you with a completely interactive unfinished design prototype. From here we progressively evolve this prototype togther to produce a design that feels almost real. Knowing this is exactly what you want we begin the final stage of actually building your website or application."]
 
      [:div.three-up-six
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/information-architecture)
        (icon-title-text
         [:h3 "Information Architecture"]
         [:p "Starting with the initial consult we establish the current state of your business and it’s future plans. From here we can design the structure of the information on your website or application to ensure that it achieves your current and future business objectives/ desired goals. "])]
 
 
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/visual-language)
        (icon-title-text
         [:h3 "Visual Language"]
         [:p "Starting with the initial consult we review the visual language your business currently has or what is missing. From here we develop the unique style of your website or application in a way that can easily be reviewed and evolve years later.
 "])]
 
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/mock-up)
        (icon-title-text
         [:h3 "Mock-up"]
         [:p "Bringing your unique style and information architecture together we create the first real representation of what the final product will look like using real or representative information."])]
 
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/micro-interactions)
        (icon-title-text
         [:h3 "Micro-interactions"]
         [:p "Once we have established the look and flow of your website or application we can focus on micro-interactions. It is here that you can truly set yourself apart. We create small interactive and intelligent animations. This is what delights your users."])]
 
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/develop)
        (icon-title-text
         [:h3 "Develop and Deploy"]
         [:p "Throughout the entire process we develop finalised designs to ensure it is completed as quickly as possible. At this stage we add the final touches and then release your website or application into the wild. "])]
 
-      [:div.inside-three
+      [:div {:class inside-three}
        (atom/happy-days)
        (icon-title-text
         [:h3 "Happy Days"]
@@ -128,8 +166,13 @@ technology the web has to offer."]
     [:h2 "What's the cost?"]
     [:p "Everyone has different needs so it will almost always end up with a custom quote. However in the interest of saving both of us time we have provided you with prices for a variety of general website combinations. These prices are based on a typical website and conditions apply with respect to upkeep fees. Prices are introductory and will change in the future."]
 
-    [:div.row.circle (atom/dollar) [:h3 "250"]]
-    [:span.initial-consult "Initial Consult"]
+    [:div {:class pricing-options}
+     ;.circle
+     (atom/dollar) [:h3 {:class [(css {:margin-top 0})]} "250"]]  ; FIXBELOW <- won't need the margin top when fixing global styles + also in pricing list
+    [:span
+     {:class [(css {:font-size "1.5em"})]}
+    ;.initial-consult
+     "Initial Consult"]
 
 
     [:p "Our initial consultation covers up to two hours discussion regarding your needs and any preliminary designing. We offer so much value it is impossible for us to do this for free. We provide a detailed info sheet following the initial consult and any designs done will also be provided to you in PDF format. This means you can easily take all that value to another studio of give it to a friend doing your website."]
@@ -140,12 +183,12 @@ technology the web has to offer."]
 
 
    [:div.bullet-padding
-    [:div.column-four
-     [:div.inside-three
-      [:div.pricing-options
-       [:div.row
+    [:div {:class column-four}
+     [:div {:class inside-three-four}
+      [:div {:class pricing-options}
+       [:div {:class [(css {:flex-direction "row"})]}
         (atom/dollar)
-        [:h3 "3000"]]
+        [:h3 {:class [(css {:margin-top 0})]} "3000"]]
        [:span "Simple Site"]]
       [:ul.pricing-features
        [:li "Without a CMS"]
@@ -154,11 +197,11 @@ technology the web has to offer."]
        [:li "You own the site code"]
        [:li "Never pay any upkeep fees"]]]
 
-     [:div.inside-three
-      [:div.pricing-options
-       [:div.row
+     [:div {:class inside-three-four}
+      [:div {:class pricing-options}
+       [:div {:class [(css {:flex-direction "row"})]}
         (atom/dollar)
-        [:h3 "3800"]]
+        [:h3 {:class [(css {:margin-top 0})]} "3800"]]
        [:span "Dynamic Site"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -167,12 +210,12 @@ technology the web has to offer."]
        [:li "You own the site code"]
        [:li "Never pay any upkeep fees"]]]]
 
-    [:div.column-four
-     [:div.inside-three
-      [:div.pricing-options
-       [:div.row
+    [:div {:class column-four}
+     [:div {:class inside-three-four}
+      [:div {:class pricing-options}
+       [:div {:class [(css {:flex-direction "row"})]}
         (atom/dollar)
-        [:h3 "4800"]]
+        [:h3 {:class [(css {:margin-top 0})]} "4800"]]
        [:span "Dynamic Site +"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -181,11 +224,11 @@ technology the web has to offer."]
        [:li "You own the site code"]
        [:li "Never pay any upkeep fees"]]]
 
-     [:div.inside-three
-      [:div.pricing-options
-       [:div.row
+     [:div {:class inside-three-four}
+      [:div {:class pricing-options}
+       [:div {:class [(css {:flex-direction "row"})]}
         (atom/dollar)
-        [:h3 "4500"]]
+        [:h3 {:class [(css {:margin-top 0})]} "4500"]]
        [:span "Dynamic Site + E-commerce"]]
       [:ul.pricing-features
        [:li "Advanced CMS"]
@@ -212,7 +255,9 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
 
        [:p
         [:label "Let us know what your dreaming up"]
-        [:textarea.bump-area-height {:name "message"}]]
+        [:textarea {:class [(css {:min-height "6em"
+                                  :max-width "100%"})]}
+         {:name "message"}]]
 
        [:p
         [:button [:span "Send"]]]]]]]])

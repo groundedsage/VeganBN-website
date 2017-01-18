@@ -1,8 +1,10 @@
 (ns vbn.index
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
-            [vbn.organisms :as organism]))
+            [vbn.organisms :as organism]
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -18,7 +20,9 @@
   [:div#sign-up.sign-up-box.full-width.buffer-top-large
    [:div.inside-block.center-items
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]
-    [:div.form-width
+    [:div {:class [(css {:width "100%"})
+                   (at-media {:min-width "60rem"} {:max-width "35em"})]}
+
      {:dangerouslySetInnerHTML
       {:__html
        "

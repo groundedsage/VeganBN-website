@@ -1,7 +1,9 @@
 (ns vbn.organisms
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]))
+            [vbn.molecules :as molecule]
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
 
@@ -46,6 +48,12 @@
 
   [:div.buffer-top-large
    (atom/h2-home "At Our Core")
-   [:div.at-our-core
+   [:div {:class [(css {:flex-direction "row"
+                        :flex-wrap "wrap"
+                        :align-items "baseline"
+                        :justify-content "space-around"
+                        :align-self "center"
+                        :width "100%"})]}
+    ;.at-our-core
     (molecule/icon-with-text "community" "We are about community")
     (molecule/icon-with-text "education" "We are about education")]])

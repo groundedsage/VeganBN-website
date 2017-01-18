@@ -6,6 +6,9 @@
 
             #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
+(def about-strong [(css {:margin-right "0.2em"
+                         :letter-spacing "0.05em"})])
+
 (rum/defc content []
   [:main#main.footer-buffer
    (molecule/page-intro
@@ -16,14 +19,24 @@
     [:div.inside-block
      (atom/h2-home "At VeganBN we work to:")
      [:div.center
-      [:p [:strong.about-strong "GROW"] "  vegan and vegan friendly businesses with world class services."]
-      [:p [:strong.about-strong "EDUCATE"] "   the public, businesses and government on veganism."]
-      [:p [:strong.about-strong "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]]]]
+      [:p [:strong {:class about-strong} "GROW"] "  vegan and vegan friendly businesses with world class services."]
+      [:p [:strong {:class about-strong} "EDUCATE"] "   the public, businesses and government on veganism."]
+      [:p [:strong {:class about-strong} "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]]]]
 
    (atom/h2-home "Vision and Values")
    [:div.vision-section
-    [:h3 "Vision"] [:.vision [:span.vision-title "A Vegan World"]
-                    [:span.simple-vision "Pretty simple really"]]]
+    [:h3 "Vision"] [:.vision [:span
+                              {:class [(css {:font-weight "bold"
+                                             ;;NEED TO FIXBELOW
+                                             :font-size "1.125em"
+                                             :line-height "1.5em"})]}
+                              ;.vision-title
+                              "A Vegan World"]
+                    [:span
+                      {:class [(css {:margin-top "0.5em"
+                                           :margin-bottom "0.5em"})]}
+                     ;.simple-vision 
+                     "Pretty simple really"]]]
 
    [:div
     {:class [(css {:display "flex"

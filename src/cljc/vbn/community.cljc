@@ -25,13 +25,19 @@
                         :border-style "solid"
                         :border-width "0.2em"
                         :padding "2em"
-                          ;Need to replace black with brand-dark
+                          ;NEED TO FIXBELOW
                         :border-color "black"
                         :border-radius "0.5em"})]}
     [:div {:class [(css {:flex-direction "row"
                          :flex-wrap "wrap"})]}
-     [:img.meetup-logo {:src "photos/meetup-logo.png"
-                        :alt-text "Meetup Logo"}]
+     [:img
+      {:class [(css {:width "5rem"
+                     :height "5rem"
+                     :margin-right "2rem"
+                     :margin-top "1rem"})]
+
+       :src "photos/meetup-logo.png"
+       :alt-text "Meetup Logo"}]
 
      [:div#meetup-text-group {:style {:padding "1em"}}
       [:div {:class meetup-text}
