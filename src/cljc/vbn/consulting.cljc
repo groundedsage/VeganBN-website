@@ -1,4 +1,5 @@
 (ns vbn.consulting
+  #?(:cljs (:require-macros  [vbn.styler :refer [css at-media]]))
   (:require [rum.core :as rum]
             [bidi.bidi :refer [path-for]]
 
@@ -6,7 +7,8 @@
             [vbn.components :refer [my-routes]]
 
             [vbn.atoms :as atom]
-            [vbn.molecules :as molecule]))
+            [vbn.molecules :as molecule]
+            #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 ;; define clojure version of link
 #?(:clj (rum/defc link [link & content]
@@ -16,6 +18,16 @@
 
 
 
+(rum/defc consult-block []
+  [:div.block-grey.full-width.consulting-block
+   [:div.inside-block.extra-padding
+    [:span.consulting-block-text "You bring the idea. "
+     [:strong.green-text
+      ;; Replacing this green text shows up on the Community page
+      ;; on the stats of members and number of meetups
+      ;;    {:class [(css {:color "#00ff7f"
+      ;;                   :letter-spacing "0.01em"
+       "We bring it to life."]]]])
 
 
 
@@ -28,10 +40,8 @@
     [:p "We provide full service business consulting"])
 
    [:span.consulting-top-text.buffer-top  "What does that mean?"]
-   [:div.block-grey.full-width.consulting-block
-    [:div.inside-block.extra-padding
-     [:span.consulting-block-text "You bring the idea. "
-      [:strong.green-text "We bring it to life."]]]]
+   (consult-block)
+
 
    [:div.home-component.buffer-top-large.consult-component
     (atom/native)

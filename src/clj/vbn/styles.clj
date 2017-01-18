@@ -672,9 +672,9 @@
 
      [:.four-up [:svg {:align-self 'center}]]
 
-     [:.three-up-six
-      [:svg
-       {:align-self 'center}]]
+     ;[:.three-up-six
+      ;[:svg
+      ; {:align-self 'center}]
 
 
      [:.buffer-left {:margin-left (em 1.5)}]
@@ -687,9 +687,9 @@
      (at-media {:min-width (em 60)}
                [:.three-up {:flex-direction 'row
                             :justify-content 'space-between}]
-               [:.three-up-six {:flex-direction 'row
-                                :flex-wrap 'wrap
-                                :justify-content 'space-around}
+               [;:.three-up-six {:flex-direction 'row
+                ;                :flex-wrap 'wrap
+                ;                :justify-content 'space-around
                 [:h3 {:font-size (em 1.4)}]]
 
                [:.buffer-left {:margin-left 0}])

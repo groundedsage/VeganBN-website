@@ -46,7 +46,6 @@
 
    [:div
     {:class [(css {:display "flex"
-                   :flex-direction "column"
                    :align-items "baseline"
                    :padding-left "1.5em"
                    :padding-right "1.5em"})

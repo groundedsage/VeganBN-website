@@ -14,11 +14,13 @@
             [vbn.components :refer [my-routes]]
 
             #?(:clj [vbn.styler :refer [css] :as styler])
+            #?(:cljs [goog.style])
 
 
 
             #?(:cljs [vbn.navigation :refer [link current-token]])
             #?(:cljs [vbn.devcards :as devcards])))
+
 
 
 ;; Accessibility defaults
@@ -140,7 +142,7 @@
 
 
 
-
+#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
 #?(:cljs
    (defn init []
      (rum/mount (page) (. js/document (getElementById "container")))))

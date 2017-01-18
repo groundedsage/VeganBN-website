@@ -127,40 +127,52 @@
    [:use {:xlink-href "/svg/print.svg#print"}]])
 
 (rum/defc information-architecture []
-  [:svg.buffer-left {:height "10em"
-                     :width "10em"
-                     :viewBox "0 0 363 309"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-left "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 363 309"}
    [:use {:xlink-href "/svg/information-architecture.svg#information-architecture"}]])
 
 (rum/defc visual-language []
-  [:svg.bump-left {:height "10em"
-                   :width "10em"
-                   :viewBox "0 0 363 309"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-right "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 363 309"}
    [:use {:xlink-href "/svg/visual-language.svg#visual-language"}]])
 
 
 (rum/defc mock-up []
-  [:svg.buffer-left {:height "10em"
-                     :width "10em"
-                     :viewBox "0 0 255 309"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-left "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 255 309"}
    [:use {:xlink-href "/svg/mock-up.svg#mock-up"}]])
 
 (rum/defc micro-interactions []
-  [:svg.bump-left {:height "10em"
-                   :width "10em"
-                   :viewBox "0 0 247 272"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-right "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 247 272"}
    [:use {:xlink-href "/svg/micro-interactions.svg#micro-interactions"}]])
 
 (rum/defc develop []
-  [:svg.bump-left {:height "10em"
-                   :width "10em"
-                   :viewBox "0 0 361 301"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-right "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 361 301"}
    [:use {:xlink-href "/svg/develop.svg#develop"}]])
 
 (rum/defc happy-days []
-  [:svg.bump-left {:height "10em"
-                   :width "10em"
-                   :viewBox "0 0 314 272"}
+  [:svg {:class [(css {:align-self "center"
+                       :margin-right "1.5em"})]
+         :height "10em"
+         :width "10em"
+         :viewBox "0 0 314 272"}
    [:use {:xlink-href "/svg/happy-days.svg#happy-days"}]])
 
 
