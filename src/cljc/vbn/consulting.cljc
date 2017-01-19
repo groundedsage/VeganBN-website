@@ -22,11 +22,11 @@
   [:div.block-grey.full-width.consulting-block
    [:div.inside-block.extra-padding
     [:span.consulting-block-text "You bring the idea. "
-     [:strong.green-text
+     [:strong;.green-text
       ;; Replacing this green text shows up on the Community page
       ;; on the stats of members and number of meetups
-      ;;    {:class [(css {:color "#00ff7f"
-      ;;                   :letter-spacing "0.01em"
+          {:class [(css {:color "#00ff7f"
+                         :letter-spacing "0.01em"})]}
        "We bring it to life."]]]])
 
 
@@ -46,7 +46,7 @@
    [:div.home-component.buffer-top-large.consult-component
     (atom/native)
     [:div
-     [:h3 "We're Native Vegans"]
+     [:h3 {:class [(css {:background "red"})]} "We're Native Vegans"]
      [:p "The vegan community is our home. Our finger is on the pulse of this beautiful community. We know what is happening. When it is happening. Why it is happening. We are also creating and driving change ourselves."]]]
 
 

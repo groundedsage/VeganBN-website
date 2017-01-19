@@ -14,6 +14,7 @@
             [vbn.components :refer [my-routes]]
 
             #?(:clj [vbn.styler :refer [css] :as styler])
+            #?(:cljs [vbn.mediafixer :refer [get-atomic-css]])
             #?(:cljs [goog.style])
 
 
@@ -142,7 +143,12 @@
 
 
 
-#?(:cljs (goog.style/installStyles (styler/get-css-str false)))
+;#?(:cljs (goog.style/installStyles (get-atomic-css(styler/get-css-str false))))
+
+;; This println somehow stops the style classnames from incorrectly being put on
+;; the wrong html elements in the final cljs output
+(println @styler/global-css-styles)
+;#?(:cljs (goog.style/installStyles (get-atomic-css(styler/get-css-str false))))
 #?(:cljs
    (defn init []
      (rum/mount (page) (. js/document (getElementById "container")))))

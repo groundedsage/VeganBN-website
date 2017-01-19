@@ -798,10 +798,10 @@
     ;                   :max-width (em 35)}]
 
 
-     ;[:.meetup-logo {:width (rem 5)
-      ;               :height (rem 5)
-      ;               :margin-right (rem 2)
-      ;               :margin-top (rem 1)]
+    ; [:.meetup-logo {:width (rem 5)
+    ;                 :height (rem 5)
+    ;                 :margin-right (rem 2)
+    ;                 :margin-top (rem 1)}]
 
 
      (def meetup-red "#ED1C40")

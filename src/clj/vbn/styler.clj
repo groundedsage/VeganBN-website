@@ -147,12 +147,17 @@
 
 (defn- classnames-for-styles
   [constructor styles]
+  ;(println "\n\n This is the style passed to classnames" styles)
   (str/join " "
             (reduce-kv
               (fn [xs prop v]
                 (conj xs
                       (let [style {prop v}
                             k (constructor style)]
+                        ;(println "This is the style" style)
+                        ;(println "This is prop " prop)
+                        ;(println "This is v " v)
+                        ;(println "This is k " k)
                         (or (get @global-css-styles k)
                             (add-css-prop k)))))
               []

@@ -10,6 +10,9 @@
 (def meetup-text [(css {:flex-direction "row"
                           :flex-wrap "wrap"})])
 
+
+
+
 (rum/defc content []
   [:main#main.footer-buffer
    (molecule/page-intro
@@ -30,21 +33,23 @@
                         :border-radius "0.5em"})]}
     [:div {:class [(css {:flex-direction "row"
                          :flex-wrap "wrap"})]}
-     [:img
-      {:class [(css {:width "5rem"
-                     :height "5rem"
-                     :margin-right "2rem"
-                     :margin-top "1rem"})]
 
-       :src "photos/meetup-logo.png"
-       :alt-text "Meetup Logo"}]
-
+     [:img {:class [(css {:width "5rem"
+                          :height "5rem"
+                          :margin-right "2rem"
+                          :margin-top "1rem"})]
+            :src "photos/meetup-logo.png"
+                         :alt-text "Meetup Logo"}]
+     ;(println "\n\n *** Inside the div *** \n" meetup-num "\n\n")
+     ;#?(:cljs (js/console.log "\n\n Inside the div \n\n" meetup-num))
      [:div#meetup-text-group {:style {:padding "1em"}}
       [:div {:class meetup-text}
        [:div {:class meetup-num} "103"] "Members"]
       [:div {:class meetup-text}
        [:div {:class meetup-num} "2"] "Meetups this month"]]]
     [:button#meetup-button.buffer-top-large [:span "Join our Meetup group"]]]])
+
+
 
    ;; API FOR MEMBERS
    ;;https://api.meetup.com/VeganBN?photo-host=public&sig_id=23539071&only=members&sig=3ef1f60056ecefb460690cfe496e3d07ac0188f5
