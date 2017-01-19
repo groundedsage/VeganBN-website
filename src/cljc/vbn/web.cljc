@@ -39,7 +39,8 @@
 
 
 
-
+(rum/defc feature [text]
+  [:li {:class [(css {:line-height "1.5em"})]} text])
 
 
 (rum/defc icon-title-text [title text]
@@ -94,19 +95,25 @@ technology the web has to offer."]
 
 
 
-   [:div.block-grey.full-width
+   [:div {:class ["full-width"
+                  "buffer-top-large"
+                  (css {:color "white"
+                        :background-color "#333D47"})]}
     [:div.inside-block
      [:h2.center "We have two guiding principles"]
-     [:div.principles
+     [:div {:class [(css {:flex-direction "row"
+                          :justify-content "space-between"})]}
 
-      [:div.principle.make-top-margin
+      [:div {:class [(css {:width "45%"
+                           :margin-top "1.5rem"})]}
+       ;.principle.make-top-margin
        [:h3 "Speed"]
        [:p "We emphasize speed throughout our development process and in our final product."]
        [:p "Immediate feedback on a design results in a smoother creative flow and is the difference between testing all the ideas both you and our team have or just the ones we have time for. "]
        [:p "Today more people visit websites or use applications on their mobiles instead of desktops. This means much slower download speeds resulting in very slow loading times and a bad user experience. People expect things to load in under 2 seconds and we can meet these expectations."]]
 
 
-      [:div.principle
+      [:div {:class [(css {:width "45%"})]}
        [:h3 "Simplicity"]
        [:p "A well designed solution is always the most simple. Often decisions are based on what is the most flashy or easiest option. The hidden side of these decisions is the result of visual and technical systems which lack the ability grow, evolve, adapt and be maintained."]
        [:p "At VBN we choose the minimal set of tools necessary to get the job done and we carry this minimalism right through to the products we deliver. The flexibility this process provides is umatched for the budgets we can work with.
@@ -115,14 +122,18 @@ technology the web has to offer."]
 
 
 
-   [:div.block-blue.full-width
+   [:div. {:class ["full-width"
+                   (css {:color "white"
+                         :background-color "#3a539b"})]}
     {:style {:margin-top "0"}}
     [:div.inside-block.bump-width
      [:h2.center "Our Process"]
 
      [:p.center "We focus on immediate feedback throughout our entire  process. As such it is highly iterative and interactive from the very beginning. You are completely engaged throughout the entire process. When you start with us after the initial consult we provide you with a completely interactive unfinished design prototype. From here we progressively evolve this prototype togther to produce a design that feels almost real. Knowing this is exactly what you want we begin the final stage of actually building your website or application."]
 
-     [:div.three-up-six
+     [:div {:class (at-media {:min-width "60rem"} {:flex-direction "row"
+                                                   :flex-wrap "wrap"
+                                                   :justify-content "space-around"})}
       [:div {:class inside-three}
        (atom/information-architecture)
        (icon-title-text
@@ -190,12 +201,12 @@ technology the web has to offer."]
         (atom/dollar)
         [:h3 {:class [(css {:margin-top 0})]} "3000"]]
        [:span "Simple Site"]]
-      [:ul.pricing-features
-       [:li "Without a CMS"]
-       [:li "Custom Site Design"]
-       [:li "Custom domain that you own"]
-       [:li "You own the site code"]
-       [:li "Never pay any upkeep fees"]]]
+      [:ul
+       (feature "Without a CMS")
+       (feature "Custom Site Design")
+       (feature "Custom domain that you own")
+       (feature "You own the site code")
+       (feature "Never pay any upkeep fees")]]
 
      [:div {:class inside-three-four}
       [:div {:class pricing-options}
@@ -203,12 +214,12 @@ technology the web has to offer."]
         (atom/dollar)
         [:h3 {:class [(css {:margin-top 0})]} "3800"]]
        [:span "Dynamic Site"]]
-      [:ul.pricing-features
-       [:li "Advanced CMS"]
-       [:li "Custom Site Design"]
-       [:li "Custom domain that you own"]
-       [:li "You own the site code"]
-       [:li "Never pay any upkeep fees"]]]]
+      [:ul
+       (feature "Advanced CMS")
+       (feature "Custom Site Design")
+       (feature "Custom domain that you own")
+       (feature "You own the site code")
+       (feature "Never pay any upkeep fees")]]]
 
     [:div {:class column-four}
      [:div {:class inside-three-four}
@@ -218,11 +229,11 @@ technology the web has to offer."]
         [:h3 {:class [(css {:margin-top 0})]} "4800"]]
        [:span "Dynamic Site +"]]
       [:ul.pricing-features
-       [:li "Advanced CMS"]
-       [:li "Custom Site Design"]
-       [:li "Custom domain that you own"]
-       [:li "You own the site code"]
-       [:li "Never pay any upkeep fees"]]]
+       (feature "Advanced CMS")
+       (feature "Custom Site Design")
+       (feature "Custom domain that you own")
+       (feature "You own the site code")
+       (feature "Never pay any upkeep fees")]]
 
      [:div {:class inside-three-four}
       [:div {:class pricing-options}
@@ -231,12 +242,12 @@ technology the web has to offer."]
         [:h3 {:class [(css {:margin-top 0})]} "4500"]]
        [:span "Dynamic Site + E-commerce"]]
       [:ul.pricing-features
-       [:li "Advanced CMS"]
-       [:li "Custom Site Design"]
-       [:li "Custom domain that you own"]
-       [:li "You own the site code"]
-       [:li "Upkeep starts at 2% of transactions with a minimum of 10 dollars (excluding fees from your choice of payment gateway).
-Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dollars and the fee is reduced to 1.5%. "]]]]]
+       (feature "Advanced CMS")
+       (feature "Custom Site Design")
+       (feature "Custom domain that you own")
+       (feature "You own the site code")
+       (feature "Upkeep starts at 2% of transactions with a minimum of 10 dollars (excluding fees from your choice of payment gateway).
+Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dollars and the fee is reduced to 1.5%. ")]]]]
 
 
    [:div.block-green.full-width

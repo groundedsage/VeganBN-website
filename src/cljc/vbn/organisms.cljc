@@ -9,16 +9,22 @@
 
 
 (rum/defc bigger-than-business []
-  [:div.home-component
+  [:div {:class [(css {:flex-direction "row"
+                       :flex-wrap "wrap"
+                       :justify-content "center"
+                       :align-items "center"})]}
    (atom/bigger-than-business)
-   [:p "There is a monumental shift happening all over the world right now! We believe in a better world and we are here to make that happen."]])
+   [:p {:class [(css {:font-size "1.125em"})]} "There is a monumental shift happening all over the world right now! We believe in a better world and we are here to make that happen."]])
 
 
 
 (rum/defc movement []
-  [:div.home-component
+  [:div {:class [(css {:flex-direction "row"
+                       :flex-wrap "wrap"
+                       :justify-content "center"
+                       :align-items "center"})]}
    (atom/movement)
-   [:p "The vegan movement continues to grow exponentially, however businesses still have little knowledge on how to cater to this rapdily growing industry."]])
+   [:p {:class [(css {:font-size "1.125em"})]} "The vegan movement continues to grow exponentially, however businesses still have little knowledge on how to cater to this rapdily growing industry."]])
 
 
 

@@ -19,8 +19,13 @@
 
 
 (rum/defc consult-block []
-  [:div.block-grey.full-width.consulting-block
+  [:div {:class ["full-width"
+                 "consulting-block"
+                 (css {:color "white"
+                       :background-color "#333D47"
+                       :margin-top "-0.3em"})]}
    [:div.inside-block.extra-padding
+    ;; Leave consulting block text because it uses calc
     [:span.consulting-block-text "You bring the idea. "
      [:strong;.green-text
       ;; Replacing this green text shows up on the Community page
@@ -43,11 +48,16 @@
    (consult-block)
 
 
-   [:div.home-component.buffer-top-large.consult-component
+   [:div {:class ["buffer-top-large"
+                  "consult-component"
+                  (css {:flex-direction "row"
+                        :flex-wrap "wrap"
+                        :justify-content "center"
+                        :align-items "center"})]}
     (atom/native)
     [:div
      [:h3 {:class [(css {:background "red"})]} "We're Native Vegans"]
-     [:p "The vegan community is our home. Our finger is on the pulse of this beautiful community. We know what is happening. When it is happening. Why it is happening. We are also creating and driving change ourselves."]]]
+     [:p {:class [(css {:font-size "1.125em"})]} "The vegan community is our home. Our finger is on the pulse of this beautiful community. We know what is happening. When it is happening. Why it is happening. We are also creating and driving change ourselves."]]]
 
 
 
@@ -85,20 +95,32 @@
          [:li "Flyers & Posters"]
          [:li "Signage & Merch"]]]]]]]
 
-   [:div.home-component.consult-component.buffer-top-large
+   [:div {:class ["consult-component"
+                  "buffer-top-large"
+                  (css {:flex-direction "row"
+                        :flex-wrap "wrap"
+                        :justify-content "center"
+                        :align-items "center"})]}
     (atom/harmonise)
 
     [:div
      (atom/h2 "Harmonise the services")
-     [:p "One stop shops for professional business services are rare. But today communication between multiple teams is critical. Co-ordinating communication between lawyers, designers, developers and marketers is the last thing you want to be doing when starting a business. "]
+     [:p {:class [(css {:font-size "1.125em"})]} "One stop shops for professional business services are rare. But today communication between multiple teams is critical. Co-ordinating communication between lawyers, designers, developers and marketers is the last thing you want to be doing when starting a business. "]
 
-     [:p "We are ready to bring some harmony to this entire process letting you work on what makes your business special."]]]
+     [:p {:class [(css {:font-size "1.125em"})]} "We are ready to bring some harmony to this entire process letting you work on what makes your business special."]]]
 
-   [:div.block-grey.full-width.buffer-top-large
+   [:div {:class ["full-width"
+                  "buffer-top-large"
+                  (css {:color "white"
+                        :background-color "#333D47"})]}
     [:div.inside-block
-     [:div.home-component.consult-component
+     [:div {:class ["consult-component"
+                    (css {:flex-direction "row"
+                          :flex-wrap "wrap"
+                          :justify-content "center"
+                          :align-items "center"})]}
       (atom/puzzle)
       [:div
        (atom/h2 "How we do it")
-       [:p "We do everything with our in house team or through tight partnerships. If what you need goes outside of our in house offerings. We have a strong network of talented individuals and organisations we can call upon. "]
-       [:p "We can tell you who is vegan and those that can get the job done. We also provide a service of verification and can review your list of candidates to ensure they are capable of doing the work required to suit your needs. This allows us to cater to the most advanced needs, the budget restricted or any location challenges."]]]]]])
+       [:p {:class [(css {:font-size "1.125em"})]} "We do everything with our in house team or through tight partnerships. If what you need goes outside of our in house offerings. We have a strong network of talented individuals and organisations we can call upon. "]
+       [:p {:class [(css {:font-size "1.125em"})]} "We can tell you who is vegan and those that can get the job done. We also provide a service of verification and can review your list of candidates to ensure they are capable of doing the work required to suit your needs. This allows us to cater to the most advanced needs, the budget restricted or any location challenges."]]]]]])

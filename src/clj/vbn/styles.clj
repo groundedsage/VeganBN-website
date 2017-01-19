@@ -397,12 +397,12 @@
      [:p :span :ol :ul {:font-family "Source Sans Pro"}]
 
 
-     [:.block-grey {:color 'white
-                    :background-color brand-dark}
+     [:.block-grey ;{:color 'white
+                    ;:background-color brand-dark
       [:p {:letter-spacing (em 0.01)}]]
 
-     [:.block-blue {:color 'white
-                    :background-color brand-blue}]
+     ;[:.block-blue {:color 'white
+    ;                :background-color "#3a539b"}]]
 
      [:.block-green {:background-color brand-color}]
 
@@ -460,11 +460,11 @@
     ;  :.h2-home {:align-self 'center
     ;             :position 'relative]
 
-     [:.home-component {:flex-direction 'row
-                        :flex-wrap 'wrap
-                        :justify-content 'center
-                        :align-items 'center}
-      [:p {:font-size (em 1.125)}]
+     [:.home-component ;{:flex-direction 'row
+                      ;  :flex-wrap 'wrap
+                        ;:justify-content 'center
+                        ;:align-items 'center
+      ;[:p {:font-size (em 1.125)}]
      ;      :padding-left (rem 1.5)
 
       [:svg {:max-width (em 10)
@@ -606,11 +606,11 @@
      [:.buffer-top {:margin-top (em 1.5)}]
      [:.buffer-top-large {:margin-top (em 3)}]
 
-     [:.consulting-block {:margin-top (em -0.3)}]
+     ;[:.consulting-block {:margin-top (em -0.3)}]
 
 
-     [:.green-text {:color brand-color
-                    :letter-spacing (em 0.01)}]
+    ; [:.green-text {:color brand-color
+    ;                :letter-spacing (em 0.01)]
 
      [:.centre {:align-self 'center}]
      [:.services-align {:margin-left (em -0.2)}]
@@ -700,17 +700,17 @@
      ;[:.inside-three {:margin-top (rem 2)}]
 
      [:.drop-top-padding {:padding-top 0}]
-     [:.make-top-margin {:margin-top (rem 1.5)}]
+  ;   [:.make-top-margin {:margin-top (rem 1.5)}]
 
 
      [:.center {:align-self 'center}]
      [:.center-items {:align-items 'center}]
 
 
-     (at-media {:min-width (em 75)}
-               [:.principles {:flex-direction 'row
-                              :justify-content 'space-between}]
-               [:.principle {:width "45%"}])
+    ; (at-media {:min-width (em 75)}
+               ;[:.principles {:flex-direction 'row
+              ;                :justify-content 'space-between)}
+      ;         [:.principle {:width "45%"}]]
 
 ;     [:.pricing-options {
 ;                         :border-style 'outset
@@ -724,7 +724,7 @@
 ;                         :width (em 19)])
     ;  [:h3 {:margin-top 0}]]
 
-     [:.pricing-features [:li {:line-height (em 1.5)}]]
+     ;[:.pricing-features [:li {:line-height (em 1.5)}]]
 
      ;[:.column-four
       ;[:.inside-three {:max-width (em 19)}]]

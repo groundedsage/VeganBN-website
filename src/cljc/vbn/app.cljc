@@ -72,7 +72,9 @@
 
 (rum/defc footer []
   [:footer
-   [:div.block-blue.full-width
+   [:div {:class ["full-width"
+                  (css {:color "white"
+                        :background-color "#3a539b"})]}
     [:div.inside-block
 
      [:h2 "Contact Us"]

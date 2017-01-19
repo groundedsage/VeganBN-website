@@ -103,11 +103,19 @@
     text]])
 
 (rum/defc bigger-than-business [text]
-  [:div.home-component
+  [:div {:class [(css {:flex-direction "row"
+                       :flex-wrap "wrap"
+                       :justify-content "center"
+                       :align-items "center"})]}
    (atom/bigger-than-business)
    (atom/p text)])
+; For p text {:class [(css {:font-size "1.125em"})]}
 
 (rum/defc movement [text]
-  [:div.home-component
+  [:div {:class [(css {:flex-direction "row"
+                       :flex-wrap "wrap"
+                       :justify-content "center"
+                       :align-items "center"})]}
    (atom/movement)
    (atom/p text)])
+; For p text {:class [(css {:font-size "1.125em"})]}
