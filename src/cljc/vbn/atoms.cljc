@@ -59,8 +59,13 @@
 
 
 (rum/defc blurb-image [src alt-text]
-  [:img.blurb-image {:src src
-                     :alt alt-text}])
+  [:img {:class [(css {:width "100%"
+                       :height "auto"
+                       :margin-top "1.5rem"
+                       :background-color "grey"
+                       :border-radius "10px"})]
+         :src src
+         :alt alt-text}])
 
 
 

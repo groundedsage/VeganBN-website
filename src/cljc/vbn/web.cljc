@@ -55,14 +55,21 @@
 
 
    [:div.full-width
-    [:div.inside-block.bump-width
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})
+                   (at-media {:min-width "120rem"} {:max-width "110rem"})]}
      (atom/h2-home "4 Reasons to Choose Us")
      [:div.four-up
       [:div {:class column-four}
        [:div {:class inside-three-four}
         (atom/rock-solid)
         (icon-title-text
-         [:h3 "Rock Solid Foundations"]
+         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]} "Rock Solid Foundations"]
          [:div [:p "Built on the most reliable
 technology the web has to offer."]
           [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing."]])]
@@ -70,7 +77,7 @@ technology the web has to offer."]
        [:div {:class inside-three-four}
         (atom/bird)
         (icon-title-text
-         [:h3 "Speed Matters"]
+         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Speed Matters"]
          [:div [:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
           [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
 
@@ -78,7 +85,7 @@ technology the web has to offer."]
        [:div {:class inside-three-four}
         (atom/safe)
         (icon-title-text
-         [:h3 "Ultra Secure"]
+         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Ultra Secure"]
          [:div [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
 "]
           [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]])]
@@ -87,7 +94,7 @@ technology the web has to offer."]
        [:div {:class inside-three-four}
         (atom/evolve)
         (icon-title-text
-         [:h3 "Designed to Evolve"]
+         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Designed to Evolve"]
          [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
 "]
           [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]])]]]]]
@@ -99,7 +106,13 @@ technology the web has to offer."]
                   "buffer-top-large"
                   (css {:color "white"
                         :background-color "#333D47"})]}
-    [:div.inside-block
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})]}
      [:h2.center "We have two guiding principles"]
      [:div {:class [(css {:flex-direction "row"
                           :justify-content "space-between"})]}
@@ -125,8 +138,15 @@ technology the web has to offer."]
    [:div. {:class ["full-width"
                    (css {:color "white"
                          :background-color "#3a539b"})]}
-    {:style {:margin-top "0"}}
-    [:div.inside-block.bump-width
+    ;{:style {:margin-top "0"}}
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})
+                   (at-media {:min-width "120rem"} {:max-width "110rem"})]}
      [:h2.center "Our Process"]
 
      [:p.center "We focus on immediate feedback throughout our entire  process. As such it is highly iterative and interactive from the very beginning. You are completely engaged throughout the entire process. When you start with us after the initial consult we provide you with a completely interactive unfinished design prototype. From here we progressively evolve this prototype togther to produce a design that feels almost real. Knowing this is exactly what you want we begin the final stage of actually building your website or application."]
@@ -137,39 +157,40 @@ technology the web has to offer."]
       [:div {:class inside-three}
        (atom/information-architecture)
        (icon-title-text
-        [:h3 "Information Architecture"]
+        [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})
+                      (at-media {:min-width "60rem"} {:font-size "1.4em"})]} "Information Architecture"]
         [:p "Starting with the initial consult we establish the current state of your business and it’s future plans. From here we can design the structure of the information on your website or application to ensure that it achieves your current and future business objectives/ desired goals. "])]
 
 
       [:div {:class inside-three}
        (atom/visual-language)
        (icon-title-text
-        [:h3 "Visual Language"]
+        [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Visual Language"]
         [:p "Starting with the initial consult we review the visual language your business currently has or what is missing. From here we develop the unique style of your website or application in a way that can easily be reviewed and evolve years later.
 "])]
 
       [:div {:class inside-three}
        (atom/mock-up)
        (icon-title-text
-        [:h3 "Mock-up"]
+        [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Mock-up"]
         [:p "Bringing your unique style and information architecture together we create the first real representation of what the final product will look like using real or representative information."])]
 
       [:div {:class inside-three}
        (atom/micro-interactions)
        (icon-title-text
-        [:h3 "Micro-interactions"]
+        [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]} "Micro-interactions"]
         [:p "Once we have established the look and flow of your website or application we can focus on micro-interactions. It is here that you can truly set yourself apart. We create small interactive and intelligent animations. This is what delights your users."])]
 
       [:div {:class inside-three}
        (atom/develop)
        (icon-title-text
-        [:h3 "Develop and Deploy"]
+        [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Develop and Deploy"]
         [:p "Throughout the entire process we develop finalised designs to ensure it is completed as quickly as possible. At this stage we add the final touches and then release your website or application into the wild. "])]
 
       [:div {:class inside-three}
        (atom/happy-days)
        (icon-title-text
-        [:h3 "Happy Days"]
+        [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Happy Days"]
         [:p "You can rest easy knowing you’ve made the best choice."])]]]]
 
 
@@ -193,7 +214,8 @@ technology the web has to offer."]
 
 
 
-   [:div.bullet-padding
+   [:div {:class [(css {:padding-left "1.5em"
+                        :padding-right "1.5em"})]}
     [:div {:class column-four}
      [:div {:class inside-three-four}
       [:div {:class pricing-options}
@@ -251,7 +273,14 @@ Non-profits, schools or crowdfunding projects are exempt from the minimum 10 dol
 
 
    [:div.block-green.full-width
-    [:div.inside-block.center-items
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"
+                         :align-items "center"})]}
      [:h2 "What are you waiting for?"]
      [:div.form-width
       [:form {:name "contact"

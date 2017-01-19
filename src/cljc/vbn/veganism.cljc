@@ -17,15 +17,21 @@
                   "buffer-top-large"
                   (css {:color "white"
                         :background-color "#333D47"})]}
-    [:div.inside-block
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})]}
 
       [:h2 "Our Definition of Vegan"]
       [:p "A vegan actively seeks to stop any exploitation and harm caused to human and non-human animals both directly and indirectly. Through pragmatic choices made daily against using, wearing or eating anything which is a product of this."]]]
 
-   [:div.center-items.dimension-buffer
-    ;{:class [(css {:margin-top "4.5rem"
-    ;               :align-items "center"
-    ;               :background "red"
+   [:div;.center-items.dimension-buffer
+    {:class [(css {:margin-top "4.5rem"
+                   :align-items "center"})]}
+
 
     (atom/h2-home "The 3 Dimensions of Veganism")
     [:p "There is 3 key points to veganism which combine to create strong feelings within those who choose to embrace the vegan philosophy entirely. "]]
@@ -64,7 +70,13 @@
 
 
    [:div.full-width.block-green.buffer-top-large
-    [:div.inside-block
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})]}
      (atom/h2 "How does this help my business?")
      [:p "By doing some research on each of the 3 dimensions of veganism. You will be more capable of handling a vegan customer and adapting to current world trends. Vegans are a chatty bunch, they stand together and are very strong willed. In a world where people are more connected and brands are defined by their customers. Vegans with either burn you or praise you. We are here to make sure they praise you. It’s better for you business and it’s better for the vegans. We love it when everyone wins!"]
      [:p"If you are very timepoor or just looking to have some guidance. We offer consulting services to teach you how to adapt your business so you never get burnt. "]]]])

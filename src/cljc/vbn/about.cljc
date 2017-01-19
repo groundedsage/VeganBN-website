@@ -11,6 +11,12 @@
 (def value-items [(css {:margin-top "0.5em"
                         :margin-bottom "2.5em"})])
 
+(rum/defc value [item desc]
+  [:li
+   [:span {:class [(css {:font-weight "bold"})]} item]
+   [:p {:class value-items} desc]])
+
+
 (rum/defc content []
   [:main#main.footer-buffer
    (molecule/page-intro
@@ -18,7 +24,13 @@
     [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])
 
    [:div.full-width.block-green
-    [:div.inside-block
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"})]}
      (atom/h2-home "At VeganBN we work to:")
      [:div.center
       [:p [:strong {:class about-strong} "GROW"] "  vegan and vegan friendly businesses with world class services."]
@@ -33,7 +45,8 @@
                                                   :padding-left 0
                                                   :padding-right 0})]}
     [:h3 {:class [(css {:margin-right "3em"})]} "Vision"]
-    [:.vision [:span {:class [(css {:font-weight "bold"
+    [:div {:class [(at-media {:min-width "30rem"} {:width "80%"})]}
+              [:span {:class [(css {:font-weight "bold"
                                     ;;NEED TO FIXBELOW
                                     :font-size "1.125em"
                                     :line-height "1.5em"})]}
@@ -55,20 +68,21 @@
     [:h3
       {:class [(css {:margin-right "3em"})]}
       "Values"]
-    [:ol.values
-     [:li [:span "Mindfulness"] [:p {:class value-items} "Consideration of actions and the impact is has. Consideration of the journey other people are on and where they may have come from."]]
-     [:li [:span "Inclusivity"] [:p {:class value-items} "Always include others who wish to be included and be inviting. Always collaborate when an opportunity presents itself. Unite efforts because the whole is always greater than the sum of it’s parts."]]
-     [:li [:span "Positivity"] [:p {:class value-items} "Always strive for a more positive perspective on all situations. Positivity creates possibilities beyond our wildest imaginations. Avoid the use of negative words and phrases."]]
-     [:li [:span "Kaizen"] [:p {:class value-items} "Solve small problems and improve continuously.
-A big problem is nothing other than a combination of small problems"]]
-     [:li [:span "Now"] [:p {:class value-items} "The best time to do anything is now. Think deeply act swiftly. Trust intuition. Draw on past experiences and be thoughtful while acting in the now. The past and failures is for learning. The future is the next now."]]
-     [:li [:span "Transparency"] [:p {:class value-items} "Be open about process and clear in communitcation"]]
+    [:ol {:class [(css {:margin-left "-0.3125rem"})
+                  (at-media {:min-width "30rem"} {:width "80%"})]}
 
-     [:li [:span "Collaboration"] [:p {:class value-items} "Unite efforts because teh whole is always greater than the sum of it's parts."]]
+     (value "Mindfulness" "Consideration of actions and the impact is has. Consideration of the journey other people are on and where they may have come from.")
+     (value "Inclusivity" "Always include others who wish to be included and be inviting. Always collaborate when an opportunity presents itself. Unite efforts because the whole is always greater than the sum of it’s parts.")
+     (value "Positivity" "Always strive for a more positive perspective on all situations. Positivity creates possibilities beyond our wildest imaginations. Avoid the use of negative words and phrases.")
+     (value "Kaizen" "Solve small problems and improve continuously. A big problem is nothing other than a combination of small problems")
+     (value "Now" "The best time to do anything is now. Think deeply act swiftly. Trust intuition. Draw on past experiences and be thoughtful while acting in the now. The past and failures is for learning. The future is the next now.")
+     (value "Transparency" "Be open about process and clear in communitcation")
 
-     [:li [:span "Passion"] [:p {:class value-items} "Be driven by a higher purpose and believe everything you do has a postivite impact on the world."]]
+     (value "Collaboration" "Unite efforts because teh whole is always greater than the sum of it's parts.")
 
-     [:li [:span "Impact"] [:p {:class value-items} "Always consider both the local and global impact"]]
-     [:li [:span "Truth"] [:p {:class value-items} "Be transparent and open in communication. For clarity communicate with simple words when possible and explain things as simply as possible. Always be happy to repeat what has been spoken. Be honest."]]]]])
+     (value "Passion" "Be driven by a higher purpose and believe everything you do has a postivite impact on the world.")
+
+     (value "Impact" "Always consider both the local and global impact")
+     (value "Truth" "Be transparent and open in communication. For clarity communicate with simple words when possible and explain things as simply as possible. Always be happy to repeat what has been spoken. Be honest.")]]])
 
 ;#?(:clj (println "This is how it looks inside about.clj "(get-css-str false)))

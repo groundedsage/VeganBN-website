@@ -75,7 +75,13 @@
    [:div {:class ["full-width"
                   (css {:color "white"
                         :background-color "#3a539b"})]}
-    [:div.inside-block
+    [:div {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5em"})]}
 
      [:h2 "Contact Us"]
      [:p "We have a lot of exciting plans which will be implemented in 2017. If you have any queries or would like to collaborate please send us an email"]

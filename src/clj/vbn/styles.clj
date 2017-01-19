@@ -102,33 +102,33 @@
 
 
      [:li {:padding-left (rem 0.3125)}]
-     [:ol.values {:margin-left (rem -0.3125)}]
+     ;[:ol.values {:margin-left (rem -0.3125)}]
 
-     [:ol.values
-      [:li {:font-weight 'bold}]]
+     ;[:ol.values
+    ;  [:li {:font-weight 'bold}]]
 
-     [];];:.values-section {}]:display 'flex
+    ; [];];:.values-section {}]:display 'flex
                         ;:flex-direction 'column
                         ;:align-items 'baseline
                         ;:padding {:left (em 1.5)
                         ;          :right (em 1.5)}]
-     [;:.vision-section
-      :.bullet-padding {:padding {:left (em 1.5)
-                                  :right (em 1.5)}}]
+     ;[;:.vision-section
+    ;  :.bullet-padding {:padding {:left (em 1.5)
+    ;                              :right (em 1.5)]
 
 
 
 
-     (at-media {:min-width (rem 30)}
-               [];:.values-section
+    ; (at-media {:min-width (rem 30)}
+            ;   [];:.values-section
                 ;:.vision-section  {:flex-direction 'row
                 ;                   :align-items 'baseline
                 ;                   :padding {:left 0
                 ;                             :right 0}
 
                 ;[:h3 {:margin-right (em 3)}]]
-               [:ol.values
-                :.vision {:width "80%"}])
+          ;   [;:ol.values
+            ;    :.vision {:width "80%"}}]
 
 
 
@@ -397,12 +397,9 @@
      [:p :span :ol :ul {:font-family "Source Sans Pro"}]
 
 
-     [:.block-grey ;{:color 'white
-                    ;:background-color brand-dark
+     [:.block-grey
       [:p {:letter-spacing (em 0.01)}]]
 
-     ;[:.block-blue {:color 'white
-    ;                :background-color "#3a539b"}]]
 
      [:.block-green {:background-color brand-color}]
 
@@ -414,9 +411,7 @@
                  :right (em 1.5)
                  :top (em 4.5)
                  :bottom (em 4.5)}}]
-     #_[:.extra-padding
-        {:padding-top (em 4.5)
-         :padding-bottom (em 4.5)}]
+
 
 
 
@@ -454,19 +449,8 @@
       [:span {:font-size (em 2)
               :color 'white}]]
 
-     ;[:.h1-home {:font-weight 'bold}]
 
-     [];:.h1-home
-    ;  :.h2-home {:align-self 'center
-    ;             :position 'relative]
-
-     [:.home-component ;{:flex-direction 'row
-                      ;  :flex-wrap 'wrap
-                        ;:justify-content 'center
-                        ;:align-items 'center
-      ;[:p {:font-size (em 1.125)}]
-     ;      :padding-left (rem 1.5)
-
+     [:.home-component
       [:svg {:max-width (em 10)
              :margin (em 1.5)}]]
                                         ;:width "25%"
@@ -496,41 +480,7 @@
                              :content " \" \" "}]
 
 
-     ;[:.at-our-core {:flex-direction 'row
-    ;                 :flex-wrap 'wrap
-  ;                   :align-items 'baseline
-;                     :justify-content 'space-around
-;                     :align-self 'center
-;                     :width "100%"
-;
-;            [:div {:padding {:left (rem 1.5)
-  ;                           :right (rem 1.5)}]
 
-
-
-     [:.sign-up-box {:color 'white
-                     :background-color brand-blue}]
-
-     [:.blurb-image {:width "100%"
-                     :height 'auto
-                     :margin-top (rem 1.5)
-                     :background-color 'grey
-                     :border-radius (px 10)}]
-
-    ; [:.blurb {:margin-top (rem 2)}]
-
-
-
-
-     (at-media {:min-width (px 568)}
-
-               ;[:.blurb {:flex-direction 'row}]
-
-               [:.img-container {
-                                   :margin-right "5%"
-                                   :max-width "35%"}])
-
-               ;[:.image-title-text-cta {:width "60%"}])
 
 
 
@@ -606,22 +556,21 @@
      [:.buffer-top {:margin-top (em 1.5)}]
      [:.buffer-top-large {:margin-top (em 3)}]
 
-     ;[:.consulting-block {:margin-top (em -0.3)}]
-
-
-    ; [:.green-text {:color brand-color
-    ;                :letter-spacing (em 0.01)]
 
      [:.centre {:align-self 'center}]
-     [:.services-align {:margin-left (em -0.2)}]
 
-     [:ul.service-list {:margin-left (rem -0.3125)}]
-     [:ul.service-list
-      [:a {:text-decoration 'underline}
-       [:&:hover
-        :&:focus {:font-weight 'bold}]]
-      [:li {:line-height (em 1.5)
-            :min-height (px 48)}]]
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;; DIFFICULT TO REMOVE
+
+
+     [:ul.service-list {:margin-left (rem -0.3125)}
+       [:a {:text-decoration 'underline}
+        [:&:hover
+         :&:focus {:font-weight 'bold}]]]
+
+
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
      (at-media {:max-width (em 76.85)}
@@ -639,14 +588,6 @@
                        :max-width (em 13)}]])
 
 
-     (at-media {:max-width (em 60)}
-               [:.center-to-60 {:align-self 'center}])
-
-     (at-media {:min-width (rem 120)}
-               [:.bump-width {:max-width (rem 110)}])
-              ;  [:.inside-three {:font-size (rem 0.8)}]])
-
-
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   WEB & APP PAGE    ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -659,92 +600,31 @@
                            :justify-content 'space-around}])
 
 
-    ; [:.column-four {:flex-direction 'row
-    ;                 :flex-wrap 'wrap
-    ;                 :justify-content 'space-around
-    ;                 :width "100%"])
-
 
      (at-media {:min-width (rem 120)}
-               [:.four-up {:flex-wrap 'no-wrap}]
-               [:.column-four {:margin-top 0
-                               :width "50%"}])
+               [:.four-up {:flex-wrap 'no-wrap}])
 
      [:.four-up [:svg {:align-self 'center}]]
-
-     ;[:.three-up-six
-      ;[:svg
-      ; {:align-self 'center}]
 
 
      [:.buffer-left {:margin-left (em 1.5)}]
 
-     (at-media {:max-width (em 60)}
-               [:.three-up-six
-                :.four-up
-                [:h3 {:align-self 'center}]])
+
 
      (at-media {:min-width (em 60)}
                [:.three-up {:flex-direction 'row
                             :justify-content 'space-between}]
-               [;:.three-up-six {:flex-direction 'row
-                ;                :flex-wrap 'wrap
-                ;                :justify-content 'space-around
-                [:h3 {:font-size (em 1.4)}]]
+
 
                [:.buffer-left {:margin-left 0}])
-              ; [:.inside-three {:padding (em 1)
-              ;                  :margin-top 0
-              ;                  :max-width (em 16)}])
-
-     ;[:.inside-three {:margin-top (rem 2)}]
 
      [:.drop-top-padding {:padding-top 0}]
-  ;   [:.make-top-margin {:margin-top (rem 1.5)}]
 
 
      [:.center {:align-self 'center}]
      [:.center-items {:align-items 'center}]
 
 
-    ; (at-media {:min-width (em 75)}
-               ;[:.principles {:flex-direction 'row
-              ;                :justify-content 'space-between)}
-      ;         [:.principle {:width "45%"}]]
-
-;     [:.pricing-options {
-;                         :border-style 'outset
-;                         :border-width (em 0.4)
-;                         :border-color brand-color
-;                         :border-radius (em 0.5)
-;                         :align-items 'center
-;                         :padding (em 1)
-;                         :background brand-dark
-;                         :color 'white
-;                         :width (em 19)])
-    ;  [:h3 {:margin-top 0}]]
-
-     ;[:.pricing-features [:li {:line-height (em 1.5)}]]
-
-     ;[:.column-four
-      ;[:.inside-three {:max-width (em 19)}]]
-
-     ;[:.row {:flex-direction 'row}]
-    ; [:.circle {:background brand-dark
-    ;            :border-radius "50%"
-    ;            :width (em 8)
-    ;            :height (em 8)
-    ;            :border-width (em 0.4)
-    ;            :border-style 'outset
-    ;            :border-color brand-color
-    ;            :color 'white
-    ;            :align-items 'center
-    ;            :justify-content 'center]
-
-    ;  [:h3 {:margin-top 0}]]
-
-     ;[:.initial-consult {
-    ;                     :font-size (em 1.5)}]]
 
      [:input
       :textarea {:margin-top (em 0.2)
@@ -767,41 +647,12 @@
 
      [:label {:color brand-dark}]
 
-     ;[:.bump-area-height {:min-height (em 6)
-    ;                      :max-width "100%"}
-
-    ; [:.form-width {:width "100%"}]
-    ; (at-media {:min-width (em 60)}
-    ;           [:.form-width {:max-width (em 35)}]]
 
 
-
-
-
-     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-     ;;;;;;;;;   ABOUT PAGE    ;;;;;;;;;;
-     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-     ;[:.about-strong {:margin-right (em 0.2)
-    ;                  :letter-spacing (em 0.05)}]
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   COMMUNITY PAGE    ;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    ; [:.community-box {:padding (em 2)
-    ;                   :border-style 'solid
-    ;                   :border-width (em 0.2)
-    ;                   :border-radius (em 0.5)
-    ;                   :border-color brand-dark
-    ;                   :width "100%"
-    ;                   :max-width (em 35)}]
-
-
-    ; [:.meetup-logo {:width (rem 5)
-    ;                 :height (rem 5)
-    ;                 :margin-right (rem 2)
-    ;                 :margin-top (rem 1)}]
 
 
      (def meetup-red "#ED1C40")
@@ -819,23 +670,15 @@
                  :border-color meetup-red}
        [:span {:color 'black}]]]
 
-     ;[:.meetup-text {:flex-direction 'row
-      ;               :flex-wrap 'wrap}]]]
-
      [:#meetup-text-group {:margin-top 0
                            :justify-content 'center
                            :letter-spacing (em 0.02)}]
-     ;[:.meetup-num {:width (em 2)}]
-
-     ;[:.wrap {:flex-wrap 'wrap}]
 
 
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;;;;;;;;   VEGANISM PAGE    ;;;;;;;;;;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-     [:.dimension-buffer {:margin-top (rem 4.5)}]
 
      [:a [:button {:width "100%"}]]
 

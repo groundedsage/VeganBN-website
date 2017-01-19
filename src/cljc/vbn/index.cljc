@@ -46,8 +46,18 @@
 
 
 (rum/defc sign-up []
-  [:div#sign-up.sign-up-box.full-width.buffer-top-large
-   [:div.inside-block.center-items
+  [:div#sign-up {:class ["full-width"
+                         "buffer-top-large"
+                         (css {:color "white"
+                               :background-color "#3a539b"})]}
+   [:div  {:class [(css {:width "100vw"
+                         :max-width "53em"
+                         :align-self "center"
+                         :padding-left "1.5em"
+                         :padding-right "1.5em"
+                         :padding-top "4.5em"
+                         :padding-bottom "4.5"
+                         :align-items "center"})]}
     [:p "We are always up to new and interesting things. We can send you a few emails from time to time to let you know what is happening in the community."]
     [:div {:class [(css {:width "100%"})
                    (at-media {:min-width "60rem"} {:max-width "35em"})]}

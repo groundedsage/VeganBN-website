@@ -91,7 +91,8 @@
            (str (slurp in-file)
                 " "
                 ;(styler/get-css-str false)
-                (get-atomic-css (styler/get-css-str false))))))
+                ; (get-atomic-css 
+                 (styler/get-css-str false)))))
   ;(println "\n\n*** THIS IS THE OUT FILE ***" (slurp out-file)))
 
 
