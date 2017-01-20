@@ -39,12 +39,53 @@
 
 
 
+
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;;;;;;;;;   Page Components   ;;;;;;;;;;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (rum/defc feature [text]
   [:li {:class [(css {:line-height "1.5em"})]} text])
 
 
 (rum/defc icon-title-text [title text]
   [:div title text])
+
+(rum/defc reason [img text]
+  [:div {:class inside-three-four} img text])
+
+(rum/defc reasons-to-choose-us []
+  [:div.four-up
+   (reason
+     (atom/rock-solid)
+     (icon-title-text
+      [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]} "Passed to Reason"]
+      [:div [:p "Built on the most reliable
+    technology the web has to offer."]
+       [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing."]]))
+   (reason
+     (atom/bird)
+     (icon-title-text
+      [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Speed Matters"]
+      [:div [:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
+       [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]]))
+   (reason
+     (atom/safe)
+     (icon-title-text
+      [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Ultra Secure"]
+      [:div [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware."]
+       [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]]))
+   (reason
+     (atom/evolve)
+     (icon-title-text
+      [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Designed to Evolve"]
+      [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!"]
+       [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]]))])
+
+
+
+
 
 (rum/defc content []
   [:main#main
@@ -64,40 +105,11 @@
                          :padding-bottom "4.5"})
                    (at-media {:min-width "120rem"} {:max-width "110rem"})]}
      (atom/h2-home "4 Reasons to Choose Us")
-     [:div.four-up
-      [:div {:class column-four}
-       [:div {:class inside-three-four}
-        (atom/rock-solid)
-        (icon-title-text
-         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]} "Rock Solid Foundations"]
-         [:div [:p "Built on the most reliable
-technology the web has to offer."]
-          [:p"Seamlessly grow from a simple blog to an international phenomenom without ever noticing a difference in speed or crashing."]])]
-
-       [:div {:class inside-three-four}
-        (atom/bird)
-        (icon-title-text
-         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Speed Matters"]
-         [:div [:p "Your website will load faster than the rest. We strive for a sub 2 second load time."]
-          [:p "Over 50% of mobile users will abandon sites that take longer than 3 seconds to load. Sites that load faster have longer user sessions and can more than double revenue generated from sales or ads."]])]]
-
-      [:div {:class column-four}
-       [:div {:class inside-three-four}
-        (atom/safe)
-        (icon-title-text
-         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Ultra Secure"]
-         [:div [:p "We provide bulletproof security. Your visitors can rest easy knowing your site will never have any malware.
-"]
-          [:p "The possibilities of your site being hacked or taken down are eliminated and significantly reduced with a very smart system design and advanced protection."]])]
 
 
-       [:div {:class inside-three-four}
-        (atom/evolve)
-        (icon-title-text
-         [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})]}  "Designed to Evolve"]
-         [:div [:p "Evolve from a simple website to an online application. Then jump from the web into a phone, tablet, desktop or TV!
-"]
-          [:p "Our system allows your business to grow without any major technology changes or massive rewrites."]])]]]]]
+     (reasons-to-choose-us)]]
+
+
 
 
 

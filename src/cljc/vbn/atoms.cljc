@@ -68,6 +68,10 @@
          :alt alt-text}])
 
 
+;; SVG COMPONENT
+(rum/defc svg [name meta-m]
+ [:svg (conj {} meta-m)
+   [:use {:xlink-href (str name ".svg#" name)}]])
 
 (rum/defc circle-icon [name]
   [:svg {:height "8rem"

@@ -1,5 +1,5 @@
 (ns vbn.app
-  #?(:cljs (:require-macros  [vbn.styler :refer [css] :as styler]))
+  #?(:cljs (:require-macros  [vbn.styler :refer [css installer-hack]]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -13,7 +13,8 @@
 
             [vbn.components :refer [my-routes]]
 
-            #?(:clj [vbn.styler :refer [css] :as styler])
+
+            #?(:clj [vbn.styler :refer [css installer-hack]])
             #?(:cljs [vbn.mediafixer :refer [get-atomic-css]])
             #?(:cljs [goog.style])
 
@@ -155,8 +156,12 @@
 
 ;; This println somehow stops the style classnames from incorrectly being put on
 ;; the wrong html elements in the final cljs output
-(println @styler/global-css-styles)
+;(println @global-css-styles)
 ;#?(:cljs (goog.style/installStyles (get-atomic-css(styler/get-css-str false))))
+
+;; Hack to fix styles
+(css {})
+
 #?(:cljs
    (defn init []
      (rum/mount (page) (. js/document (getElementById "container")))))

@@ -271,3 +271,8 @@
    (spit-css-fn! file-name (get-css-str-fn prefix? auto-prefixer-cmd)))
   ([file-name prefix? cmd]
    (spit-css-fn! file-name (get-css-str-fn prefix? cmd))))
+
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ;; WADES CUSTOM HACK TO CSS INSTALLER BUG:
+(defn installer-hack []
+  @global-css-styles)
