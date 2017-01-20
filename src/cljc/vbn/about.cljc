@@ -46,16 +46,16 @@
                                                   :padding-right 0})]}
     [:h3 {:class [(css {:margin-right "3em"})]} "Vision"]
     [:div {:class [(at-media {:min-width "30rem"} {:width "80%"})]}
-              [:span {:class [(css {:font-weight "bold"
+          [:span {:class [(css {:font-weight "bold"
                                     ;;NEED TO FIXBELOW
-                                    :font-size "1.125em"
-                                    :line-height "1.5em"})]}
+                                :font-size "1.125em"
+                                :line-height "1.5em"})]}
                               ;.vision-title
-               "A Vegan World"]
-              [:span {:class [(css {:margin-top "0.5em"
-                                    :margin-bottom "0.5em"})]}
+           "A Vegan World"]
+          [:span {:class [(css {:margin-top "0.5em"
+                                :margin-bottom "0.5em"})]}
                      ;.simple-vision
-                "Pretty simple really"]]]
+            "Pretty simple really"]]]
 
    [:div
     {:class [(css {:display "flex"

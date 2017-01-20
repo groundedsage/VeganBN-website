@@ -13,9 +13,9 @@
 
             [vbn.components :refer [my-routes]]
 
-
-            #?(:clj [vbn.styler :refer [css installer-hack]])
-            #?(:cljs [vbn.mediafixer :refer [get-atomic-css]])
+            ;[vbn.styler :refer [installer-hack]]
+            #?(:clj [vbn.styler :refer [css installer-hack global-css-styles]])
+            ;#?(:cljs [vbn.mediafixer :refer [get-atomic-css]])
             #?(:cljs [goog.style])
 
 
@@ -160,7 +160,8 @@
 ;#?(:cljs (goog.style/installStyles (get-atomic-css(styler/get-css-str false))))
 
 ;; Hack to fix styles
-(css {})
+(installer-hack)
+;(css {:random "random"})
 
 #?(:cljs
    (defn init []
