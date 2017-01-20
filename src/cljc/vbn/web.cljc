@@ -42,19 +42,21 @@
 
 
 
-(rum/defc icon-title-text [title text]
- [:div title text])
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;   PAGE COMPONENTS   ;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(rum/defc icon-title-text [title text]
+ [:div title text])
+
 (rum/defc process-h3 [text]
   [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  text])
 
 
-(rum/defc process [img text]
-  [:div {:class inside-three} img text])
+(rum/defc process [img title text]
+  [:div {:class inside-three} img title text])
 
 
 
@@ -87,46 +89,38 @@
 
      (process
        (atom/visual-language)
-       (process-h3 "This is the process component"))
-
-     [:div {:class inside-three}
-      (atom/information-architecture)
-      (icon-title-text
-       [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})
-                     (at-media {:min-width "60rem"} {:font-size "1.4em"})]} "Information Architecture"]
-       [:p "Starting with the initial consult we establish the current state of your business and it’s future plans. From here we can design the structure of the information on your website or application to ensure that it achieves your current and future business objectives/ desired goals. "])]
+       (process-h3 "Visual Language")
+       [:p "Starting with the initial consult we review the visual language your business currently has or what is missing. From here we develop the unique style of your website or application in a way that can easily be reviewed and evolve years later."])
 
 
-     [:div {:class inside-three}
-      (atom/visual-language)
-      (icon-title-text
-       [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Visual Language"]
-       [:p "Starting with the initial consult we review the visual language your business currently has or what is missing. From here we develop the unique style of your website or application in a way that can easily be reviewed and evolve years later."])]
+     (process
+       (atom/mock-up)
+       (process-h3 "Mock-up")
+       [:p "Bringing your unique style and information architecture together we create the first real representation of what the final product will look like using real or representative information."])
 
-     [:div {:class inside-three}
-      (atom/mock-up)
-      (icon-title-text
-       [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Mock-up"]
-       [:p "Bringing your unique style and information architecture together we create the first real representation of what the final product will look like using real or representative information."])]
+     (process
+       (atom/micro-interactions)
+       (process-h3 "Micro-interactions")
+       [:p "Once we have established the look and flow of your website or application we can focus on micro-interactions. It is here that you can truly set yourself apart. We create small interactive and intelligent animations. This is what delights your users."])
 
-     [:div {:class inside-three}
-      (atom/micro-interactions)
-      (icon-title-text
-       [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]} "Micro-interactions"]
-       [:p "Once we have established the look and flow of your website or application we can focus on micro-interactions. It is here that you can truly set yourself apart. We create small interactive and intelligent animations. This is what delights your users."])]
+     (process
+       (atom/develop)
+       (process-h3 "Develop and Deploy")
+       [:p "Throughout the entire process we develop finalised designs to ensure it is completed as quickly as possible. At this stage we add the final touches and then release your website or application into the wild. "])
 
-     [:div {:class inside-three}
-      (atom/develop)
-      (icon-title-text
-       [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Develop and Deploy"]
-       [:p "Throughout the entire process we develop finalised designs to ensure it is completed as quickly as possible. At this stage we add the final touches and then release your website or application into the wild. "])]
+     (process
+       (atom/happy-days)
+       (process-h3 "Happy Days")
+       [:p "You can rest easy knowing you’ve made the best choice."])
+
+
 
      [:div {:class inside-three}
       (atom/happy-days)
       (icon-title-text
-       [:h3 {:class [(at-media {:min-width "60rem"} {:font-size "1.4em"})]}  "Happy Days"]
-       [:p "You can rest easy knowing you’ve made the best choice."])]]]])
-
+       [:h3 {:class [(at-media {:max-width "60rem"} {:align-self "center"})
+                     (at-media {:min-width "60rem"} {:font-size "1.4em"})]} "Information Architecture"]
+       [:p "Starting with the initial consult we establish the current state of your business and it’s future plans. From here we can design the structure of the information on your website or application to ensure that it achieves your current and future business objectives/ desired goals. "])]]]])
 
 
 
