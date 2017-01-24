@@ -51,70 +51,10 @@
     (= :not-found route) "404.html"
     :else (subs (path-for my-routes route) 1)))
 
-(defn remove-html [in-file out-file]
-  ;(println (slurp in-file))
-  (doto out-file
-      io/make-parents
-      (spit (str/replace (slurp in-file) #".html" ""))))
-  ;(println (slurp out-file)))
-
-
-(deftask remove-html-task
-  "Removes the html from routes"
-  []
-  (let [tmp (tmp-dir!)]
-    (with-pre-wrap [fileset]
-      (empty-dir! tmp)
-      (let [in-files (input-files fileset)
-            file-with-html (by-name ["components.cljc"] in-files)]
-        (doseq [in file-with-html]
-          (let [in-file (tmp-file in)
-                in-path (tmp-path in)
-                out-path in-path
-                out-file (io/file tmp out-path)]
-            (remove-html in-file out-file)))
-        (-> fileset
-            (add-resource tmp)
-            commit!)))))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ADDING ATOMIC STYLES ISN'T WORKING THIS WAY  ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-(defn make-atomic-styles [in-file out-file]
-  ;(println  "\n\n*** THIS IS THE IN FILE ***" (slurp in-file)
-      (doto out-file
-          io/make-parents
-          (spit
-           (str (slurp in-file)
-                " "
-                ;(styler/get-css-str false)
-                ; (get-atomic-css 
-                 (styler/get-css-str false)))))
-  ;(println "\n\n*** THIS IS THE OUT FILE ***" (slurp out-file)))
 
 
 
 
-(deftask add-atomic-styles
-    "Adds atomic styles to final css"
-    []
-    (let [tmp (tmp-dir!)]
-      (with-pre-wrap [fileset]
-        (empty-dir! tmp)
-        (let [in-files (input-files fileset)
-              css-file (by-name ["garden.css"] in-files)]
-          (doseq [in css-file]
-            (let [in-file (tmp-file in)
-                  in-path (tmp-path in)
-                  out-path in-path
-                  out-file (io/file tmp out-path)]
-              (make-atomic-styles in-file out-file)))
-          (-> fileset
-              (add-resource tmp)
-              commit!)))))
 
 
 (deftask string-template

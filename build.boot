@@ -27,6 +27,8 @@
  '[org.martinklepsch.boot-garden :refer [garden]]
 
  '[vbn.static :as static]
+ '[vbn.removehtmlextension :refer [remove-html-task]]
+ '[vbn.atomicstyles :refer [add-atomic-styles]]
  '[vbn.app :as app]
  '[bidi.bidi :refer [path-for route-seq]]
  '[vbn.components :refer [my-routes]])
@@ -46,14 +48,14 @@
 
 (deftask build []
   (comp (speak)
-        ;(static/remove-html-task)
-        (cljs)
         ;;;;;;
         ;; Alternate comment below to toggle between Single Page Application and full site.
         (static/make-pages)
         ;;(static/make-page :route :index)
-        (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")
-        (static/add-atomic-styles)))
+        (remove-html-task)
+        (cljs)
+        (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
+        ;(add-atomic-styles)))
 
 
 (deftask run []
@@ -68,7 +70,7 @@
 
 (deftask production []
   (task-options! cljs {:optimizations :advanced}
-                      garden {:pretty-print false})
+                 garden {:pretty-print false})
   identity)
 
 

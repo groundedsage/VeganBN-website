@@ -6,8 +6,41 @@
 
             #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
+
+
+
+
+
+
+
+
+;;;;;;;;;
+;;;;;;;;;   VBN WORKS TO
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (def about-strong [(css {:margin-right "0.2em"
                          :letter-spacing "0.05em"})])
+
+(rum/defc vbn-works-to []
+  [:div.full-width.block-green
+   [:div {:class [(css {:width "100vw"
+                        :max-width "53em"
+                        :align-self "center"
+                        :padding-left "1.5em"
+                        :padding-right "1.5em"
+                        :padding-top "4.5em"
+                        :padding-bottom "4.5"})]}
+    (atom/h2-home "At VeganBN we work to:")
+    [:div.center
+     [:p [:strong {:class about-strong} "GROW"] "  vegan and vegan friendly businesses with world class services."]
+     [:p [:strong {:class about-strong} "EDUCATE"] "   the public, businesses and government on veganism."]
+     [:p [:strong {:class about-strong} "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]]]])
+
+
+;;;;;;;;;
+;;;;;;;;;   VISION & VALUES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (def value-items [(css {:margin-top "0.5em"
                         :margin-bottom "2.5em"})])
 
@@ -17,46 +50,28 @@
    [:p {:class value-items} desc]])
 
 
-(rum/defc content []
-  [:main#main.footer-buffer
-   (molecule/page-intro
-    [:h1 "About"]
-    [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])
 
-   [:div.full-width.block-green
-    [:div {:class [(css {:width "100vw"
-                         :max-width "53em"
-                         :align-self "center"
-                         :padding-left "1.5em"
-                         :padding-right "1.5em"
-                         :padding-top "4.5em"
-                         :padding-bottom "4.5"})]}
-     (atom/h2-home "At VeganBN we work to:")
-     [:div.center
-      [:p [:strong {:class about-strong} "GROW"] "  vegan and vegan friendly businesses with world class services."]
-      [:p [:strong {:class about-strong} "EDUCATE"] "   the public, businesses and government on veganism."]
-      [:p [:strong {:class about-strong} "REPRESENT"] "  the Vegan Business community in political and legal campaigns. "]]]]
-
-   (atom/h2-home "Vision and Values")
-   [:div {:class [(css {:padding-left "1.5em"
-                        :padding-right "1.5em"})
-                  (at-media {:min-width "30rem"} {:flex-direction "row"
-                                                  :align-items "baseline"
-                                                  :padding-left 0
-                                                  :padding-right 0})]}
-    [:h3 {:class [(css {:margin-right "3em"})]} "Vision"]
-    [:div {:class [(at-media {:min-width "30rem"} {:width "80%"})]}
-          [:span {:class [(css {:font-weight "bold"
-                                    ;;NEED TO FIXBELOW
-                                :font-size "1.125em"
-                                :line-height "1.5em"})]}
-                              ;.vision-title
-           "A Vegan World"]
-          [:span {:class [(css {:margin-top "0.5em"
-                                :margin-bottom "0.5em"})]}
-                     ;.simple-vision
-            "Pretty simple really"]]]
-
+(rum/defc vision-values []
+  [:div
+    (atom/h2-home "Vision and Values")
+    [:div {:class [(css {:padding-left "1.5em"
+                         :padding-right "1.5em"})
+                   (at-media {:min-width "30rem"} {:flex-direction "row"
+                                                   :align-items "baseline"
+                                                   :padding-left 0
+                                                   :padding-right 0})]}
+     [:h3 {:class [(css {:margin-right "3em"})]} "Vision"]
+     [:div {:class [(at-media {:min-width "30rem"} {:width "80%"})]}
+           [:span {:class [(css {:font-weight "bold"
+                                     ;;NEED TO FIXBELOW
+                                 :font-size "1.125em"
+                                 :line-height "1.5em"})]}
+                               ;.vision-title
+            "A Vegan World"]
+           [:span {:class [(css {:margin-top "0.5em"
+                                 :margin-bottom "0.5em"})]}
+                      ;.simple-vision
+             "Pretty simple really"]]]
    [:div
     {:class [(css {:display "flex"
                    :align-items "baseline"
@@ -65,8 +80,7 @@
              (at-media {:min-width "30rem"} {:flex-direction "row"
                                              :padding-left 0
                                              :padding-right 0})]}
-    [:h3
-      {:class [(css {:margin-right "3em"})]}
+    [:h3 {:class [(css {:margin-right "3em"})]}
       "Values"]
     [:ol {:class [(css {:margin-left "-0.3125rem"})
                   (at-media {:min-width "30rem"} {:width "80%"})]}
@@ -85,4 +99,19 @@
      (value "Impact" "Always consider both the local and global impact")
      (value "Truth" "Be transparent and open in communication. For clarity communicate with simple words when possible and explain things as simply as possible. Always be happy to repeat what has been spoken. Be honest.")]]])
 
-;#?(:clj (println "This is how it looks inside about.clj "(get-css-str false)))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;;;;;;;   FULL PAGE CONTENT   ;;;;;;;;;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(rum/defc content []
+  [:main#main.footer-buffer
+   (molecule/page-intro
+    [:h1 "About"]
+    [:p "VBN is Australia’s first and only Peak Body for vegan businesses."])
+   (vbn-works-to)
+   (vision-values)])
