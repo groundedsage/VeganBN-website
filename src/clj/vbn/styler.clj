@@ -275,4 +275,5 @@
    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ;; WADES CUSTOM HACK TO CSS INSTALLER BUG:
 (defmacro installer-hack []
-  @global-css-styles)
+  @global-css-styles
+  nil)
