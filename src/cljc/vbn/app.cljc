@@ -1,5 +1,5 @@
 (ns vbn.app
-  #?(:cljs (:require-macros  [vbn.styler :refer [css installer-hack]]))
+  #?(:cljs (:require-macros  [vbn.styler :refer [css installer-hack get-css-str]]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -162,6 +162,13 @@
 ;; Hack to fix styles
 (installer-hack)
 ;(css {:random "random"})
+
+#?(:cljs
+   (do
+     (defonce prev (volatile! nil))
+     (when @prev
+       (goog.style/uninstallStyles @prev))
+     (vreset! prev (goog.style/installStyles (get-css-str false)))))
 
 #?(:cljs
    (defn init []

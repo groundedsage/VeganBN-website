@@ -49,7 +49,7 @@
   (cond
     (= :index route) "index.html"
     (= :not-found route) "404.html"
-    :else (subs (path-for my-routes route) 1)))
+    :else (str (subs (path-for my-routes route) 1) ".html")))
 
 
 
@@ -90,4 +90,4 @@
 
 
 (deftask make-pages []
-  (reduce comp (map #(make-page :route %) (gather-routes))))
+  (reduce comp identity (map #(make-page :route %) (gather-routes))))

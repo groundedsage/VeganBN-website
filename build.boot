@@ -54,9 +54,10 @@
         ;; Alternate comment below to toggle between Single Page Application and full site.
         (static/make-pages)
         ;;(static/make-page :route :index)
-
+        ;(add-atomic-styles)))
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")
         (add-atomic-styles)))
+
 
 
 (deftask run []
@@ -80,7 +81,8 @@
   (task-options! cljs {:optimizations :none
                        :source-map true
                        :compiler-options {:devcards true}}
-                 reload {:on-jsload 'vbn.app/init})
+                 reload {:on-jsload 'vbn.app/init
+                         :cljs-asset-path ""})
   identity)
 
 
