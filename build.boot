@@ -79,7 +79,8 @@
   (task-options! cljs {:optimizations :none
                        :source-map true
                        :compiler-options {:devcards true}}
-                 reload {:on-jsload 'vbn.app/init})
+                 reload {:on-jsload 'vbn.app/init
+                         :cljs-asset-path ""})
   identity)
 
 
