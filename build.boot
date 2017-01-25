@@ -52,7 +52,6 @@
         ;; Alternate comment below to toggle between Single Page Application and full site.
         (static/make-pages)
         ;;(static/make-page :route :index)
-        (remove-html-task)
         (cljs)
         (garden :styles-var 'vbn.styles/screen :output-to "css/garden.css")))
         ;(add-atomic-styles)))
