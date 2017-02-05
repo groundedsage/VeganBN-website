@@ -6,13 +6,18 @@
             #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
-
+ 
 
   ;;;;;;;;;
   ;;;;;;;;;   MEETUP BLOCK
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def meetup-num [(css {:width "2em"})])
+#?(:clj (println "\n This is the style from CLJ" meetup-num "\n"))
+;#?(:clj (println "\n This is system styles " (System/getProperty "styles")))
+#?(:cljs (println "\n This is the style from CLJS" meetup-num "\n"))
+
+
 (def meetup-text [(css {:flex-direction "row"
                           :flex-wrap "wrap"})])
 ;;

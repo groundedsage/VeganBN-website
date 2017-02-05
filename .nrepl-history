@@ -16,3 +16,24 @@ exit
 (str "This is it" )
 exity
 exit
+(def new-style "hello")
+new-style
+(def new-atom "man")
+new-atom
+(def happy-atom new-style)
+happy -atom
+@happy-atom
+(def happy-atom  atom new-style)
+(def new-atom (atom "man"))
+@new-atom
+(def happy-atom  (atom new-style))
+@happy-atom
+(System/setProperty "random" "test")
+(System/getProperty "random")
+(def example (atom (+ 1 1)))
+exampe
+@example
+(def random (atom (read-str (System/getProperty "random"))))
+(def random (atom (read-string (System/getProperty "random"))))
+@random
+exit

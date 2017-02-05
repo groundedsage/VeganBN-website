@@ -1,5 +1,5 @@
 (ns vbn.app
-  #?(:cljs (:require-macros  [vbn.styler :refer [css installer-hack]]))
+  #?(:cljs (:require-macros  [vbn.styler :refer [css]]))
   (:require [rum.core :as rum]
             [devcards.core :as dc]
             [bidi.bidi :as b :refer [match-route path-for]]
@@ -14,7 +14,7 @@
             [vbn.components :refer [my-routes]]
 
             ;[vbn.styler :refer [installer-hack]]
-            #?(:clj [vbn.styler :refer [css installer-hack]])
+            #?(:clj [vbn.styler :refer [css]])
             ;#?(:cljs [vbn.mediafixer :refer [get-atomic-css]])
             #?(:cljs [goog.style])
 
@@ -160,7 +160,6 @@
 ;#?(:cljs (goog.style/installStyles (get-atomic-css(styler/get-css-str false))))
 
 ;; Hack to fix styles
-(installer-hack)
 ;(css {:random "random"})
 
 #?(:cljs

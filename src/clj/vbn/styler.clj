@@ -65,7 +65,37 @@
 
 (def ^:private auto-prefixer-cmd ["postcss" "-u" "autoprefixer"])
 
-(def global-css-styles (atom {}))
+;
+
+
+
+
+
+;(def a (atom {})
+
+;(add-watch my-atom :watcher
+;  (fn [key atom old-state new-state]
+;    (prn new-state)
+;    (System/setProperty "styles" (pr-str new-state)))
+
+
+;(reset! my-atom {:hello "there"})
+;(System/getProperty "styles")
+
+
+
+;(def global-css-styles (atom {}))
+(defn global-styles []
+  (if (= nil (System/getProperty "styles"))
+    {}
+    (read-string (System/getProperty "styles"))))
+
+(defn add-to-global-styles [styles]
+  (System/setProperty "styles" (pr-str styles)))
+
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Class GEN:
@@ -109,7 +139,8 @@
   "Adds the css prop + value to the atom and returns the newly generated class"
   [pv]
   (let [gen-class (new-class)]
-    (swap! global-css-styles assoc pv gen-class)
+    ;(swap! global-css-styles assoc pv gen-class)
+    (add-to-global-styles (assoc (global-styles) pv gen-class))
     gen-class))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -158,7 +189,9 @@
                         ;(println "This is prop " prop)
                         ;(println "This is v " v)
                         ;(println "This is k " k)
-                        (or (get @global-css-styles k)
+                        (or (get ;@global-css-styles
+                                (global-styles)
+                                k)
                             (add-css-prop k)))))
               []
               styles)))
@@ -247,7 +280,8 @@
               (mapv
                 (fn [[k css-class]]
                   (to-garden k css-class))
-                (merge-media-queries @global-css-styles))))
+                (merge-media-queries (global-styles))))) ;@global-css-styles))))
+
 
 (defn- get-css-str-fn
   [prefix? cmd]
@@ -271,8 +305,3 @@
    (spit-css-fn! file-name (get-css-str-fn prefix? auto-prefixer-cmd)))
   ([file-name prefix? cmd]
    (spit-css-fn! file-name (get-css-str-fn prefix? cmd))))
-
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-   ;; WADES CUSTOM HACK TO CSS INSTALLER BUG:
-(defn installer-hack []
-  @global-css-styles)
