@@ -6,7 +6,7 @@
             [vbn.atoms :as atom]
             [vbn.molecules :as molecule]
             [vbn.organisms :as organism])
-  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source   ]]))
+  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source]]))
 
 (defcard Bigger-than-business
   (organism/bigger-than-business))

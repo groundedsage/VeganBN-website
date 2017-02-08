@@ -11,7 +11,7 @@
 
 
 
-  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source   ]]))
+  (:require-macros [devcards.core :refer [defcard defcard-doc mkdn-pprint-source]]))
 
 
 
@@ -30,8 +30,8 @@
 
 
 #_(defcard-doc
-  "This is the source code for h1"
-  (mkdn-pprint-source atom/h1) )
+   "This is the source code for h1"
+   (mkdn-pprint-source atom/h1))
 
 
 
@@ -85,12 +85,3 @@
 
 (defcard Intro-text
   (atom/intro [:span "This is intro text"]))
-
-
-
-
-
-
-
-
-

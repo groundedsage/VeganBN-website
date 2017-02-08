@@ -47,9 +47,9 @@
 (defn get-path [route]
   "Catches edge cases regarding getting the route path"
   (cond
-    (= :index route) "index.html"
     (= :not-found route) "404.html"
-    :else (subs (path-for my-routes route) 1)))
+    (str/ends-with? (path-for my-routes route) "/") (str (subs (path-for my-routes route) 1) "index.html")
+    :else (str (subs (path-for my-routes route) 1) ".html")))
 
 
 

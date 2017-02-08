@@ -27,15 +27,14 @@
 #?(:clj (rum/defc link [link & content]
           [:a {:href link} content]))
 
-
                                       ;; NAVIGATION
 
-  (def my-routes ["/" [[#{"" "index.html"} :index]
-                       ["veganism.html" :veganism]
-                       ["about-us.html" :about-us]
-                       ["consulting/"  [[ "index.html" :consulting]
-                                        ["web.html" :web]]]
-                       ["community.html" :community]]])
+  (def my-routes ["/" [[#{"" "index"} :index]
+                       ["veganism" :veganism]
+                       ["about-us" :about-us]
+                       ["consulting/"  [[#{"" "index"} :consulting]
+                                        ["web" :web]]]
+                       ["community" :community]]])
                                           ;["devcards.html" :devcards]
             ;[true :not-found]]])
 
