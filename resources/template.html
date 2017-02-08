@@ -12,12 +12,14 @@
     </head>
     <body>
         <div id="container">{{CONTENT}}</div>
-        <script type='application/javascript' src='/js/fastclick.js'></script>
+        <script type='text/javascript' src='/fastclick.js'></script>
         <script type="text/javascript">if ('addEventListener' in document) {
-             document.addEventListener('DOMContentLoaded', function() {
-                 FastClick.attach(document.body);
-             }, false);
-         }</script>
+            document.addEventListener('DOMContentLoaded', function() {
+              if(window.FastClick) { // I'm not sure about this --Eric
+                FastClick.attach(document.body);
+              }
+            }, false);
+           }</script>
         <script type="text/javascript" src="/js/app.js"></script>
     </body>
 </html>

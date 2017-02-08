@@ -19,7 +19,6 @@
 ;;;;;;;;;   CONSULTING BLOCK
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 (rum/defc consult-block []
   [:div {:class ["full-width"
                  "consulting-block"

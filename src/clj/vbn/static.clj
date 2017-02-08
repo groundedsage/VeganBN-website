@@ -90,4 +90,4 @@
 
 
 (deftask make-pages []
-  (reduce comp (map #(make-page :route %) (gather-routes))))
+  (reduce comp identity (map #(make-page :route %) (gather-routes))))

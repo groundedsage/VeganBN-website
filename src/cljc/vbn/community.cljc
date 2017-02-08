@@ -6,16 +6,16 @@
             #?(:clj [vbn.styler :refer [css at-media get-css-str]])))
 
 
- 
+
 
   ;;;;;;;;;
   ;;;;;;;;;   MEETUP BLOCK
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def meetup-num [(css {:width "2em"})])
-#?(:clj (println "\n This is the style from CLJ" meetup-num "\n"))
+;#?(:clj (println "\n This is the style from CLJ" meetup-num "\n"))
 ;#?(:clj (println "\n This is system styles " (System/getProperty "styles")))
-#?(:cljs (println "\n This is the style from CLJS" meetup-num "\n"))
+;#?(:cljs (println "\n This is the style from CLJS" meetup-num "\n"))
 
 
 (def meetup-text [(css {:flex-direction "row"
@@ -38,8 +38,8 @@
                          :height "5rem"
                          :margin-right "2rem"
                          :margin-top "1rem"})]
-           :src "photos/meetup-logo.png"
-                        :alt-text "Meetup Logo"}]
+           :src "photos/meetup-logo.png"}]
+                         ;:alt-text "Meetup Logo"}]
     ;(println "\n\n *** Inside the div *** \n" meetup-num "\n\n")
     ;#?(:cljs (js/console.log "\n\n Inside the div \n\n" meetup-num))
     [:div#meetup-text-group {:style {:padding "1em"}}
