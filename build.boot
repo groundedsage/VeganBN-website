@@ -1,9 +1,9 @@
 (set-env!
  :source-paths    #{"src/cljs" "src/clj" "src/cljc"}
  :resource-paths  #{"resources"}
- :dependencies '[[adzerk/boot-cljs          "1.7.228-1"  :scope "test"]
+ :dependencies '[[adzerk/boot-cljs          "1.7.48-5"  :scope "test"]
                  [adzerk/boot-cljs-repl     "0.3.0"      :scope "test"]
-                 [adzerk/boot-reload        "0.4.8"      :scope "test"]
+                 [adzerk/boot-reload        "0.5.1"      :scope "test"]
                  [pandeiro/boot-http        "0.7.2"      :scope "test"]
                  [com.cemerick/piggieback   "0.2.1"      :scope "test"]
                  [org.clojure/tools.nrepl   "0.2.12"     :scope "test"]
