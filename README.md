@@ -139,7 +139,7 @@ I have chosen to use **Garden** as it is:
 * Video and audio command line editor - https://ffmpeg.org/
 
 ## Notes for those critiquing my process
-* I am still a very new developer. I love to spend time in the field of design and finding the intersectionality of these two fields. My Git commits and messages are likely all over the shop as I am still learning the process of using Git and only use it at present as a safety net for my learning.
+* I am still a very new developer. I love to spend time in the field of design and find the intersectionality of these two fields very interesting with the amount that they overlap. My Git commits and messages are likely all over the shop as I am still learning the process of using Git and only use it at present as a safety net for my learning.
 
 
 ## Gratitude Journal
