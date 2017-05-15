@@ -90,7 +90,7 @@ I have chosen to use **Garden** as it is:
 
 
 
-###Other useful third party services
+### Other useful third party services
 
 * **Snipcart** (ecommerce) - https://snipcart.com/
 * **AuthO** (Authentication) - https://auth0.com/
