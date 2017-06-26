@@ -114,6 +114,7 @@ I have chosen to use **Garden** as it is:
 * Readability (Literacy) uses Node.js - https://chrome.google.com/webstore/detail/tray-readability-tool/eccbjfaplogblgjpopbihpgfgmlgjamf?hl=en-GB
 * Colour Blindness Emulator (Mac) - https://itunes.apple.com/au/app/sim-daltonism/id693112260?mt=12
 * Responsive design tool - http://material.io/resizer/
+* Font Manager - http://fontba.se/
 
 ### Dev
 
